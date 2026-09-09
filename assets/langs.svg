@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="170" viewBox="0 0 450 170" role="img" aria-label="Repositories nach Sprache">
+<style>
+  .t { font: 600 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #E8799A; }
+  .n { font: 700 22px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #B07CC6; }
+  .l { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; letter-spacing:.4px; }
+  .b { font: 400 12.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #6D6178; }
+  .s { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; }
+</style>
+<rect x="0.5" y="0.5" width="449" height="169" rx="14"
+      fill="#FFF5F7" stroke="#FFD3DF"/>
+<text x="22" y="32" class="t">Repositories nach Sprache</text>
+<rect x="24" y="70" width="402" height="12" rx="6" fill="#FBE4EA"/>
+<clipPath id="clip"><rect x="24" y="70" width="402" height="12" rx="6"/></clipPath>
+<g clip-path="url(#clip)">
+<rect x="24.0" y="70" width="319.6" height="12" fill="#FFB7C5"/>
+<rect x="345.6" y="70" width="80.4" height="12" fill="#CBA6F7"/>
+</g>
+<circle cx="30" cy="114" r="5.5" fill="#FFB7C5"/>
+<text x="44" y="118" class="b">PowerShell</text>
+<text x="213" y="118" class="s" text-anchor="end">80%  (8)</text>
+<circle cx="243" cy="114" r="5.5" fill="#CBA6F7"/>
+<text x="257" y="118" class="b">HTML</text>
+<text x="426" y="118" class="s" text-anchor="end">20%  (2)</text>
+</svg>

@@ -108,20 +108,16 @@
 
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  S T A T I S T I K E N  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 
-<img src="https://github-readme-stats.vercel.app/api?username=adblocker-1&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&title_color=FFB7C5&icon_color=CBA6F7&text_color=6D6178&bg_color=FFF5F7&card_width=450" alt="GitHub Stats" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adblocker-1&layout=compact&hide_border=true&langs_count=8&title_color=FFB7C5&text_color=6D6178&bg_color=FFF5F7&card_width=350" alt="Top Sprachen" />
+<img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/stats.svg" alt="GitHub Statistiken" />
+<img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/langs.svg" alt="Repositories nach Sprache" />
 
 <br />
 
-<img src="https://streak-stats.demolab.com?user=adblocker-1&hide_border=true&background=FFF5F7&ring=FFB7C5&fire=CBA6F7&currStreakLabel=CBA6F7&sideLabels=6D6178&currStreakNum=6D6178&sideNums=6D6178&dates=B9A5C4&stroke=FFB7C5" alt="Streak" />
+<img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/recent.svg" alt="Zuletzt aktualisierte Repositories" width="98%" />
+
+<sub>Die Karten liegen als SVG im Repo und werden jede Nacht per GitHub Action neu gezeichnet ˎˊ˗</sub>
 
 <br /><br />
-
-<img src="https://github-profile-trophy.vercel.app/?username=adblocker-1&theme=flat&no-frame=true&no-bg=true&column=7&margin-w=6&margin-h=6" alt="Trophäen" />
-
-<br />
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=adblocker-1&bg_color=FFF5F7&color=6D6178&line=FFB7C5&point=CBA6F7&area=true&area_color=FFB7C5&hide_border=true" alt="Aktivitätsverlauf" width="98%" />
 
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  D I E   S C H L A N G E  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 

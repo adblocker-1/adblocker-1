@@ -1,0 +1,44 @@
+name: Statistikkarten
+
+# Zeichnet assets/*.svg aus den aktuellen GitHub-Daten neu und committet sie,
+# falls sich etwas geaendert hat.
+
+on:
+  schedule:
+    - cron: "20 3 * * *"   # jede Nacht um 03:20 UTC
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/generate_stats.py"
+      - ".github/workflows/stats.yml"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Karten neu zeichnen
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate_stats.py
+
+      - name: Committen, falls geaendert
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain assets)" ]; then
+            git add assets
+            git commit -m "Statistikkarten aktualisiert"
+            git push
+          else
+            echo "Keine Aenderung - nichts zu committen."
+          fi

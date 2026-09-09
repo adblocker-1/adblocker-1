@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="914" height="188" viewBox="0 0 914 188" role="img" aria-label="Zuletzt aktualisiert  ·  Balken = Repo-Größe">
+<style>
+  .t { font: 600 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #E8799A; }
+  .n { font: 700 22px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #B07CC6; }
+  .l { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; letter-spacing:.4px; }
+  .b { font: 400 12.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #6D6178; }
+  .s { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; }
+</style>
+<rect x="0.5" y="0.5" width="913" height="187" rx="14"
+      fill="#FFF5F7" stroke="#FFD3DF"/>
+<text x="22" y="32" class="t">Zuletzt aktualisiert  ·  Balken = Repo-Größe</text>
+<text x="24" y="64" class="b">UnifiController-PRTG</text>
+<text x="470" y="64" class="s">02.09.2026</text>
+<rect x="560" y="55" width="240" height="9" rx="4.5" fill="#FBE4EA"/>
+<rect x="560" y="55" width="57.4" height="9" rx="4.5" fill="#FFB7C5"/>
+<text x="890" y="64" class="s" text-anchor="end">29 KB</text>
+<text x="24" y="90" class="b">HyperVReplicaHealth-PRTG</text>
+<text x="470" y="90" class="s">02.09.2026</text>
+<rect x="560" y="81" width="240" height="9" rx="4.5" fill="#FBE4EA"/>
+<rect x="560" y="81" width="42.3" height="9" rx="4.5" fill="#CBA6F7"/>
+<text x="890" y="90" class="s" text-anchor="end">14 KB</text>
+<text x="24" y="116" class="b">MailStore-PRTG</text>
+<text x="470" y="116" class="s">02.09.2026</text>
+<rect x="560" y="107" width="240" height="9" rx="4.5" fill="#FBE4EA"/>
+<rect x="560" y="107" width="43.5" height="9" rx="4.5" fill="#B5EAD7"/>
+<text x="890" y="116" class="s" text-anchor="end">15 KB</text>
+<text x="24" y="142" class="b">Sophos-Firewall-API-Documentation</text>
+<text x="470" y="142" class="s">22.07.2026</text>
+<rect x="560" y="133" width="240" height="9" rx="4.5" fill="#FBE4EA"/>
+<rect x="560" y="133" width="240.0" height="9" rx="4.5" fill="#FFDAC1"/>
+<text x="890" y="142" class="s" text-anchor="end">640 KB</text>
+<text x="24" y="168" class="b">Cove-Data-Protection-PRTG</text>
+<text x="470" y="168" class="s">20.07.2026</text>
+<rect x="560" y="159" width="240" height="9" rx="4.5" fill="#FBE4EA"/>
+<rect x="560" y="159" width="37.0" height="9" rx="4.5" fill="#A0C4FF"/>
+<text x="890" y="168" class="s" text-anchor="end">10 KB</text>
+</svg>
