@@ -175,6 +175,37 @@ def card_recent(d):
                 "\n".join(body), mascot=bear(862, 58, 0.92))
 
 
+def card_achievements(d):
+    u, repos = d["user"], d["repos"]
+    body = []
+
+    achievements = [
+        ("\u2b50 Developer", f"{sum(r['stars'] for r in repos)}", "STARS EARNED"),
+        ("\ud83d\udc65 Community", str(u["followers"]), "FOLLOWERS"),
+        ("\ud83d\udce6 Creator", str(len(repos)), "REPOSITORIES"),
+        ("\ud83d\udd25 Active", "10+", "PROJECTS"),
+    ]
+
+    for i, (title, num, label) in enumerate(achievements):
+        x = 40 + (i % 2) * 186
+        y = 100 + (i // 2) * 56
+        col = PASTELS[i % len(PASTELS)]
+
+        body.append(f'<rect x="{x}" y="{y - 35}" width="170" height="48" '
+                    f'rx="8" fill="{col}" opacity="0.3"/>')
+        body.append(f'<text x="{x + 85}" y="{y - 8}" class="n" '
+                    f'text-anchor="middle">{escape(num)}</text>')
+        body.append(f'<text x="{x + 85}" y="{y + 10}" class="s" '
+                    f'text-anchor="middle">{escape(label)}</text>')
+
+    body.append(heart(60, 60, 0.8, SPARK))
+    body.append(heart(380, 60, 0.8, SPARK))
+
+    return card(460, 240, "Errungenschaften",
+                "\u3010 \u6210\u5c31 \u3011",
+                "\n".join(body), mascot=cat(410, 92, 1.0))
+
+
 # --------------------------------------------------------- Projekttabelle
 # Beschreibung kommt aus dem GitHub-Feld des jeweiligen Repos. Nur fuer
 # Repos ohne gepflegte Beschreibung steht hier ein Ersatztext.
@@ -264,7 +295,8 @@ def main():
     OUT.mkdir(exist_ok=True)
     for name, svg in (("stats", card_stats(d)),
                       ("langs", card_langs(d)),
-                      ("recent", card_recent(d))):
+                      ("recent", card_recent(d)),
+                      ("achievements", card_achievements(d))):
         (OUT / f"{name}.svg").write_text(svg, encoding="utf-8")
         print(f"assets/{name}.svg geschrieben ({len(svg)} Zeichen)")
     update_readme(d)
