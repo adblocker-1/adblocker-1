@@ -101,6 +101,18 @@
 
 ⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
+### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  E R R U N G E N S C H A F T E N  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>【 成就 】</sub>
+
+<sub>ᐛ)و  Trophäen und Erfolge</sub>
+
+[![Trophy](https://github-profile-trophy.vercel.app/?username=adblocker-1&theme=darkhub&no-frame=true&margin-w=4&margin-h=4&column=6)](https://github.com/adblocker-1)
+
+<br />
+
+⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
+
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  M E I N E   P R O J E K T E  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 
 <sub>【 作品一覧 】</sub>
