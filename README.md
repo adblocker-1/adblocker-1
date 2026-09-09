@@ -2,7 +2,9 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=220&section=header&text=Hallo%2C%20ich%20bin%20Adblocker%21&fontSize=40&fontColor=ffffff&animation=twinkling&fontAlignY=34&desc=PowerShell%20%20%C2%B7%20%20PRTG%20%20%C2%B7%20%20Monitoring%20%20%C2%B7%20%20Automatisierung&descAlignY=54&descSize=16" width="100%" alt="Header" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3200&pause=800&color=FFB7C5&center=true&vCenter=true&width=620&height=45&lines=Willkommen%20auf%20meinem%20Profil%21%20%28%3D%5E%EF%BD%A5%CF%89%EF%BD%A5%5E%3D%29%3BIch%20baue%20PRTG-Sensoren%20in%20PowerShell%3BMonitoring%2C%20APIs%20und%20viel%20Automatisierung%3BAlles%20mit%20KI%20gebaut%20%20-%20%20und%20es%20laeuft%21" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3400&pause=800&color=FFB7C5&center=true&vCenter=true&width=680&height=45&lines=%E3%82%88%E3%81%86%E3%81%93%E3%81%9D%EF%BC%81%20%20Willkommen%20auf%20meinem%20Profil%21%3B%28%20%EF%BD%A5%CF%89%EF%BD%A5%20%29%20PRTG-Sensoren%20in%20PowerShell%3B%E7%9B%A3%E8%A6%96%20%E3%83%BB%20API%20%E3%83%BB%20%E8%87%AA%E5%8B%95%E5%8C%96%20%20%E2%99%A1%3BAlles%20mit%20KI%20gebaut%20%20-%20%20und%20es%20laeuft%21" alt="Typing SVG" />
+
+**こんにちは！  （≧▽≦）ノ  見てくれてありがとう！**
 
 <img src="https://komarev.com/ghpvc/?username=adblocker-1&style=flat-square&color=FFB7C5&label=Besucher" alt="Besucher" />
 &nbsp;
@@ -13,20 +15,20 @@
 </div>
 
 ```
-
-        /\_/\      ╭──────────────────────────────────────────╮
-       ( o.o )     │  Monitoring soll nicht wehtun.           │
-        > ^ <      │  Ein Skript. Ein Sensor. Fertig. ♡       │
-       /|   |\     ╰──────────────────────────────────────────╯
-      (_|   |_)
-
+        /\_/\      ╭────────────────────────────────────────────╮
+       ( o.o )     │  監視は痛くないほうがいい。                │
+        > ^ <      │  Monitoring soll nicht wehtun.             │
+       /|   |\     │  Ein Skript. Ein Sensor. Fertig. ♡         │
+      (_|   |_)    ╰────────────────────────────────────────────╯
 ```
 
 <div align="center">
 
-`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  Ü B E R   M I C H  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>【 自己紹介 】</sub>
 
 <sub>( ｡•ㅅ•｡ )♡  wer da eigentlich tippt</sub>
 
@@ -66,9 +68,11 @@
 
 <div align="center">
 
-`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  T E C H   S T A C K  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>【 道具箱 】</sub>
 
 <sub>‧₊˚ ⋅ womit die Sensoren gebaut werden ⋅ ˚₊‧</sub>
 
@@ -95,9 +99,11 @@
 <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code" />
 <img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" />
 
-`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  M E I N E   P R O J E K T E  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>【 作品一覧 】</sub>
 
 <sub>૮ ˶ᵔ ᵕ ᵔ˶ ა  frisch von oben nach alt sortiert</sub>
 
@@ -120,9 +126,11 @@
 
 <div align="center">
 
-`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  S T A T I S T I K E N  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>【 統計 】</sub>
 
 <sub>ฅ^•ﻌ•^ฅ  alle 6 Stunden frisch gezeichnet</sub>
 
@@ -137,9 +145,11 @@
 
 <br /><br />
 
-`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  D I E   S C H L A N G E  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>【 へび 】</sub>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/output/snake-dark.svg" />
@@ -197,9 +207,11 @@
 
 <div align="center">
 
-`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  S C H R E I B   M I R  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>【 連絡先 】</sub>
 
 <sub>(⁄ ⁄•⁄ω⁄•⁄ ⁄)  ich beiße nicht</sub>
 

@@ -1,49 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="450" height="178" viewBox="0 0 450 178" role="img" aria-label="✧  Adblocker  ·  GitHub  ✧">
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="214" viewBox="0 0 460 214" role="img" aria-label="Adblocker の GitHub">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#FFF5F7"/>
-    <stop offset="100%" stop-color="#FDEBF3"/>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+    <stop offset="0%" stop-color="#FFF6FA"/>
+    <stop offset="100%" stop-color="#FDE9F2"/>
   </linearGradient>
+  <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+    <circle cx="4" cy="4" r="1.6" fill="#FFE3EE"/>
+    <circle cx="12" cy="12" r="1.6" fill="#FFE3EE"/>
+  </pattern>
+  <clipPath id="inner"><path d="M8.85,8.92a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83Z"/></clipPath>
 </defs>
 <style>
-  .t { font: 700 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #E8799A; }
-  .n { font: 700 23px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #B07CC6; }
-  .l { font: 400 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; letter-spacing:.5px; }
-  .b { font: 400 12.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #6D6178; }
-  .s { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; }
+  .t  { font: 700 15.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #E36F97; }
+  .jp { font: 400 10px 'Hiragino Maru Gothic ProN','Yu Gothic','Meiryo','Noto Sans JP','MS PGothic',sans-serif; fill: #AB99B8; letter-spacing:1px; }
+  .n  { font: 700 23px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A874C9; }
+  .l  { font: 400 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #AB99B8; letter-spacing:.5px; }
+  .b  { font: 400 12.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #6D6178; }
+  .s  { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #AB99B8; }
 </style>
-<rect x="1" y="1" width="448" height="176" rx="20" fill="url(#bg)"
-      stroke="#FFD3DF" stroke-width="2"/>
-<rect x="7" y="7" width="436" height="164" rx="15" fill="none"
-      stroke="#FFC9DC" stroke-width="1.4" stroke-dasharray="1 6"
-      stroke-linecap="round" opacity=".85"/>
-<text x="26" y="36" class="t">✧  Adblocker  ·  GitHub  ✧</text>
-<path opacity="1.0" fill="#FFC9DC" d="M354 21Q354.9 25.1 359 26Q354.9 26.9 354 31Q353.1 26.9 349 26Q353.1 25.1 354 21Z"/><path opacity="0.75" fill="#FFC9DC" d="M372 13Q372.54 15.46 375 16Q372.54 16.54 372 19Q371.46 16.54 369 16Q371.46 15.46 372 13Z"/><path opacity="0.55" fill="#FFC9DC" d="M384 28.4Q384.648 31.352 387.6 32Q384.648 32.648 384 35.6Q383.352 32.648 380.4 32Q383.352 31.352 384 28.4Z"/>
-<g transform="translate(388,14) scale(1.15)">
-  <path d="M2 10 L3 -3 L12 5 Z"   fill="#FFAFC8"/>
-  <path d="M24 10 L23 -3 L14 5 Z" fill="#FFAFC8"/>
-  <ellipse cx="13" cy="13" rx="11.5" ry="9.5" fill="#FFAFC8"/>
-  <circle cx="9"  cy="12" r="1.5" fill="#FFFFFF"/>
-  <circle cx="17" cy="12" r="1.5" fill="#FFFFFF"/>
-  <path d="M11.6 15.8 Q13 17.2 14.4 15.8" stroke="#FFFFFF"
-        stroke-width="1.3" fill="none" stroke-linecap="round"/>
+<path d="M8.85,8.92a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.85,8.85 0 0 1 17.69,0a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.92,8.92 0 0 1 0,17.83a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.85,8.85 0 0 1 -17.69,0a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83a8.92,8.92 0 0 1 0,-17.83Z" fill="url(#bg)" stroke="#FFC2D6" stroke-width="2"
+      stroke-linejoin="round"/>
+<g clip-path="url(#inner)"><rect width="460" height="214" fill="url(#dots)"
+   opacity=".8"/></g>
+<text x="48.84615384615385" y="30.916666666666664" class="t">Adblocker の GitHub</text>
+<text x="48.84615384615385" y="44.916666666666664" class="jp">【 プロフィール 】</text>
+<g transform="translate(18.846153846153847,16.916666666666664) scale(0.95)">
+  <path d="M11 6 L1 1 Q-1 6 1 11 Z" fill="#FF9EBB"/>
+  <path d="M13 6 L23 1 Q25 6 23 11 Z" fill="#FF9EBB"/>
+  <path d="M11 6 L11 12 L6 14 Z"  fill="#FF9EBB" opacity=".8"/>
+  <path d="M13 6 L13 12 L18 14 Z" fill="#FF9EBB" opacity=".8"/>
+  <circle cx="12" cy="6.5" r="3" fill="#FF9EBB"/>
+  <circle cx="12" cy="6.5" r="1.2" fill="#FFFFFF" opacity=".55"/>
 </g>
-<text x="28" y="88" class="n">10</text>
-<path transform="translate(28,94) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
-<text x="38" y="105" class="l">REPOSITORIES</text>
-<text x="171" y="88" class="n">2</text>
-<path transform="translate(171,94) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
-<text x="181" y="105" class="l">SPRACHEN</text>
-<text x="314" y="88" class="n">0</text>
-<path transform="translate(314,94) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
-<text x="324" y="105" class="l">STERNE</text>
-<text x="28" y="146" class="n">1</text>
-<path transform="translate(28,152) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
-<text x="38" y="163" class="l">FOLLOWER</text>
-<text x="171" y="146" class="n">2021</text>
-<path transform="translate(171,152) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
-<text x="181" y="163" class="l">DABEI SEIT</text>
-<text x="314" y="146" class="n">09/2026</text>
-<path transform="translate(314,152) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
-<text x="324" y="163" class="l">LETZTER PUSH</text>
+<path fill="#FFC9DC" opacity="1.0" d="M429.15384615384613 15.516666666666664Q430.2338461538461 19.836666666666666 434.5538461538461 20.916666666666664Q430.2338461538461 21.996666666666663 429.15384615384613 26.316666666666663Q428.07384615384615 21.996666666666663 423.75384615384615 20.916666666666664Q428.07384615384615 19.836666666666666 429.15384615384613 15.516666666666664Z"><animate attributeName="opacity" values="1.0;0.2;1.0" dur="2.8s" begin="0.0s" repeatCount="indefinite"/></path>
+<path fill="#FFC9DC" opacity="0.8" d="M411.15384615384613 29.516666666666666Q411.83384615384614 32.236666666666665 414.5538461538461 32.916666666666664Q411.83384615384614 33.596666666666664 411.15384615384613 36.31666666666666Q410.4738461538461 33.596666666666664 407.75384615384615 32.916666666666664Q410.4738461538461 32.236666666666665 411.15384615384613 29.516666666666666Z"><animate attributeName="opacity" values="0.8;0.16000000000000003;0.8" dur="2.8s" begin="0.9s" repeatCount="indefinite"/></path>
+<path fill="#FFC9DC" opacity="0.65" d="M443.15384615384613 35.916666666666664Q443.75384615384615 38.31666666666666 446.15384615384613 38.916666666666664Q443.75384615384615 39.516666666666666 443.15384615384613 41.916666666666664Q442.5538461538461 39.516666666666666 440.15384615384613 38.916666666666664Q442.5538461538461 38.31666666666666 443.15384615384613 35.916666666666664Z"><animate attributeName="opacity" values="0.65;0.13;0.65" dur="2.8s" begin="1.7s" repeatCount="indefinite"/></path>
+<g transform="translate(410,92) scale(1.0)">
+  <path d="M-11 -2 L-12.5 -15 L-2.5 -7 Z" fill="#FFB7C5"/>
+  <path d="M11 -2 L12.5 -15 L2.5 -7 Z"    fill="#FFB7C5"/>
+  <ellipse cx="0" cy="8" rx="14" ry="12" fill="#FFB7C5"/>
+  <path d="M-19 6 L-14.5 5 M-19 10 L-14.5 9.6" stroke="#FFB7C5"
+        stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M19 6 L14.5 5 M19 10 L14.5 9.6" stroke="#FFB7C5"
+        stroke-width="1.3" stroke-linecap="round"/>
+  
+  <ellipse cx="-6.5" cy="13.5" rx="3.1" ry="2.1"
+           fill="#FFA6BE" opacity=".55"/>
+  <ellipse cx="6.5" cy="13.5" rx="3.1" ry="2.1"
+           fill="#FFA6BE" opacity=".55"/>
+  <path d="M-6.4 10.6 Q-4.4 8.2 -2.4 10.6" stroke="#7A5C72" stroke-width="1.5"
+        fill="none" stroke-linecap="round"/>
+  <path d="M2.4 10.6 Q4.4 8.2 6.4 10.6" stroke="#7A5C72" stroke-width="1.5"
+        fill="none" stroke-linecap="round"/>
+  <path d="M-2 13.8 Q0 15.8 2 13.8" stroke="#7A5C72" stroke-width="1.4"
+        fill="none" stroke-linecap="round"/>
+</g>
+<text x="40" y="104" class="n">10</text>
+<path transform="translate(40,110) scale(0.6)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="50" y="121" class="l">REPOSITORIES</text>
+<text x="166" y="104" class="n">2</text>
+<path transform="translate(166,110) scale(0.6)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="176" y="121" class="l">SPRACHEN</text>
+<text x="292" y="104" class="n">0</text>
+<path transform="translate(292,110) scale(0.6)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="302" y="121" class="l">STERNE</text>
+<text x="40" y="160" class="n">1</text>
+<path transform="translate(40,166) scale(0.6)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="50" y="177" class="l">FOLLOWER</text>
+<text x="166" y="160" class="n">2021</text>
+<path transform="translate(166,166) scale(0.6)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="176" y="177" class="l">DABEI SEIT</text>
+<text x="292" y="160" class="n">09/2026</text>
+<path transform="translate(292,166) scale(0.6)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="302" y="177" class="l">LETZTER PUSH</text>
+<text x="40" y="198" class="jp">きらきら ・ 6時間ごとに更新 ・ alle 6 Stunden frisch</text>
 </svg>
