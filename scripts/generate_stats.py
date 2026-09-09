@@ -77,7 +77,9 @@ def fetch():
                    "size": r["size"], "stars": r["stargazers_count"],
                    "forks": r["forks_count"], "pushed_at": r["pushed_at"],
                    "created_at": r["created_at"]}
-                  for r in repos if not r["fork"]],
+                  # Das Profil-Repo selbst ist kein Projekt und taucht
+                  # sonst in "Zuletzt aktualisiert" und der Repo-Zahl auf.
+                  for r in repos if not r["fork"] and r["name"] != USER],
     }
 
 
