@@ -56,10 +56,10 @@
         fill="none" stroke-linecap="round"/>
 </g>
 <rect x="40" y="65" width="170" height="48" rx="8" fill="#FFB7C5" opacity="0.3"/>
-<text x="125" y="92" class="n" text-anchor="middle">33</text>
+<text x="125" y="92" class="n" text-anchor="middle">0</text>
 <text x="125" y="110" class="s" text-anchor="middle">STARS EARNED</text>
 <rect x="226" y="65" width="170" height="48" rx="8" fill="#CBA6F7" opacity="0.3"/>
-<text x="311" y="92" class="n" text-anchor="middle">42</text>
+<text x="311" y="92" class="n" text-anchor="middle">1</text>
 <text x="311" y="110" class="s" text-anchor="middle">FOLLOWERS</text>
 <rect x="40" y="121" width="170" height="48" rx="8" fill="#B5EAD7" opacity="0.3"/>
 <text x="125" y="148" class="n" text-anchor="middle">10</text>
