@@ -1,25 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="450" height="170" viewBox="0 0 450 170" role="img" aria-label="Adblocker  ·  GitHub">
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="178" viewBox="0 0 450 178" role="img" aria-label="✧  Adblocker  ·  GitHub  ✧">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFF5F7"/>
+    <stop offset="100%" stop-color="#FDEBF3"/>
+  </linearGradient>
+</defs>
 <style>
-  .t { font: 600 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #E8799A; }
-  .n { font: 700 22px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #B07CC6; }
-  .l { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; letter-spacing:.4px; }
+  .t { font: 700 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #E8799A; }
+  .n { font: 700 23px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #B07CC6; }
+  .l { font: 400 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; letter-spacing:.5px; }
   .b { font: 400 12.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #6D6178; }
   .s { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; }
 </style>
-<rect x="0.5" y="0.5" width="449" height="169" rx="14"
-      fill="#FFF5F7" stroke="#FFD3DF"/>
-<text x="22" y="32" class="t">Adblocker  ·  GitHub</text>
-<path transform="translate(410,20) scale(1.5)" fill="#FFC9D6" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
-<text x="24" y="80" class="n">10</text>
-<text x="24" y="97" class="l">REPOSITORIES</text>
-<text x="169" y="80" class="n">2</text>
-<text x="169" y="97" class="l">SPRACHEN</text>
-<text x="314" y="80" class="n">0</text>
-<text x="314" y="97" class="l">STERNE</text>
-<text x="24" y="138" class="n">1</text>
-<text x="24" y="155" class="l">FOLLOWER</text>
-<text x="169" y="138" class="n">2021</text>
-<text x="169" y="155" class="l">DABEI SEIT</text>
-<text x="314" y="138" class="n">09/2026</text>
-<text x="314" y="155" class="l">LETZTER PUSH</text>
+<rect x="1" y="1" width="448" height="176" rx="20" fill="url(#bg)"
+      stroke="#FFD3DF" stroke-width="2"/>
+<rect x="7" y="7" width="436" height="164" rx="15" fill="none"
+      stroke="#FFC9DC" stroke-width="1.4" stroke-dasharray="1 6"
+      stroke-linecap="round" opacity=".85"/>
+<text x="26" y="36" class="t">✧  Adblocker  ·  GitHub  ✧</text>
+<path opacity="1.0" fill="#FFC9DC" d="M354 21Q354.9 25.1 359 26Q354.9 26.9 354 31Q353.1 26.9 349 26Q353.1 25.1 354 21Z"/><path opacity="0.75" fill="#FFC9DC" d="M372 13Q372.54 15.46 375 16Q372.54 16.54 372 19Q371.46 16.54 369 16Q371.46 15.46 372 13Z"/><path opacity="0.55" fill="#FFC9DC" d="M384 28.4Q384.648 31.352 387.6 32Q384.648 32.648 384 35.6Q383.352 32.648 380.4 32Q383.352 31.352 384 28.4Z"/>
+<g transform="translate(388,14) scale(1.15)">
+  <path d="M2 10 L3 -3 L12 5 Z"   fill="#FFAFC8"/>
+  <path d="M24 10 L23 -3 L14 5 Z" fill="#FFAFC8"/>
+  <ellipse cx="13" cy="13" rx="11.5" ry="9.5" fill="#FFAFC8"/>
+  <circle cx="9"  cy="12" r="1.5" fill="#FFFFFF"/>
+  <circle cx="17" cy="12" r="1.5" fill="#FFFFFF"/>
+  <path d="M11.6 15.8 Q13 17.2 14.4 15.8" stroke="#FFFFFF"
+        stroke-width="1.3" fill="none" stroke-linecap="round"/>
+</g>
+<text x="28" y="88" class="n">10</text>
+<path transform="translate(28,94) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="38" y="105" class="l">REPOSITORIES</text>
+<text x="171" y="88" class="n">2</text>
+<path transform="translate(171,94) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="181" y="105" class="l">SPRACHEN</text>
+<text x="314" y="88" class="n">0</text>
+<path transform="translate(314,94) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="324" y="105" class="l">STERNE</text>
+<text x="28" y="146" class="n">1</text>
+<path transform="translate(28,152) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="38" y="163" class="l">FOLLOWER</text>
+<text x="171" y="146" class="n">2021</text>
+<path transform="translate(171,152) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="181" y="163" class="l">DABEI SEIT</text>
+<text x="314" y="146" class="n">09/2026</text>
+<path transform="translate(314,152) scale(0.62)" fill="#FFC9DC" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
+<text x="324" y="163" class="l">LETZTER PUSH</text>
 </svg>

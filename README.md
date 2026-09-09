@@ -24,7 +24,11 @@
 
 <div align="center">
 
+`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  Ü B E R   M I C H  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>( ｡•ㅅ•｡ )♡  wer da eigentlich tippt</sub>
 
 </div>
 
@@ -39,7 +43,7 @@
 <tr>
 <td width="50%" valign="top">
 
-**🌸 Woran ich arbeite**
+**🌸 Woran ich arbeite** ｡ﾟ+.
 
 - PRTG-Sensoren (EXE/Script Advanced)
 - REST- & XML-APIs anzapfen
@@ -49,7 +53,7 @@
 </td>
 <td width="50%" valign="top">
 
-**🍡 Wie ich arbeite**
+**🍡 Wie ich arbeite** ｡ﾟ+.
 
 - Eine Datei, keine Abhängigkeiten
 - Sprechende Fehlermeldungen statt Abstürze
@@ -62,7 +66,11 @@
 
 <div align="center">
 
+`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  T E C H   S T A C K  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>‧₊˚ ⋅ womit die Sensoren gebaut werden ⋅ ˚₊‧</sub>
 
 <img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell" />
 <img src="https://img.shields.io/badge/Windows_Server-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows Server" />
@@ -87,26 +95,36 @@
 <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code" />
 <img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" />
 
+`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  M E I N E   P R O J E K T E  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>૮ ˶ᵔ ᵕ ᵔ˶ ა  frisch von oben nach alt sortiert</sub>
 
 </div>
 
+<!-- PROJEKTE:START -->
 | ♡ | Projekt | Worum es geht |
 | :-: | :-- | :-- |
-| 📡 | **[UnifiController-PRTG](https://github.com/adblocker-1/UnifiController-PRTG)** | UniFi-Switches, APs und Gateways in PRTG – auf allen Plattformen von Cloud Key bis Legacy-Controller. |
-| 🛡️ | **[Sophos-Central-PRTG](https://github.com/adblocker-1/Sophos-Central-PRTG)** | Endpoints, Server und Mobilgeräte inkl. Health-Status und Alerts über die Sophos-Central-API. |
-| 🔥 | **[Sophos-Firewall-API-Documentation](https://github.com/adblocker-1/Sophos-Firewall-API-Documentation)** | Komplette SFOS-Konfiguration per XML-API exportieren – als Excel, HTML-Report oder JSON/XML. |
-| 🔄 | **[Sophos-api-device-migration](https://github.com/adblocker-1/Sophos-api-device-migration)** | Geräte dialoggeführt zwischen Sophos-Central-Tenants migrieren, mit GUI und Live-Status. |
-| 💾 | **[Veeam-Backup365-PRTG](https://github.com/adblocker-1/Veeam-Backup365-PRTG)** | Backup-, Copy-, Replication-, Endpoint- und Tape-Jobs plus Repository-Auslastung. |
-| ☁️ | **[Veeam-backup-PRTG](https://github.com/adblocker-1/Veeam-backup-PRTG)** | Veeam Backup for Microsoft 365: Job-Status, Postfächer, OneDrive, SharePoint und Teams. |
+| 📡 | **[UnifiController-PRTG](https://github.com/adblocker-1/UnifiController-PRTG)** | UniFi-Switches, APs und Gateways in PRTG - auf allen Plattformen von Cloud Key bis Legacy-Controller. |
+| 🖥️ | **[HyperVReplicaHealth-PRTG](https://github.com/adblocker-1/HyperVReplicaHealth-PRTG)** | PRTG-Push-Sensor für Hyper-V-Replikation: PowerShell-Skript liest den Replikationszustand aller VMs per CIM/WMI aus und pusht ihn als XML an einen „HTTP Push Data ... |
+| ✉️ | **[MailStore-PRTG](https://github.com/adblocker-1/MailStore-PRTG)** | PRTG EXE/Script-Advanced-Sensor für MailStore Server: überwacht Archivierungsprofile und geplante Jobs direkt über die Administration API (HTTPS/8463). Eine einzelne ... |
+| 🔥 | **[Sophos-Firewall-API-Documentation](https://github.com/adblocker-1/Sophos-Firewall-API-Documentation)** | PowerShell-Skript zum Export der kompletten Sophos Firewall (SFOS) Konfiguration über die XML-API – Firewall-Regeln, Objekte, Netzwerk & System als Excel-Tabelle ... |
 | 🗄️ | **[Cove-Data-Protection-PRTG](https://github.com/adblocker-1/Cove-Data-Protection-PRTG)** | Cove Data Protection im PRTG-Blick behalten. |
-| ✉️ | **[MailStore-PRTG](https://github.com/adblocker-1/MailStore-PRTG)** | Archivierungsprofile und geplante Jobs direkt über die MailStore Administration API. |
-| 🖥️ | **[HyperVReplicaHealth-PRTG](https://github.com/adblocker-1/HyperVReplicaHealth-PRTG)** | Hyper-V-Replikationszustand per CIM/WMI auslesen und als XML an einen Push-Sensor senden. |
-| 🐦 | **[Flappy-tori](https://github.com/adblocker-1/Flappy-tori)** | Flappy Bird im Ukiyo-e-Stil – ein Browser-Game in einer einzigen HTML-Datei. |
+| 💾 | **[Veeam-Backup365-PRTG](https://github.com/adblocker-1/Veeam-Backup365-PRTG)** | PRTG Advanced Sensor für Veeam Backup & Replication – überwacht Backup-, Copy-, Replication-, Endpoint- und Tape-Jobs sowie die Repository-Auslastung. |
+| 🔄 | **[Sophos-api-device-migration](https://github.com/adblocker-1/Sophos-api-device-migration)** | PowerShell-Skript zur dialoggeführten Migration von Sophos-Central-Geräten (Server/Clients) zwischen Tenants – mit GUI-Geräteauswahl und Live-Statusanzeige. |
+| 🛡️ | **[Sophos-Central-PRTG](https://github.com/adblocker-1/Sophos-Central-PRTG)** | PRTG-Sensor für Sophos Central: PowerShell-Skript, das Endpoints, Server und Mobilgeräte (iOS/Android) inkl. Health-Status und Alerts über die Sophos Central API abfragt ... |
+| ☁️ | **[Veeam-backup-PRTG](https://github.com/adblocker-1/Veeam-backup-PRTG)** | PRTG-Sensor (PowerShell) zur Überwachung von Veeam Backup for Microsoft 365 — prüft den Job-Status und zeigt, wie viele Postfächer, OneDrive-Accounts, SharePoint-Sites ... |
+| 🐦 | **[Flappy-tori](https://github.com/adblocker-1/Flappy-tori)** | Flappy Bird im Ukiyo-e-Stil – ein Browser-Game in einer einzigen HTML-Datei |
+<!-- PROJEKTE:ENDE -->
 
 <div align="center">
 
+`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  S T A T I S T I K E N  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>ฅ^•ﻌ•^ฅ  alle 6 Stunden frisch gezeichnet</sub>
 
 <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/stats.svg" alt="GitHub Statistiken" />
 <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/langs.svg" alt="Repositories nach Sprache" />
@@ -118,6 +136,8 @@
 <sub>Die Karten liegen als SVG im Repo und werden jede Nacht per GitHub Action neu gezeichnet ˎˊ˗</sub>
 
 <br /><br />
+
+`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
 
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  D I E   S C H L A N G E  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 
@@ -134,7 +154,7 @@
 <br />
 
 <details>
-<summary><b>🍓 Noch ein paar Kleinigkeiten über mich (aufklappen!)</b></summary>
+<summary><b>🍓 Noch ein paar Kleinigkeiten über mich  ‧₊˚ (aufklappen!) ˚₊‧</b></summary>
 
 <br />
 
@@ -158,6 +178,12 @@
 - READMEs schreiben, die man ohne Vorwissen durcharbeiten kann
 - Und ab und zu: ein kleines Spiel im Browser 🐦
 
+```
+     (\ (\
+     ( -.-)   noch wach? dann kommt hier der Rest ~
+     o_(")(")
+```
+
 **Was du in meinen Repos findest**
 
 - Eine einzelne `.ps1` – keine Module, keine Installation
@@ -171,7 +197,11 @@
 
 <div align="center">
 
+`｡ﾟ･ ♡ ･ﾟ｡`  `･ﾟ✧ ⋆ ✧ﾟ･`  `｡ﾟ･ ♡ ･ﾟ｡`
+
 ### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  S C H R E I B   M I R  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+
+<sub>(⁄ ⁄•⁄ω⁄•⁄ ⁄)  ich beiße nicht</sub>
 
 <a href="https://github.com/adblocker-1?tab=repositories">
   <img src="https://img.shields.io/badge/Meine_Repos-FFB7C5?style=for-the-badge&logo=github&logoColor=white" alt="Repos" />

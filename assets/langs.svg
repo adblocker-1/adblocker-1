@@ -1,24 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="450" height="170" viewBox="0 0 450 170" role="img" aria-label="Repositories nach Sprache">
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="178" viewBox="0 0 450 178" role="img" aria-label="✧  Repositories nach Sprache">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFF5F7"/>
+    <stop offset="100%" stop-color="#FDEBF3"/>
+  </linearGradient>
+</defs>
 <style>
-  .t { font: 600 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #E8799A; }
-  .n { font: 700 22px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #B07CC6; }
-  .l { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; letter-spacing:.4px; }
+  .t { font: 700 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #E8799A; }
+  .n { font: 700 23px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #B07CC6; }
+  .l { font: 400 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; letter-spacing:.5px; }
   .b { font: 400 12.5px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #6D6178; }
   .s { font: 400 11px -apple-system,BlinkMacSystemFont,'Segoe UI',Ubuntu,'Helvetica Neue',Helvetica,Arial,sans-serif; fill: #A796B4; }
 </style>
-<rect x="0.5" y="0.5" width="449" height="169" rx="14"
-      fill="#FFF5F7" stroke="#FFD3DF"/>
-<text x="22" y="32" class="t">Repositories nach Sprache</text>
-<rect x="24" y="70" width="402" height="12" rx="6" fill="#FBE4EA"/>
-<clipPath id="clip"><rect x="24" y="70" width="402" height="12" rx="6"/></clipPath>
+<rect x="1" y="1" width="448" height="176" rx="20" fill="url(#bg)"
+      stroke="#FFD3DF" stroke-width="2"/>
+<rect x="7" y="7" width="436" height="164" rx="15" fill="none"
+      stroke="#FFC9DC" stroke-width="1.4" stroke-dasharray="1 6"
+      stroke-linecap="round" opacity=".85"/>
+<text x="26" y="36" class="t">✧  Repositories nach Sprache</text>
+<path opacity="1.0" fill="#FFC9DC" d="M354 21Q354.9 25.1 359 26Q354.9 26.9 354 31Q353.1 26.9 349 26Q353.1 25.1 354 21Z"/><path opacity="0.75" fill="#FFC9DC" d="M372 13Q372.54 15.46 375 16Q372.54 16.54 372 19Q371.46 16.54 369 16Q371.46 15.46 372 13Z"/><path opacity="0.55" fill="#FFC9DC" d="M384 28.4Q384.648 31.352 387.6 32Q384.648 32.648 384 35.6Q383.352 32.648 380.4 32Q383.352 31.352 384 28.4Z"/>
+<rect x="28" y="78" width="394" height="13" rx="6" fill="#FBE4EA"/>
+<clipPath id="clip"><rect x="28" y="78" width="394" height="13" rx="6"/></clipPath>
 <g clip-path="url(#clip)">
-<rect x="24.0" y="70" width="319.6" height="12" fill="#FFB7C5"/>
-<rect x="345.6" y="70" width="80.4" height="12" fill="#CBA6F7"/>
+<rect x="28.0" y="78" width="313.2" height="13" fill="#FFB7C5"/>
+<rect x="343.2" y="78" width="78.8" height="13" fill="#CBA6F7"/>
 </g>
-<circle cx="30" cy="114" r="5.5" fill="#FFB7C5"/>
-<text x="44" y="118" class="b">PowerShell</text>
-<text x="213" y="118" class="s" text-anchor="end">80%  (8)</text>
-<circle cx="243" cy="114" r="5.5" fill="#CBA6F7"/>
-<text x="257" y="118" class="b">HTML</text>
-<text x="426" y="118" class="s" text-anchor="end">20%  (2)</text>
+<circle cx="34" cy="124" r="5.5" fill="#FFB7C5"/>
+<text x="48" y="128" class="b">PowerShell</text>
+<text x="217" y="128" class="s" text-anchor="end">80%  (8)</text>
+<circle cx="243" cy="124" r="5.5" fill="#CBA6F7"/>
+<text x="257" y="128" class="b">HTML</text>
+<text x="426" y="128" class="s" text-anchor="end">20%  (2)</text>
+<text x="28" y="162" class="s">aus 10 Repositories  ·  10 mit erkannter Sprache</text>
 </svg>

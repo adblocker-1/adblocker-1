@@ -31,6 +31,9 @@ TEXT    = "#6D6178"
 MUTED   = "#A796B4"
 NUMBER  = "#B07CC6"
 TRACK   = "#FBE4EA"
+BG2     = "#FDEBF3"
+SPARK   = "#FFC9DC"
+CAT     = "#FFAFC8"
 
 LANG_COLORS = {
     "PowerShell": "#FFB7C5",
@@ -74,6 +77,7 @@ def fetch():
                  ("login", "name", "followers", "following",
                   "public_repos", "created_at")},
         "repos": [{"name": r["name"], "language": r["language"],
+                   "description": r["description"],
                    "size": r["size"], "stars": r["stargazers_count"],
                    "forks": r["forks_count"], "pushed_at": r["pushed_at"],
                    "created_at": r["created_at"]}
@@ -84,18 +88,56 @@ def fetch():
 
 
 # -------------------------------------------------------------- Bausteine
-def card(w, h, title, body):
+def sparkle(x, y, r, fill, op=1.0):
+    """Vierzackiger Funkel-Stern."""
+    return (f'<path opacity="{op}" fill="{fill}" d="M{x} {y - r}'
+            f'Q{x + r * .18} {y - r * .18} {x + r} {y}'
+            f'Q{x + r * .18} {y + r * .18} {x} {y + r}'
+            f'Q{x - r * .18} {y + r * .18} {x - r} {y}'
+            f'Q{x - r * .18} {y - r * .18} {x} {y - r}Z"/>')
+
+
+def kitty(x, y, s=1.0):
+    """Kleines Katzengesicht - reine Pfade, damit nichts von einer
+    Emoji-Schriftart auf dem Rechner des Betrachters abhaengt."""
+    return f"""<g transform="translate({x},{y}) scale({s})">
+  <path d="M2 10 L3 -3 L12 5 Z"   fill="{CAT}"/>
+  <path d="M24 10 L23 -3 L14 5 Z" fill="{CAT}"/>
+  <ellipse cx="13" cy="13" rx="11.5" ry="9.5" fill="{CAT}"/>
+  <circle cx="9"  cy="12" r="1.5" fill="#FFFFFF"/>
+  <circle cx="17" cy="12" r="1.5" fill="#FFFFFF"/>
+  <path d="M11.6 15.8 Q13 17.2 14.4 15.8" stroke="#FFFFFF"
+        stroke-width="1.3" fill="none" stroke-linecap="round"/>
+</g>"""
+
+
+def card(w, h, title, body, deco=True):
+    sparks = ""
+    if deco:
+        sparks = (sparkle(w - 96, 26, 5, SPARK)
+                  + sparkle(w - 78, 16, 3, SPARK, .75)
+                  + sparkle(w - 66, 32, 3.6, SPARK, .55))
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="{escape(title)}">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="{BG}"/>
+    <stop offset="100%" stop-color="{BG2}"/>
+  </linearGradient>
+</defs>
 <style>
-  .t {{ font: 600 15px {FONT}; fill: {TITLE}; }}
-  .n {{ font: 700 22px {FONT}; fill: {NUMBER}; }}
-  .l {{ font: 400 11px {FONT}; fill: {MUTED}; letter-spacing:.4px; }}
+  .t {{ font: 700 15px {FONT}; fill: {TITLE}; }}
+  .n {{ font: 700 23px {FONT}; fill: {NUMBER}; }}
+  .l {{ font: 400 10.5px {FONT}; fill: {MUTED}; letter-spacing:.5px; }}
   .b {{ font: 400 12.5px {FONT}; fill: {TEXT}; }}
   .s {{ font: 400 11px {FONT}; fill: {MUTED}; }}
 </style>
-<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="14"
-      fill="{BG}" stroke="{BORDER}"/>
-<text x="22" y="32" class="t">{escape(title)}</text>
+<rect x="1" y="1" width="{w - 2}" height="{h - 2}" rx="20" fill="url(#bg)"
+      stroke="{BORDER}" stroke-width="2"/>
+<rect x="7" y="7" width="{w - 14}" height="{h - 14}" rx="15" fill="none"
+      stroke="{SPARK}" stroke-width="1.4" stroke-dasharray="1 6"
+      stroke-linecap="round" opacity=".85"/>
+<text x="26" y="36" class="t">{escape(title)}</text>
+{sparks}
 {body}
 </svg>
 """
@@ -123,13 +165,15 @@ def card_stats(d):
         (since.strftime("%Y"),                "DABEI SEIT"),
         (last.strftime("%m/%Y"),              "LETZTER PUSH"),
     ]
-    body = [heart(410, 20, 1.5, "#FFC9D6")]
+    body = [kitty(388, 14, 1.15)]
     for i, (num, lab) in enumerate(cells):
-        x = 24 + (i % 3) * 145
-        y = 80 + (i // 3) * 58
+        x = 28 + (i % 3) * 143
+        y = 88 + (i // 3) * 58
         body.append(f'<text x="{x}" y="{y}" class="n">{num}</text>')
-        body.append(f'<text x="{x}" y="{y + 17}" class="l">{lab}</text>')
-    return card(450, 170, "Adblocker  ·  GitHub", "\n".join(body))
+        body.append(heart(x, y + 6, 0.62, SPARK))
+        body.append(f'<text x="{x + 10}" y="{y + 17}" class="l">{lab}</text>')
+    return card(450, 178, "\u2727  Adblocker  \u00b7  GitHub  \u2727",
+                "\n".join(body))
 
 
 def card_langs(d):
@@ -137,7 +181,7 @@ def card_langs(d):
     total = sum(counts.values())
     order = counts.most_common()
 
-    bar_x, bar_y, bar_w, bar_h, gap = 24, 70, 402, 12, 2
+    bar_x, bar_y, bar_w, bar_h, gap = 28, 78, 394, 13, 2
     body, cx = [], bar_x
     body.append(f'<rect x="{bar_x}" y="{bar_y}" width="{bar_w}" '
                 f'height="{bar_h}" rx="6" fill="{TRACK}"/>')
@@ -155,15 +199,17 @@ def card_langs(d):
     # Feste Spalten mit rechtsbuendiger Prozentzahl - eine geschaetzte
     # Textbreite (Zeichen * Pixel) laesst lange Namen ueberlappen.
     for i, (lang, n) in enumerate(order):
-        col_x = 24 + (i % 2) * 213
-        y = 118 + (i // 2) * 28
+        col_x = 28 + (i % 2) * 209
+        y = 128 + (i // 2) * 28
         col = LANG_COLORS.get(lang, FALLBACK[i % len(FALLBACK)])
         pct = 100 * n / total
         body.append(f'<circle cx="{col_x + 6}" cy="{y - 4}" r="5.5" fill="{col}"/>')
         body.append(f'<text x="{col_x + 20}" y="{y}" class="b">{escape(lang)}</text>')
         body.append(f'<text x="{col_x + 189}" y="{y}" class="s" '
                     f'text-anchor="end">{pct:.0f}%  ({n})</text>')
-    return card(450, 170, "Repositories nach Sprache", "\n".join(body))
+    body.append(f'<text x="28" y="162" class="s">aus {len(d["repos"])} '
+                f'Repositories  \u00b7  {total} mit erkannter Sprache</text>')
+    return card(450, 178, "\u2727  Repositories nach Sprache", "\n".join(body))
 
 
 def card_recent(d):
@@ -173,12 +219,13 @@ def card_recent(d):
     mx = max(r["size"] for r in repos) or 1
     body = []
     for i, r in enumerate(repos):
-        y = 64 + i * 26
+        y = 72 + i * 25
         d = r["pushed_at"][:10]
         date = f"{d[8:10]}.{d[5:7]}.{d[0:4]}"
         w = 8 + 232 * (r["size"] / mx) ** 0.5
         col = FALLBACK[i % len(FALLBACK)]
-        body.append(f'<text x="24" y="{y}" class="b">{escape(r["name"])}</text>')
+        body.append(heart(28, y - 8, 0.75, col))
+        body.append(f'<text x="45" y="{y}" class="b">{escape(r["name"])}</text>')
         body.append(f'<text x="470" y="{y}" class="s">{date}</text>')
         body.append(f'<rect x="560" y="{y - 9}" width="240" height="9" '
                     f'rx="4.5" fill="{TRACK}"/>')
@@ -186,8 +233,85 @@ def card_recent(d):
                     f'rx="4.5" fill="{col}"/>')
         body.append(f'<text x="890" y="{y}" class="s" text-anchor="end">'
                     f'{r["size"]} KB</text>')
-    return card(914, 188, "Zuletzt aktualisiert  ·  Balken = Repo-Gr\u00f6\u00dfe",
+    return card(914, 196, "\u2727  Zuletzt aktualisiert  \u00b7  Balken = Repo-Gr\u00f6\u00dfe",
                 "\n".join(body))
+
+
+# --------------------------------------------------------- Projekttabelle
+# Beschreibung kommt aus dem GitHub-Feld des jeweiligen Repos. Nur fuer
+# Repos ohne gepflegte Beschreibung steht hier ein Ersatztext.
+DESCRIPTIONS = {
+    "UnifiController-PRTG":
+        "UniFi-Switches, APs und Gateways in PRTG - auf allen Plattformen "
+        "von Cloud Key bis Legacy-Controller.",
+    "Cove-Data-Protection-PRTG":
+        "Cove Data Protection im PRTG-Blick behalten.",
+}
+
+# Reihenfolge zaehlt: der erste Treffer im Repo-Namen gewinnt.
+EMOJI_RULES = [
+    ("unifi", "\U0001F4E1"),        # Satellitenschuessel
+    ("firewall", "\U0001F525"),     # Feuer
+    ("migration", "\U0001F504"),    # Pfeile im Kreis
+    ("sophos", "\U0001F6E1\uFE0F"),  # Schild
+    ("365", "\U0001F4BE"),          # Diskette
+    ("backup", "\u2601\uFE0F"),      # Wolke
+    ("cove", "\U0001F5C4\uFE0F"),    # Aktenschrank
+    ("mail", "\u2709\uFE0F"),        # Briefumschlag
+    ("hyperv", "\U0001F5A5\uFE0F"),  # Bildschirm
+    ("flappy", "\U0001F426"),       # Vogel
+    ("prtg", "\U0001F4CA"),         # Diagramm
+]
+FALLBACK_EMOJI = "\u2728"           # Funkeln
+
+MARK_START = "<!-- PROJEKTE:START -->"
+MARK_END = "<!-- PROJEKTE:ENDE -->"
+MAX_DESC = 170
+
+
+def emoji_for(name):
+    low = name.lower().replace("-", "")
+    for key, emo in EMOJI_RULES:
+        if key in low:
+            return emo
+    return FALLBACK_EMOJI
+
+
+def describe(r):
+    text = (r.get("description") or DESCRIPTIONS.get(r["name"], "")).strip()
+    if not text:
+        return "&nbsp;"
+    if len(text) > MAX_DESC:
+        text = text[:MAX_DESC].rsplit(" ", 1)[0].rstrip(" .,;-") + " ..."
+    # Ein rohes | wuerde die Markdown-Tabelle sprengen.
+    return text.replace("|", "\\|").replace("\n", " ")
+
+
+def project_table(d):
+    rows = ["| \u2661 | Projekt | Worum es geht |", "| :-: | :-- | :-- |"]
+    for r in sorted(d["repos"], key=lambda x: x["pushed_at"], reverse=True):
+        url = f"https://github.com/{USER}/{r['name']}"
+        rows.append(f"| {emoji_for(r['name'])} | **[{r['name']}]({url})** | "
+                    f"{describe(r)} |")
+    return "\n".join(rows)
+
+
+def update_readme(d):
+    """Ersetzt die Tabelle zwischen den Markern. Fehlen die Marker, wird
+    nichts angefasst - lieber unveraendert als halb zerstoert."""
+    readme = Path(__file__).resolve().parent.parent / "README.md"
+    text = readme.read_text(encoding="utf-8")
+    if MARK_START not in text or MARK_END not in text:
+        print("Marker fehlen - README unveraendert.")
+        return
+    head, rest = text.split(MARK_START, 1)
+    _, tail = rest.split(MARK_END, 1)
+    new = (f"{head}{MARK_START}\n{project_table(d)}\n{MARK_END}{tail}")
+    if new != text:
+        readme.write_text(new, encoding="utf-8")
+        print(f"README.md: Projekttabelle aktualisiert ({len(d['repos'])} Repos)")
+    else:
+        print("README.md: Projekttabelle bereits aktuell")
 
 
 # ------------------------------------------------------------------- Main
@@ -205,6 +329,7 @@ def main():
                       ("recent", card_recent(d))):
         (OUT / f"{name}.svg").write_text(svg, encoding="utf-8")
         print(f"assets/{name}.svg geschrieben ({len(svg)} Zeichen)")
+    update_readme(d)
 
 
 if __name__ == "__main__":

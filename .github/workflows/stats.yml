@@ -1,11 +1,12 @@
 name: Statistikkarten
 
-# Zeichnet assets/*.svg aus den aktuellen GitHub-Daten neu und committet sie,
-# falls sich etwas geaendert hat.
+# Zeichnet assets/*.svg neu und traegt die Projektliste zwischen den
+# PROJEKTE-Markern im README nach - beides aus den aktuellen GitHub-Daten.
+# Committet nur, wenn sich wirklich etwas geaendert hat.
 
 on:
   schedule:
-    - cron: "20 3 * * *"   # jede Nacht um 03:20 UTC
+    - cron: "20 */6 * * *"   # alle 6 Stunden
   workflow_dispatch:
   push:
     branches:
@@ -26,7 +27,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Karten neu zeichnen
+      - name: Karten und Projektliste neu erzeugen
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/generate_stats.py
@@ -35,9 +36,9 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain assets)" ]; then
-            git add assets
-            git commit -m "Statistikkarten aktualisiert"
+          if [ -n "$(git status --porcelain assets README.md)" ]; then
+            git add assets README.md
+            git commit -m "Statistiken und Projektliste aktualisiert"
             git push
           else
             echo "Keine Aenderung - nichts zu committen."
