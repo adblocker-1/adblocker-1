@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>ヘビゲーム · Kawaii Snake</title>
+<style>
+  :root {
+    --bg:      #FFF6FA;
+    --bg2:     #FDE9F2;
+    --border:  #FFC2D6;
+    --title:   #E36F97;
+    --text:    #6D6178;
+    --muted:   #AB99B8;
+    --number:  #A874C9;
+    --track:   #FBE0EA;
+    --spark:   #FFC9DC;
+    --blush:   #FFA6BE;
+    --ink:     #7A5C72;
+    --font:    -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+    --font-jp: 'Hiragino Maru Gothic ProN', 'Yu Gothic', Meiryo, 'Noto Sans JP', 'MS PGothic', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--font);
+    color: var(--text);
+    background:
+      radial-gradient(circle at 12% 18%, #FFE3EE 0 2px, transparent 2px) 0 0/28px 28px,
+      linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 40px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(22px, 5vw, 30px);
+    color: var(--title);
+    letter-spacing: .5px;
+  }
+
+  .jp {
+    font-family: var(--font-jp);
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+  }
+
+  .hint {
+    color: var(--muted);
+    font-size: 12.5px;
+    margin-top: 8px;
+  }
+
+  /* ---------------------------------------------------------- Spielfeld */
+  .frame {
+    position: relative;
+    background: linear-gradient(160deg, #FFFFFF 0%, var(--bg) 100%);
+    border: 2px solid var(--border);
+    border-radius: 22px;
+    padding: 14px;
+    box-shadow: 0 10px 34px rgba(227, 111, 151, .16);
+    width: min(92vw, 460px);
+  }
+
+  .scores {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 6px 12px;
+  }
+
+  .score-block { text-align: center; flex: 1; }
+
+  .score-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--number);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .score-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .stage {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--track);
+  }
+
+  canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    touch-action: none;
+  }
+
+  /* ------------------------------------------------------------ Overlay */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 246, 250, .93);
+    backdrop-filter: blur(2px);
+    border-radius: 14px;
+  }
+
+  .overlay[hidden] { display: none; }
+
+  .overlay .big {
+    font-size: clamp(19px, 4.6vw, 24px);
+    font-weight: 700;
+    color: var(--title);
+  }
+
+  .overlay .jp-line {
+    font-family: var(--font-jp);
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .overlay .msg {
+    font-size: 13.5px;
+    color: var(--text);
+    max-width: 30ch;
+    line-height: 1.5;
+  }
+
+  .face {
+    font-size: 28px;
+    color: var(--title);
+    font-family: var(--font-jp);
+  }
+
+  button {
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #FFB7C5 0%, #E36F97 100%);
+    border: none;
+    border-radius: 999px;
+    padding: 11px 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(227, 111, 151, .34);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+
+  button:hover  { transform: translateY(-2px); box-shadow: 0 7px 18px rgba(227, 111, 151, .42); }
+  button:active { transform: translateY(0); }
+  button:focus-visible { outline: 3px solid var(--spark); outline-offset: 3px; }
+
+  /* --------------------------------------------------------- Steuerung */
+  .pad {
+    display: grid;
+    grid-template-columns: repeat(3, 58px);
+    grid-template-rows: repeat(2, 58px);
+    gap: 8px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .pad button {
+    padding: 0;
+    font-size: 20px;
+    background: #FFFFFF;
+    color: var(--title);
+    border: 2px solid var(--border);
+    box-shadow: 0 3px 10px rgba(227, 111, 151, .16);
+  }
+
+  .pad .up    { grid-column: 2; grid-row: 1; }
+  .pad .left  { grid-column: 1; grid-row: 2; }
+  .pad .down  { grid-column: 2; grid-row: 2; }
+  .pad .right { grid-column: 3; grid-row: 2; }
+
+  @media (hover: hover) and (pointer: fine) {
+    .pad { display: none; }
+  }
+
+  footer {
+    margin-top: 22px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  footer a { color: var(--title); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  kbd {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    padding: 1px 5px;
+    color: var(--title);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>ヘビゲーム</h1>
+  <div class="jp">【 か わ い い ス ネ ー ク 】</div>
+  <div class="hint">
+    <kbd>←</kbd> <kbd>↑</kbd> <kbd>↓</kbd> <kbd>→</kbd> oder <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
+    &nbsp;·&nbsp; <kbd>Leertaste</kbd> Pause &nbsp;·&nbsp; am Handy: wischen
+  </div>
+</header>
+
+<div class="frame">
+  <div class="scores">
+    <div class="score-block">
+      <div class="score-value" id="score">0</div>
+      <div class="score-label">Punkte</div>
+    </div>
+    <div class="score-block">
+      <div class="score-value" id="best">0</div>
+      <div class="score-label">Rekord</div>
+    </div>
+    <div class="score-block">
+      <div class="score-value" id="level">1</div>
+      <div class="score-label">Tempo</div>
+    </div>
+  </div>
+
+  <div class="stage">
+    <canvas id="board" width="600" height="600" aria-label="Snake-Spielfeld"></canvas>
+
+    <div class="overlay" id="overlay">
+      <div class="face" id="ovFace">( ˶ˆ ᗜ ˆ˵ )</div>
+      <div class="big"     id="ovTitle">Bereit?</div>
+      <div class="jp-line" id="ovJp">【 はじめまして 】</div>
+      <div class="msg"     id="ovMsg">Sammle die Dango ein und werde länger.<br />Wände und der eigene Schwanz sind tabu.</div>
+      <button id="ovBtn" type="button">Los geht's ♡</button>
+    </div>
+  </div>
+
+  <div class="pad" aria-hidden="false">
+    <button class="up"    type="button" data-dir="up"    aria-label="hoch">↑</button>
+    <button class="left"  type="button" data-dir="left"  aria-label="links">←</button>
+    <button class="down"  type="button" data-dir="down"  aria-label="runter">↓</button>
+    <button class="right" type="button" data-dir="right" aria-label="rechts">→</button>
+  </div>
+</div>
+
+<footer>
+  ⋆｡°✩ &nbsp; gebaut für <a href="https://github.com/adblocker-1">@adblocker-1</a> &nbsp; ✩°｡⋆<br />
+  <span style="font-family: var(--font-jp)">たくさん食べてね！</span>
+</footer>
+
+<script>
+(() => {
+  "use strict";
+
+  const CELLS = 20;            // Raster 20x20
+  const SIZE  = 600;           // Canvas-Kantenlaenge in CSS-Pixeln
+  const CELL  = SIZE / CELLS;
+  const START_MS = 165;        // Millisekunden pro Zug am Anfang
+  const MIN_MS   = 70;         // schnellster Zug
+  const STORE_KEY = "kawaii-snake-best";
+
+  const PASTELS = ["#FFB7C5", "#CBA6F7", "#B5EAD7", "#FFDAC1", "#A0C4FF", "#F7C8E0"];
+  const INK    = "#7A5C72";
+  const BLUSH  = "#FFA6BE";
+  const TRACK  = "#FBE0EA";
+  const DOT    = "#FFE3EE";
+
+  const DIRS = {
+    up:    { x:  0, y: -1 },
+    down:  { x:  0, y:  1 },
+    left:  { x: -1, y:  0 },
+    right: { x:  1, y:  0 },
+  };
+
+  const canvas = document.getElementById("board");
+  const ctx    = canvas.getContext("2d");
+
+  const el = {
+    score:   document.getElementById("score"),
+    best:    document.getElementById("best"),
+    level:   document.getElementById("level"),
+    overlay: document.getElementById("overlay"),
+    ovFace:  document.getElementById("ovFace"),
+    ovTitle: document.getElementById("ovTitle"),
+    ovJp:    document.getElementById("ovJp"),
+    ovMsg:   document.getElementById("ovMsg"),
+    ovBtn:   document.getElementById("ovBtn"),
+  };
+
+  // Auf HiDPI-Displays sonst matschig: Backing-Store hochskalieren.
+  function scaleCanvas() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 3);
+    canvas.width  = SIZE * dpr;
+    canvas.height = SIZE * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  scaleCanvas();
+
+  let snake, dir, queue, food, score, best, running, over, stepMs, acc, last, blink;
+
+  best = readBest();
+  el.best.textContent = best;
+
+  function readBest() {
+    try {
+      const v = parseInt(localStorage.getItem(STORE_KEY) || "0", 10);
+      return Number.isFinite(v) && v > 0 ? v : 0;
+    } catch { return 0; }        // Privater Modus wirft beim Zugriff
+  }
+
+  function writeBest(v) {
+    try { localStorage.setItem(STORE_KEY, String(v)); } catch { /* egal */ }
+  }
+
+  function reset() {
+    snake  = [{ x: 9, y: 10 }, { x: 8, y: 10 }, { x: 7, y: 10 }];
+    dir    = DIRS.right;
+    queue  = [];
+    score  = 0;
+    stepMs = START_MS;
+    acc    = 0;
+    last   = 0;
+    blink  = 0;
+    over   = false;
+    placeFood();
+    updateHud();
+  }
+
+  function updateHud() {
+    el.score.textContent = score;
+    el.best.textContent  = best;
+    el.level.textContent = Math.min(9, 1 + Math.floor(score / 4));
+  }
+
+  function placeFood() {
+    const free = [];
+    for (let y = 0; y < CELLS; y++) {
+      for (let x = 0; x < CELLS; x++) {
+        if (!snake.some(s => s.x === x && s.y === y)) free.push({ x, y });
+      }
+    }
+    // Brett voll = gewonnen; dann bleibt das letzte Futter einfach liegen.
+    if (!free.length) { food = null; return; }
+    const spot = free[Math.floor(Math.random() * free.length)];
+    food = { x: spot.x, y: spot.y, kind: Math.floor(Math.random() * 3) };
+  }
+
+  // --------------------------------------------------------------- Eingabe
+  function turn(name) {
+    const next = DIRS[name];
+    if (!next) return;
+    // Gegen die aktuelle Richtung zu drehen waere sofortiger Selbstbiss.
+    const base = queue.length ? queue[queue.length - 1] : dir;
+    if (base.x === -next.x && base.y === -next.y) return;
+    if (base.x ===  next.x && base.y ===  next.y) return;
+    // Mehr als zwei gepufferte Drehungen fuehlen sich traege an.
+    if (queue.length < 2) queue.push(next);
+  }
+
+  const KEYS = {
+    ArrowUp: "up", ArrowDown: "down", ArrowLeft: "left", ArrowRight: "right",
+    w: "up", s: "down", a: "left", d: "right",
+    W: "up", S: "down", A: "left", D: "right",
+  };
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === " " || e.key === "Spacebar") {
+      e.preventDefault();
+      if (!over) togglePause();
+      return;
+    }
+    if (e.key === "Enter" && (over || !running)) { e.preventDefault(); el.ovBtn.click(); return; }
+    const name = KEYS[e.key];
+    if (!name) return;
+    e.preventDefault();                 // sonst scrollt die Seite mit
+    if (running && !over) turn(name);
+  }, { passive: false });
+
+  document.querySelectorAll(".pad button").forEach(b => {
+    b.addEventListener("click", () => { if (running && !over) turn(b.dataset.dir); });
+  });
+
+  // Wischgesten auf dem Spielfeld
+  let touch = null;
+  canvas.addEventListener("touchstart", (e) => {
+    const t = e.changedTouches[0];
+    touch = { x: t.clientX, y: t.clientY };
+  }, { passive: true });
+
+  canvas.addEventListener("touchend", (e) => {
+    if (!touch) return;
+    const t  = e.changedTouches[0];
+    const dx = t.clientX - touch.x;
+    const dy = t.clientY - touch.y;
+    touch = null;
+    if (Math.abs(dx) < 24 && Math.abs(dy) < 24) return;   // Tippen, kein Wisch
+    if (Math.abs(dx) > Math.abs(dy)) turn(dx > 0 ? "right" : "left");
+    else                             turn(dy > 0 ? "down"  : "up");
+  }, { passive: true });
+
+  // ---------------------------------------------------------------- Logik
+  function step() {
+    if (queue.length) dir = queue.shift();
+
+    const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+
+    if (head.x < 0 || head.y < 0 || head.x >= CELLS || head.y >= CELLS) return gameOver("wall");
+
+    // Das letzte Glied rueckt im selben Zug weg - ausser es wird gerade gefressen.
+    const grows = food && head.x === food.x && head.y === food.y;
+    const body  = grows ? snake : snake.slice(0, -1);
+    if (body.some(s => s.x === head.x && s.y === head.y)) return gameOver("self");
+
+    snake.unshift(head);
+
+    if (grows) {
+      score += 1;
+      stepMs = Math.max(MIN_MS, START_MS - score * 4);
+      if (score > best) { best = score; writeBest(best); }
+      placeFood();
+      updateHud();
+    } else {
+      snake.pop();
+    }
+  }
+
+  function gameOver(reason) {
+    over = true;
+    running = false;
+    const msgs = {
+      wall: "Die Wand war leider im Weg.",
+      self: "Selbst gebissen! Autsch.",
+    };
+    showOverlay({
+      face:  "( ; ω ; )",
+      title: score > 0 && score === best ? "Neuer Rekord!" : "Vorbei!",
+      jp:    score > 0 && score === best ? "【 さいこう きろく 】" : "【 ゲームオーバー 】",
+      msg:   `${msgs[reason]}<br />Du hast <b>${score}</b> Dango gesammelt.`,
+      btn:   "Nochmal ♡",
+    });
+  }
+
+  function togglePause() {
+    if (over) return;
+    if (running) {
+      running = false;
+      showOverlay({
+        face: "( ˘ ω ˘ )", title: "Pause", jp: "【 きゅうけい 】",
+        msg: "Alles halb so wild. Mach in Ruhe weiter.", btn: "Weiter ♡",
+      });
+    } else {
+      hideOverlay();
+      start();
+    }
+  }
+
+  function showOverlay({ face, title, jp, msg, btn }) {
+    el.ovFace.textContent  = face;
+    el.ovTitle.textContent = title;
+    el.ovJp.textContent    = jp;
+    el.ovMsg.innerHTML     = msg;
+    el.ovBtn.textContent   = btn;
+    el.overlay.hidden      = false;
+    el.ovBtn.focus({ preventScroll: true });
+  }
+
+  function hideOverlay() { el.overlay.hidden = true; }
+
+  el.ovBtn.addEventListener("click", () => {
+    hideOverlay();
+    if (over || !snake) reset();
+    start();
+  });
+
+  function start() {
+    running = true;
+    last = performance.now();
+    acc  = 0;
+  }
+
+  // -------------------------------------------------------------- Zeichnen
+  function roundRect(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y,     x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x,     y + h, r);
+    ctx.arcTo(x,     y + h, x,     y,     r);
+    ctx.arcTo(x,     y,     x + w, y,     r);
+    ctx.closePath();
+  }
+
+  function drawBoard() {
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillRect(0, 0, SIZE, SIZE);
+
+    // Sehr zurueckhaltendes Schachbrett: das Feld soll man ahnen, die
+    // Schlange soll darauf knallen. Kraeftiges Rosa schluckt die Pastelltoene.
+    ctx.fillStyle = "#FDF4F8";
+    for (let y = 0; y < CELLS; y++) {
+      for (let x = 0; x < CELLS; x++) {
+        if ((x + y) % 2 === 0) ctx.fillRect(x * CELL, y * CELL, CELL, CELL);
+      }
+    }
+    ctx.fillStyle = "#FBE6EF";
+    for (let y = 0; y < CELLS; y++) {
+      for (let x = 0; x < CELLS; x++) {
+        if ((x + y) % 2 === 1) {
+          ctx.beginPath();
+          ctx.arc(x * CELL + CELL / 2, y * CELL + CELL / 2, 1.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+  }
+
+  function drawHeart(cx, cy, s, fill) {
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.scale(s / 10, s / 10);
+    ctx.fillStyle = fill;
+    ctx.beginPath();
+    ctx.moveTo(0, 4.6);
+    ctx.bezierCurveTo(-7, -1.4, -5, -6.6, -2.1, -4.6);
+    ctx.bezierCurveTo(-0.9, -3.8, -0.3, -2.6,  0, -1.9);
+    ctx.bezierCurveTo( 0.3, -2.6,  0.9, -3.8,  2.1, -4.6);
+    ctx.bezierCurveTo( 5,   -6.6,  7,   -1.4,  0,  4.6);
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function drawFood() {
+    if (!food) return;
+    const cx = food.x * CELL + CELL / 2;
+    const cy = food.y * CELL + CELL / 2;
+    // Leichtes Pulsieren, damit das Futter ins Auge springt.
+    const pulse = 1 + Math.sin(performance.now() / 260) * 0.07;
+    const r = (CELL * 0.38) * pulse;
+
+    if (food.kind === 0) {
+      drawHeart(cx, cy, CELL * 0.78 * pulse, "#FF8FB1");
+    } else if (food.kind === 1) {
+      // Dango: drei Kugeln auf einem Spiess
+      const cols = ["#FFB7C5", "#FFFFFF", "#B5EAD7"];
+      ctx.strokeStyle = "#E8C9A0";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - r * 1.5);
+      ctx.lineTo(cx, cy + r * 1.7);
+      ctx.stroke();
+      for (let i = 0; i < 3; i++) {
+        ctx.fillStyle = cols[i];
+        ctx.strokeStyle = "#F0BFD2";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(cx, cy - r * 0.85 + i * r * 0.85, r * 0.52, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+      }
+    } else {
+      // Onigiri: Dreieck mit Nori-Streifen
+      ctx.fillStyle = "#FFFFFF";
+      ctx.strokeStyle = "#F0BFD2";
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - r * 1.15);
+      ctx.lineTo(cx + r * 1.1, cy + r * 0.9);
+      ctx.lineTo(cx - r * 1.1, cy + r * 0.9);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = "#7A8B7F";
+      ctx.fillRect(cx - r * 0.62, cy + r * 0.12, r * 1.24, r * 0.66);
+    }
+  }
+
+  function drawSnake() {
+    // Von hinten nach vorne, damit der Kopf oben liegt.
+    for (let i = snake.length - 1; i >= 0; i--) {
+      const seg = snake[i];
+      const x = seg.x * CELL;
+      const y = seg.y * CELL;
+      const pad = i === 0 ? CELL * 0.04 : CELL * 0.11;
+      const col = i === 0 ? "#FF9EBB" : PASTELS[i % PASTELS.length];
+
+      ctx.fillStyle = col;
+      roundRect(x + pad, y + pad, CELL - pad * 2, CELL - pad * 2, CELL * 0.33);
+      ctx.fill();
+      // Duenne Kontur, sonst verschwimmen helle Glieder ineinander.
+      ctx.strokeStyle = "rgba(227,111,151,.28)";
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      if (i > 0 && i % 2 === 0) {                 // kleiner Glanzpunkt
+        ctx.fillStyle = "rgba(255,255,255,.5)";
+        ctx.beginPath();
+        ctx.arc(x + CELL * 0.36, y + CELL * 0.34, CELL * 0.1, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    drawFace();
+  }
+
+  function drawFace() {
+    const head = snake[0];
+    const cx = head.x * CELL + CELL / 2;
+    const cy = head.y * CELL + CELL / 2;
+    const eyeOff = CELL * 0.21;
+    // Augen sitzen leicht in Laufrichtung, das wirkt aufmerksam.
+    const fx = dir.x * CELL * 0.09;
+    const fy = dir.y * CELL * 0.09;
+    const closed = blink > 0;
+
+    ctx.fillStyle = BLUSH;
+    ctx.globalAlpha = .55;
+    ctx.beginPath();
+    ctx.ellipse(cx - eyeOff * 1.45 + fx, cy + CELL * 0.17 + fy, CELL * 0.13, CELL * 0.09, 0, 0, Math.PI * 2);
+    ctx.ellipse(cx + eyeOff * 1.45 + fx, cy + CELL * 0.17 + fy, CELL * 0.13, CELL * 0.09, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+
+    ctx.strokeStyle = INK;
+    ctx.fillStyle   = INK;
+    ctx.lineWidth   = Math.max(1.4, CELL * 0.055);
+    ctx.lineCap     = "round";
+
+    if (closed) {
+      [-1, 1].forEach(s => {
+        ctx.beginPath();
+        ctx.moveTo(cx + s * eyeOff - CELL * 0.07 + fx, cy - CELL * 0.02 + fy);
+        ctx.quadraticCurveTo(cx + s * eyeOff + fx, cy - CELL * 0.11 + fy,
+                             cx + s * eyeOff + CELL * 0.07 + fx, cy - CELL * 0.02 + fy);
+        ctx.stroke();
+      });
+    } else {
+      [-1, 1].forEach(s => {
+        ctx.beginPath();
+        ctx.arc(cx + s * eyeOff + fx, cy - CELL * 0.04 + fy, CELL * 0.1, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.fillStyle = "#FFFFFF";
+      [-1, 1].forEach(s => {
+        ctx.beginPath();
+        ctx.arc(cx + s * eyeOff + fx + CELL * 0.035, cy - CELL * 0.085 + fy, CELL * 0.036, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    ctx.strokeStyle = INK;
+    ctx.beginPath();
+    ctx.moveTo(cx - CELL * 0.06 + fx, cy + CELL * 0.15 + fy);
+    ctx.quadraticCurveTo(cx + fx, cy + CELL * 0.23 + fy, cx + CELL * 0.06 + fx, cy + CELL * 0.15 + fy);
+    ctx.stroke();
+  }
+
+  function draw() {
+    drawBoard();
+    drawFood();
+    drawSnake();
+  }
+
+  // ------------------------------------------------------------ Hauptloop
+  function loop(now) {
+    requestAnimationFrame(loop);
+
+    if (running && !over) {
+      // Akkumulator statt fester Frames: laeuft auf 60- und 144-Hz gleich schnell.
+      const delta = Math.min(now - last, 250);   // nach Tab-Wechsel nicht aufholen
+      last = now;
+      acc += delta;
+      while (acc >= stepMs) {
+        acc -= stepMs;
+        step();
+        if (over) break;
+      }
+      blink = blink > 0 ? blink - 1
+            : (Math.random() < 0.004 ? 9 : 0);   // gelegentliches Blinzeln
+    } else {
+      last = now;
+    }
+
+    draw();
+  }
+
+  // Nicht window.blur: das feuert schon, wenn der fokussierte Button beim
+  // Ausblenden des Overlays verschwindet - und pausiert direkt nach dem Start.
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && running && !over) togglePause();
+  });
+  window.addEventListener("resize", () => { scaleCanvas(); draw(); });
+
+  reset();
+  requestAnimationFrame(loop);
+})();
+</script>
+
+</body>
+</html>
