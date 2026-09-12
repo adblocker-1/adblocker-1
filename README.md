@@ -173,24 +173,6 @@
 
 <sub>frisst jede Nacht meine Contributions ˎˊ˗</sub>
 
-<br /><br />
-
-⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
-
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  S P I E L E N  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
-
-<sub>【 ゲーム 】</sub>
-
-<sub>( ˶ˆ ᗜ ˆ˵ )  die Schlange oben frisst nur – diese hier darfst du steuern</sub>
-
-<a href="https://adblocker-1.github.io/adblocker-1/games/snake.html">
-  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/snake-game.png" alt="Kawaii Snake – zum Spielen klicken" width="52%" />
-</a>
-
-**[▶ &nbsp; K A W A I I &nbsp; S N A K E &nbsp; spielen](https://adblocker-1.github.io/adblocker-1/games/snake.html)**
-
-<sub>Pfeiltasten, WASD oder wischen · Dango und Onigiri sammeln · der Rekord bleibt im Browser ˎˊ˗</sub>
-
 </div>
 
 <br />
