@@ -132,6 +132,97 @@ def bear(x, y, s=1.0, fur="#FFD9B8"):
 </g>"""
 
 
+# ------------------------------------------------ Achievement-Abzeichen
+# GitHub bietet fuer die eigenen Profil-Achievements keine API - die
+# Liste hier bildet nur nach, was tatsaechlich auf dem Profil steht,
+# und muss von Hand aktualisiert werden, wenn ein neues dazukommt.
+def badge_shark(r=26):
+    """Kawaii-Variante des 'Pull Shark'-Abzeichens: klassische
+    Hai-Seitenansicht (Tropfenkoerper, Rueckenflosse, Schwanzflosse),
+    aber mit rundem Kawaii-Gesicht statt spitzen Zaehnen."""
+    return f"""<g>
+  <circle r="{r}" fill="#F6DCC0"/>
+  <circle r="{r}" fill="none" stroke="#E3B98A" stroke-width="2"/>
+  <g transform="translate(-1,3)">
+    <path d="M-15 0 Q-13 -7 -2 -7 Q9 -7 15 -1
+             Q9 1 -2 1 Q-11 1 -15 0 Z"
+          fill="#F1C79A" stroke="#B9895A" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M-3 -7 L2 -15 L6 -7 Z"
+          fill="#F1C79A" stroke="#B9895A" stroke-width="1" stroke-linejoin="round"/>
+    <path d="M13 -2 L20 -6 L19 1 L20 6 L13 2 Z"
+          fill="#F1C79A" stroke="#B9895A" stroke-width="1" stroke-linejoin="round"/>
+    <circle cx="-9" cy="-2" r="1.3" fill="#7A5C72"/>
+    <path d="M-13 2 Q-9 4.5 -5 2" stroke="#B9895A" stroke-width="1"
+          fill="none" stroke-linecap="round"/>
+  </g>
+</g>"""
+
+
+def badge_yolo(r=26):
+    """Kawaii-Variante des 'YOLO'-Abzeichens: Pastell-Regenbogen + Herz."""
+    bands = ["#FFB7C5", "#FFDAC1", "#FFF3B0", "#B5EAD7", "#A0C4FF", "#CBA6F7"]
+    n = len(bands)
+    rows = []
+    for i, col in enumerate(bands):
+        y0 = -r + (2 * r * i / n)
+        y1 = -r + (2 * r * (i + 1) / n)
+        rows.append(f'<rect x="-{r}" y="{y0:.2f}" width="{2*r}" '
+                     f'height="{(y1 - y0) + .5:.2f}" fill="{col}"/>')
+    return f"""<g>
+  <clipPath id="yoloClip"><circle r="{r}"/></clipPath>
+  <g clip-path="url(#yoloClip)">{"".join(rows)}</g>
+  <circle r="{r}" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  {heart(0, 2, 1.35, "#FFFFFF")}
+</g>"""
+
+
+def badge_vault(r=26):
+    """Kawaii-Variante des 'Arctic Code Vault Contributor'-Schilds."""
+    s = r * 1.05
+    return f"""<g>
+  <path d="M0 {-s} Q{s} {-s*.75} {s} {-s*.05}
+           Q{s} {s*.85} 0 {s*1.15}
+           Q{-s} {s*.85} {-s} {-s*.05}
+           Q{-s} {-s*.75} 0 {-s} Z" fill="#123B6E"/>
+  <path d="M0 {-s} Q{s} {-s*.75} {s} {-s*.05}
+           Q{s} {s*.85} 0 {s*1.15}
+           Q{-s} {s*.85} {-s} {-s*.05}
+           Q{-s} {-s*.75} 0 {-s} Z" fill="none" stroke="#FFFFFF"
+        stroke-width="2"/>
+  <circle cx="6" cy="{-s*.42:.2f}" r="{r*.24:.2f}" fill="#FDF3D0"/>
+  <path d="M{-s*.8:.2f} {s*.55:.2f} L{-s*.15:.2f} {-s*.05:.2f}
+           L{s*.2:.2f} {s*.3:.2f} L{s*.8:.2f} {-s*.35:.2f}
+           L{s*.8:.2f} {s*.85:.2f} L{-s*.8:.2f} {s*.85:.2f} Z"
+        fill="#DCEBFA" opacity=".9"/>
+</g>"""
+
+
+ACHIEVEMENT_ICONS = {
+    "shark": badge_shark,
+    "yolo":  badge_yolo,
+    "vault": badge_vault,
+}
+
+
+def achievement_badge(x, y, icon, title, count=None, r=26):
+    """Ein Achievement-Abzeichen: Icon im Kreis, Name darunter, optional
+    ein x-Chip fuer mehrfach verdiente Abzeichen (z. B. Pull Shark x2)."""
+    draw = ACHIEVEMENT_ICONS[icon]
+    chip = ""
+    if count and count > 1:
+        chip = f"""<g transform="translate({r*.72:.1f},{-r*.72:.1f})">
+  <circle r="10" fill="{TITLE}"/>
+  <text y="3.5" text-anchor="middle"
+        style="font: 700 10px {FONT}; fill:#FFFFFF">x{count}</text>
+</g>"""
+    return f"""<g transform="translate({x},{y})">
+  {draw(r)}
+  {chip}
+  <text y="{r + 17}" text-anchor="middle"
+        style="font: 700 11px {FONT}; fill:{TEXT}">{escape(title)}</text>
+</g>"""
+
+
 # -------------------------------------------------------------- Karte
 def card(w, h, title, title_jp, body, mascot="", pad_extra=0):
     """Kartenrahmen mit Bogenrand, Punktmuster, Schleife und Funkeln."""

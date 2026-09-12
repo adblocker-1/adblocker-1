@@ -21,8 +21,8 @@ from html import escape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from kawaii import (BLUSH, PASTELS, SPARK, TRACK, bear, bunny, card, cat,
-                    heart, sparkle)
+from kawaii import (BLUSH, PASTELS, SPARK, TRACK, achievement_badge, bear,
+                    bunny, card, cat, heart, sparkle)
 
 USER = "adblocker-1"
 OUT = Path(__file__).resolve().parent.parent / "assets"
@@ -175,35 +175,33 @@ def card_recent(d):
                 "\n".join(body), mascot=bear(862, 58, 0.92))
 
 
+# GitHub bietet fuer die eigenen Profil-Achievements keine API - diese
+# Liste bildet nur nach, was tatsaechlich auf https://github.com/adblocker-1
+# unter "Achievements" steht, und muss von Hand nachgezogen werden, wenn
+# ein neues Abzeichen dazukommt.
+ACHIEVEMENTS = [
+    ("shark", "Pull Shark", 2),
+    ("yolo",  "YOLO",       None),
+    ("vault", "Arctic Vault", None),
+]
+
+
 def card_achievements(d):
-    u, repos = d["user"], d["repos"]
     body = []
+    n = len(ACHIEVEMENTS)
+    step = 460 / (n + 1)
+    for i, (icon, title, count) in enumerate(ACHIEVEMENTS):
+        x = step * (i + 1)
+        body.append(achievement_badge(x, 118, icon, title, count, r=28))
 
-    achievements = [
-        ("\u2b50 Developer", f"{sum(r['stars'] for r in repos)}", "STARS EARNED"),
-        ("\ud83d\udc65 Community", str(u["followers"]), "FOLLOWERS"),
-        ("\ud83d\udce6 Creator", str(len(repos)), "REPOSITORIES"),
-        ("\ud83d\udd25 Active", "10+", "PROJECTS"),
-    ]
+    body.append(heart(40, 58, 0.7, SPARK))
+    body.append(heart(420, 58, 0.7, SPARK))
+    body.append('<text x="230" y="185" class="s" text-anchor="middle">'
+                'echte GitHub-Achievements \u00b7 von Hand gepflegt</text>')
 
-    for i, (title, num, label) in enumerate(achievements):
-        x = 40 + (i % 2) * 186
-        y = 100 + (i // 2) * 56
-        col = PASTELS[i % len(PASTELS)]
-
-        body.append(f'<rect x="{x}" y="{y - 35}" width="170" height="48" '
-                    f'rx="8" fill="{col}" opacity="0.3"/>')
-        body.append(f'<text x="{x + 85}" y="{y - 8}" class="n" '
-                    f'text-anchor="middle">{escape(num)}</text>')
-        body.append(f'<text x="{x + 85}" y="{y + 10}" class="s" '
-                    f'text-anchor="middle">{escape(label)}</text>')
-
-    body.append(heart(60, 60, 0.8, SPARK))
-    body.append(heart(380, 60, 0.8, SPARK))
-
-    return card(460, 240, "Errungenschaften",
+    return card(460, 210, "Errungenschaften",
                 "\u3010 \u6210\u5c31 \u3011",
-                "\n".join(body), mascot=cat(410, 92, 1.0))
+                "\n".join(body))
 
 
 # --------------------------------------------------------- Projekttabelle

@@ -109,7 +109,7 @@
 
 <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/achievements.svg" alt="GitHub Errungenschaften" width="60%" />
 
-<sub>Die Kawaii-Trophäen werden jede Nacht aktualisiert ˎˊ˗</sub>
+<sub>echte Achievements von meinem Profil, im Kawaii-Stil nachgezeichnet ˎˊ˗</sub>
 
 <br />
 
@@ -126,16 +126,8 @@
 <!-- PROJEKTE:START -->
 | ♡ | Projekt | Worum es geht |
 | :-: | :-- | :-- |
-| 📡 | **[UnifiController-PRTG](https://github.com/adblocker-1/UnifiController-PRTG)** | UniFi-Switches, APs und Gateways in PRTG - auf allen Plattformen von Cloud Key bis Legacy-Controller. |
-| 🖥️ | **[HyperVReplicaHealth-PRTG](https://github.com/adblocker-1/HyperVReplicaHealth-PRTG)** | PRTG-Push-Sensor für Hyper-V-Replikation: PowerShell-Skript liest den Replikationszustand aller VMs per CIM/WMI aus und pusht ihn als XML an einen „HTTP Push Data ... |
-| ✉️ | **[MailStore-PRTG](https://github.com/adblocker-1/MailStore-PRTG)** | PRTG EXE/Script-Advanced-Sensor für MailStore Server: überwacht Archivierungsprofile und geplante Jobs direkt über die Administration API (HTTPS/8463). Eine einzelne ... |
-| 🔥 | **[Sophos-Firewall-API-Documentation](https://github.com/adblocker-1/Sophos-Firewall-API-Documentation)** | PowerShell-Skript zum Export der kompletten Sophos Firewall (SFOS) Konfiguration über die XML-API – Firewall-Regeln, Objekte, Netzwerk & System als Excel-Tabelle ... |
-| 🗄️ | **[Cove-Data-Protection-PRTG](https://github.com/adblocker-1/Cove-Data-Protection-PRTG)** | Cove Data Protection im PRTG-Blick behalten. |
-| 💾 | **[Veeam-Backup365-PRTG](https://github.com/adblocker-1/Veeam-Backup365-PRTG)** | PRTG Advanced Sensor für Veeam Backup & Replication – überwacht Backup-, Copy-, Replication-, Endpoint- und Tape-Jobs sowie die Repository-Auslastung. |
-| 🔄 | **[Sophos-api-device-migration](https://github.com/adblocker-1/Sophos-api-device-migration)** | PowerShell-Skript zur dialoggeführten Migration von Sophos-Central-Geräten (Server/Clients) zwischen Tenants – mit GUI-Geräteauswahl und Live-Statusanzeige. |
-| 🛡️ | **[Sophos-Central-PRTG](https://github.com/adblocker-1/Sophos-Central-PRTG)** | PRTG-Sensor für Sophos Central: PowerShell-Skript, das Endpoints, Server und Mobilgeräte (iOS/Android) inkl. Health-Status und Alerts über die Sophos Central API abfragt ... |
-| ☁️ | **[Veeam-backup-PRTG](https://github.com/adblocker-1/Veeam-backup-PRTG)** | PRTG-Sensor (PowerShell) zur Überwachung von Veeam Backup for Microsoft 365 — prüft den Job-Status und zeigt, wie viele Postfächer, OneDrive-Accounts, SharePoint-Sites ... |
-| 🐦 | **[Flappy-tori](https://github.com/adblocker-1/Flappy-tori)** | Flappy Bird im Ukiyo-e-Stil – ein Browser-Game in einer einzigen HTML-Datei |
+| 📡 | **[UnifiController-PRTG](https://github.com/adblocker-1/UnifiController-PRTG)** | x |
+| 🐦 | **[Flappy-tori](https://github.com/adblocker-1/Flappy-tori)** | x |
 <!-- PROJEKTE:ENDE -->
 
 <div align="center">
