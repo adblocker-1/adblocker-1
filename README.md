@@ -26,9 +26,9 @@
 
 ⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  Ü B E R   M I C H  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  自己紹介  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 
-<sub>【 自己紹介 】</sub>
+<sub>【 Ü B E R   M I C H 】</sub>
 
 <sub>( ｡•ㅅ•｡ )♡  wer da eigentlich tippt</sub>
 
@@ -45,7 +45,7 @@
 <tr>
 <td width="50%" valign="top">
 
-**🌸 Woran ich arbeite** ｡ﾟ+.
+**🌸 取り組み ・ Woran ich arbeite** ｡ﾟ+.
 
 - PRTG-Sensoren (EXE/Script Advanced)
 - REST- & XML-APIs anzapfen
@@ -55,7 +55,7 @@
 </td>
 <td width="50%" valign="top">
 
-**🍡 Wie ich arbeite** ｡ﾟ+.
+**🍡 やり方 ・ Wie ich arbeite** ｡ﾟ+.
 
 - Eine Datei, keine Abhängigkeiten
 - Sprechende Fehlermeldungen statt Abstürze
@@ -70,9 +70,9 @@
 
 ⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  T E C H   S T A C K  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  道具箱  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 
-<sub>【 道具箱 】</sub>
+<sub>【 T E C H   S T A C K 】</sub>
 
 <sub>‧₊˚ ⋅ womit die Sensoren gebaut werden ⋅ ˚₊‧</sub>
 
@@ -101,9 +101,9 @@
 
 ⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  E R R U N G E N S C H A F T E N  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  成就  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 
-<sub>【 成就 】</sub>
+<sub>【 E R R U N G E N S C H A F T E N 】</sub>
 
 <sub>ᐛ)و  Trophäen und Erfolge</sub>
 
@@ -115,9 +115,9 @@
 
 ⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  M E I N E   P R O J E K T E  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  作品一覧  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 
-<sub>【 作品一覧 】</sub>
+<sub>【 M E I N E   P R O J E K T E 】</sub>
 
 <sub>૮ ˶ᵔ ᵕ ᵔ˶ ა  frisch von oben nach alt sortiert</sub>
 
@@ -143,9 +143,9 @@
 
 ⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  S T A T I S T I K E N  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  統計  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 
-<sub>【 統計 】</sub>
+<sub>【 S T A T I S T I K E N 】</sub>
 
 <sub>ฅ^•ﻌ•^ฅ  alle 6 Stunden frisch gezeichnet</sub>
 
@@ -162,9 +162,9 @@
 
 ⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  D I E   S C H L A N G E  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  へび  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 
-<sub>【 へび 】</sub>
+<sub>【 D I E   S C H L A N G E 】</sub>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/output/snake-dark.svg" />
@@ -179,7 +179,7 @@
 <br />
 
 <details>
-<summary><b>🍓 Noch ein paar Kleinigkeiten über mich  ‧₊˚ (aufklappen!) ˚₊‧</b></summary>
+<summary><b>🍓 秘密の小箱  ‧₊˚ Noch ein paar Kleinigkeiten über mich (aufklappen!) ˚₊‧</b></summary>
 
 <br />
 
@@ -196,7 +196,7 @@
  ╰─────────────────────────────────────────────────╯
 ```
 
-**Womit ich mich am liebsten beschäftige**
+**得意なこと &nbsp;・&nbsp; Womit ich mich am liebsten beschäftige**
 
 - APIs, die eigentlich niemand dokumentiert hat, trotzdem zum Reden bringen
 - Sensoren so bauen, dass man sie einmal einrichtet und dann vergisst
@@ -209,7 +209,7 @@
      o_(")(")
 ```
 
-**Was du in meinen Repos findest**
+**中身 &nbsp;・&nbsp; Was du in meinen Repos findest**
 
 - Eine einzelne `.ps1` – keine Module, keine Installation
 - Parameter für alles, sinnvolle Standardwerte für den Rest
@@ -224,9 +224,9 @@
 
 ⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
 
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  S C H R E I B   M I R  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  連絡先  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
 
-<sub>【 連絡先 】</sub>
+<sub>【 S C H R E I B   M I R 】</sub>
 
 <sub>(⁄ ⁄•⁄ω⁄•⁄ ⁄)  ich beiße nicht</sub>
 
@@ -242,7 +242,9 @@
 
 <br /><br />
 
-**♡ Danke fürs Vorbeischauen! ♡**
+**♡ 一期一会 ♡**
+
+<sub>„Ichigo ichie" – jede Begegnung ein einziges Mal, auch diese hier. Danke fürs Vorbeischauen!</sub>
 
 <sub>Wenn dir eines der Skripte den Tag gerettet hat, freue ich mich über einen ⭐</sub>
 

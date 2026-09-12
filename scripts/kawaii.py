@@ -240,8 +240,9 @@ def card(w, h, title, title_jp, body, mascot="", pad_extra=0):
   <clipPath id="inner"><path d="{path}"/></clipPath>
 </defs>
 <style>
-  .t  {{ font: 700 15.5px {FONT}; fill: {TITLE}; }}
-  .jp {{ font: 400 10px {FONT_JP}; fill: {MUTED}; letter-spacing:1px; }}
+  .t  {{ font: 700 19px {FONT_JP}; fill: {TITLE}; letter-spacing:.5px; }}
+  .de {{ font: 700 9.5px {FONT}; fill: {MUTED}; letter-spacing:1.5px;
+         text-transform: uppercase; }}
   .n  {{ font: 700 23px {FONT}; fill: {NUMBER}; }}
   .l  {{ font: 400 10.5px {FONT}; fill: {MUTED}; letter-spacing:.5px; }}
   .b  {{ font: 400 12.5px {FONT}; fill: {TEXT}; }}
@@ -251,8 +252,8 @@ def card(w, h, title, title_jp, body, mascot="", pad_extra=0):
       stroke-linejoin="round"/>
 <g clip-path="url(#inner)"><rect width="{w}" height="{h}" fill="url(#dots)"
    opacity=".8"/></g>
-<text x="{rx + 40 + pad_extra}" y="{ry + 22}" class="t">{escape(title)}</text>
-<text x="{rx + 40 + pad_extra}" y="{ry + 36}" class="jp">{escape(title_jp)}</text>
+<text x="{rx + 40 + pad_extra}" y="{ry + 24}" class="t">{escape(title_jp)}</text>
+<text x="{rx + 40 + pad_extra}" y="{ry + 38}" class="de">{escape(title)}</text>
 {ribbon(rx + 10 + pad_extra, ry + 8, .95)}
 {sparkle(w - rx - 22, ry + 12, 5.4, SPARK, 0.0)}
 {sparkle(w - rx - 40, ry + 24, 3.4, SPARK, 0.9, .8)}
