@@ -136,7 +136,6 @@
 | 🔄 | **[Sophos-api-device-migration](https://github.com/adblocker-1/Sophos-api-device-migration)** | PowerShell-Tool zur Sophos-Central-Geräte-Migration zwischen Tenants mit GUI. |
 | 🛡️ | **[Sophos-Central-PRTG](https://github.com/adblocker-1/Sophos-Central-PRTG)** | PRTG-Sensor für Sophos Central – Endpoints, Server und Mobilgeräte mit Health und Alerts. |
 | ☁️ | **[Veeam-backup-PRTG](https://github.com/adblocker-1/Veeam-backup-PRTG)** | PRTG-Sensor für Veeam Backup & Replication – Job-Status und Repository-Auslastung. |
-| 🐦 | **[Flappy-tori](https://github.com/adblocker-1/Flappy-tori)** | Flappy Bird im Ukiyo-e-Stil – Browser-Game in einer einzigen HTML-Datei. |
 <!-- PROJEKTE:ENDE -->
 
 <div align="center">
