@@ -58,8 +58,8 @@
 <text x="57" y="100" class="b">entra-Health-Check-PRTG</text>
 <text x="486" y="100" class="s">12.09.2026</text>
 <rect x="576" y="91" width="230" height="9" rx="4.5" fill="#FBE0EA"/>
-<rect x="576" y="91" width="8.0" height="9" rx="4.5" fill="#FFB7C5"/>
-<text x="884" y="100" class="s" text-anchor="end">0 KB</text>
+<rect x="576" y="91" width="40.8" height="9" rx="4.5" fill="#FFB7C5"/>
+<text x="884" y="100" class="s" text-anchor="end">14 KB</text>
 <path transform="translate(40,117) scale(0.75)" fill="#CBA6F7" d="M5 9.2C2.2 7.3 0 5.7 0 3.6 0 1.9 1.3.7 2.9.7c1 0 1.7.5 2.1 1.1C5.4 1.2 6.1.7 7.1.7 8.7.7 10 1.9 10 3.6c0 2.1-2.2 3.7-5 5.6z"/>
 <text x="57" y="125" class="b">UnifiController-PRTG</text>
 <text x="486" y="125" class="s">02.09.2026</text>
