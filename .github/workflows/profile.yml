@@ -1,0 +1,46 @@
+name: Profil aktualisieren
+
+# Zeichnet assets/*.svg neu und traegt die Projekttabelle zwischen den
+# PROJEKTE-Markern im README nach - beides aus den aktuellen GitHub-Daten.
+# Committet nur, wenn sich wirklich etwas geaendert hat.
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # alle 6 Stunden
+  workflow_dispatch:          # von Hand startbar (Tab "Actions")
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/**"
+      - ".github/workflows/profile.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profil
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Grafiken und Projekttabelle erzeugen
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/generate.py
+
+      - name: Committen, falls geaendert
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets README.md
+          if git diff --cached --quiet; then
+            echo "Keine Aenderung - nichts zu committen."
+          else
+            git commit -m "Statistiken und Projektliste aktualisiert"
+            git push
+          fi

@@ -1,65 +1,50 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=220&section=header&text=Hallo%2C%20ich%20bin%20Adblocker%21&fontSize=40&fontColor=ffffff&animation=twinkling&fontAlignY=34&desc=PowerShell%20%20%C2%B7%20%20PRTG%20%20%C2%B7%20%20Monitoring%20%20%C2%B7%20%20Automatisierung&descAlignY=54&descSize=16" width="100%" alt="Header" />
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3400&pause=800&color=FFB7C5&center=true&vCenter=true&width=680&height=45&lines=%E3%82%88%E3%81%86%E3%81%93%E3%81%9D%EF%BC%81%20%20Willkommen%20auf%20meinem%20Profil%21%3B%28%20%EF%BD%A5%CF%89%EF%BD%A5%20%29%20PRTG-Sensoren%20in%20PowerShell%3B%E7%9B%A3%E8%A6%96%20%E3%83%BB%20API%20%E3%83%BB%20%E8%87%AA%E5%8B%95%E5%8C%96%20%20%E2%99%A1%3BAlles%20mit%20KI%20gebaut%20%20-%20%20und%20es%20laeuft%21" alt="Typing SVG" />
-
-**こんにちは！  （≧▽≦）ノ  見てくれてありがとう！**
-
-<img src="https://komarev.com/ghpvc/?username=adblocker-1&style=flat-square&color=FFB7C5&label=Besucher" alt="Besucher" />
-&nbsp;
-<img src="https://img.shields.io/badge/Made_with-%F0%9F%92%96_%26_KI-FFB7C5?style=flat-square" alt="Made with love" />
-&nbsp;
-<img src="https://img.shields.io/badge/Location-Germany_%F0%9F%87%A9%F0%9F%87%AA-CBA6F7?style=flat-square" alt="Germany" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/header-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/header-light.svg" alt="Adblocker – PowerShell · PRTG · Monitoring · Automatisierung" width="100%" />
+</picture>
 
 </div>
 
-```
-        /\_/\      ╭────────────────────────────────────────────╮
-       ( o.o )     │  監視は痛くないほうがいい。                │
-        > ^ <      │  Monitoring soll nicht wehtun.             │
-       /|   |\     │  Ein Skript. Ein Sensor. Fertig. ♡         │
-      (_|   |_)    ╰────────────────────────────────────────────╯
-```
+<br />
 
 <div align="center">
 
-⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
-
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  自己紹介  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
-
-<sub>【 Ü B E R   M I C H 】</sub>
-
-<sub>( ｡•ㅅ•｡ )♡  wer da eigentlich tippt</sub>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-about-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-about-light.svg" alt="一 自己紹介 – Über mich" width="100%" />
+</picture>
 
 </div>
 
-> **Just trying some Claude. All done by AI.** ⋆⭒˚｡⋆
->
-> Ich schreibe **PowerShell-Sensoren für PRTG** – für alles, was in einer
-> IT-Umgebung überwacht werden will: Backups, Firewalls, Endpoints, Netzwerk
-> und Virtualisierung. Ein Skript pro Sensor, keine Zusatzmodule, keine
-> Lookup-Dateien. Einfach kopieren, Parameter setzen, läuft. ♡
+**こんにちは – Hallo!** Ich schreibe **PowerShell-Sensoren für PRTG Network Monitor** –
+für alles, was in einer IT-Umgebung überwacht werden will: Backups, Firewalls,
+Endpoints, Netzwerk, E-Mail-Archiv und Virtualisierung. Ein Skript pro Sensor,
+keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.
+
+> *Just trying some Claude – all done by AI.* Dieses Profil und viele meiner
+> Skripte sind zusammen mit einer KI entstanden.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-**🌸 取り組み ・ Woran ich arbeite** ｡ﾟ+.
+**🎋 取り組み · Woran ich arbeite**
 
 - PRTG-Sensoren (EXE/Script Advanced)
-- REST- & XML-APIs anzapfen
-- Netzwerk- und Backup-Monitoring
-- Kleine Tools, die einen Handgriff sparen
+- REST- und XML-APIs anzapfen
+- Backup-, Netzwerk- und Security-Monitoring
+- Kleine Tools, die Handgriffe sparen
 
 </td>
 <td width="50%" valign="top">
 
-**🍡 やり方 ・ Wie ich arbeite** ｡ﾟ+.
+**🍵 流儀 · Wie ich arbeite**
 
 - Eine Datei, keine Abhängigkeiten
-- Sprechende Fehlermeldungen statt Abstürze
-- Ausführliche READMEs auf Deutsch
+- Verständliche Fehlermeldungen statt Abstürze
+- Ausführliche Anleitungen auf Deutsch
 - Sinnvolle Grenzwerte ab Werk
 
 </td>
@@ -68,152 +53,141 @@
 
 <div align="center">
 
-⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/haiku-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/haiku-light.svg" alt="Haiku: 夜の番 / 静かに光る / 緑の灯 – Nachtwache, still leuchten sie, die grünen Lichter." width="100%" />
+</picture>
 
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  道具箱  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
-
-<sub>【 T E C H   S T A C K 】</sub>
-
-<sub>‧₊˚ ⋅ womit die Sensoren gebaut werden ⋅ ˚₊‧</sub>
-
-<img src="https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell" />
-<img src="https://img.shields.io/badge/Windows_Server-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows Server" />
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-<img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white" alt="JSON" />
-<img src="https://img.shields.io/badge/REST_API-6DB33F?style=for-the-badge&logo=swagger&logoColor=white" alt="REST API" />
+</div>
 
 <br />
 
-<img src="https://img.shields.io/badge/PRTG_Network_Monitor-F26522?style=for-the-badge&logoColor=white" alt="PRTG" />
-<img src="https://img.shields.io/badge/UniFi-0559C9?style=for-the-badge&logo=ubiquiti&logoColor=white" alt="UniFi" />
-<img src="https://img.shields.io/badge/Sophos_Central-0A0A0A?style=for-the-badge&logoColor=white" alt="Sophos" />
-<img src="https://img.shields.io/badge/Veeam-00B336?style=for-the-badge&logo=veeam&logoColor=white" alt="Veeam" />
-<img src="https://img.shields.io/badge/Hyper--V-0078D6?style=for-the-badge&logo=microsoft&logoColor=white" alt="Hyper-V" />
-<img src="https://img.shields.io/badge/Microsoft_365-D83B01?style=for-the-badge&logo=microsoft365&logoColor=white" alt="Microsoft 365" />
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-tools-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-tools-light.svg" alt="二 道具箱 – Werkzeugkasten" width="100%" />
+</picture>
+
+</div>
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/tools-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/tools-light.svg" alt="Werkzeugkasten: PowerShell, Python, JavaScript, HTML, JSON · PRTG, UniFi, Sophos, Veeam, MailStore, Cove, Hyper-V, Intune, Entra ID · Git, GitHub Actions, VS Code, REST-APIs, Windows Server, Claude" width="100%" />
+</picture>
+
+</div>
 
 <br />
 
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
-<img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code" />
-<img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" />
+<div align="center">
 
-⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
-
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  成就  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
-
-<sub>【 E R R U N G E N S C H A F T E N 】</sub>
-
-<sub>ᐛ)و  Trophäen und Erfolge</sub>
-
-<img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/achievements.svg" alt="GitHub Errungenschaften" width="60%" />
-
-<sub>echte Achievements von meinem Profil, im Kawaii-Stil nachgezeichnet ˎˊ˗</sub>
-
-<br />
-
-⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
-
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  作品一覧  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
-
-<sub>【 M E I N E   P R O J E K T E 】</sub>
-
-<sub>૮ ˶ᵔ ᵕ ᵔ˶ ა  frisch von oben nach alt sortiert</sub>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-works-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-works-light.svg" alt="三 作品 – Projekte" width="100%" />
+</picture>
 
 </div>
 
 <!-- PROJEKTE:START -->
-| ♡ | Projekt | Worum es geht |
-| :-: | :-- | :-- |
-| 📊 | **[entra-Health-Check-PRTG](https://github.com/adblocker-1/entra-Health-Check-PRTG)** | PRTG-Sensor für Microsoft Intune und Entra ID – Gerätebestand, Compliance und Sync-Status. |
-| 📡 | **[UnifiController-PRTG](https://github.com/adblocker-1/UnifiController-PRTG)** | PRTG-Sensor für UniFi Controller – plattformübergreifende Geräteüberwachung mit API-Key oder lokalem Login. |
-| 🖥️ | **[HyperVReplicaHealth-PRTG](https://github.com/adblocker-1/HyperVReplicaHealth-PRTG)** | PRTG-Push-Sensor für Hyper-V-Replikation – VM-Replikationsstatus überwachen. |
-| ✉️ | **[MailStore-PRTG](https://github.com/adblocker-1/MailStore-PRTG)** | PRTG-Sensor für MailStore Server – Archivierungsprofile und Job-Status überwachen. |
-| 🔥 | **[Sophos-Firewall-API-Documentation](https://github.com/adblocker-1/Sophos-Firewall-API-Documentation)** | PowerShell-Tool für Sophos-Firewall-Konfigurations-Export in Excel, JSON, XML. |
-| 🗄️ | **[Cove-Data-Protection-PRTG](https://github.com/adblocker-1/Cove-Data-Protection-PRTG)** | PRTG-Sensor für N-able Cove Backups – Backup-Status, Fehler und Sicherungsalter. |
-| 💾 | **[Veeam-Backup365-PRTG](https://github.com/adblocker-1/Veeam-Backup365-PRTG)** | PRTG-Sensor für Veeam Backup for Microsoft 365 – Job-Status und Objekt-Zählung. |
-| 🔄 | **[Sophos-api-device-migration](https://github.com/adblocker-1/Sophos-api-device-migration)** | PowerShell-Tool zur Sophos-Central-Geräte-Migration zwischen Tenants mit GUI. |
-| 🛡️ | **[Sophos-Central-PRTG](https://github.com/adblocker-1/Sophos-Central-PRTG)** | PRTG-Sensor für Sophos Central – Endpoints, Server und Mobilgeräte mit Health und Alerts. |
-| ☁️ | **[Veeam-backup-PRTG](https://github.com/adblocker-1/Veeam-backup-PRTG)** | PRTG-Sensor für Veeam Backup & Replication – Job-Status und Repository-Auslastung. |
+| 作品 · Projekt | 分野 · Thema und Beschreibung |
+| :-- | :-- |
+| **[Veeam-Backup365-PRTG](https://github.com/adblocker-1/Veeam-Backup365-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für Veeam Backup for Microsoft 365 – Job-Status und Objekt-Zählung. |
+| **[Veeam-backup-PRTG](https://github.com/adblocker-1/Veeam-backup-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für Veeam Backup & Replication – Job-Status und Repository-Auslastung. |
+| **[Sophos-Firewall-API-Documentation](https://github.com/adblocker-1/Sophos-Firewall-API-Documentation)** | <sub>防御 · Firewall</sub><br>PowerShell-Tool für Sophos-Firewall-Konfigurations-Export in Excel, JSON, XML. |
+| **[Sophos-Central-PRTG](https://github.com/adblocker-1/Sophos-Central-PRTG)** | <sub>防御 · Security</sub><br>PRTG-Sensor für Sophos Central – Endpoints, Server und Mobilgeräte mit Health und Alerts. |
+| **[Sophos-api-device-migration](https://github.com/adblocker-1/Sophos-api-device-migration)** | <sub>移行 · Migration</sub><br>PowerShell-Tool zur Sophos-Central-Geräte-Migration zwischen Tenants mit GUI. |
+| **[HyperVReplicaHealth-PRTG](https://github.com/adblocker-1/HyperVReplicaHealth-PRTG)** | <sub>仮想化 · Virtualisierung</sub><br>PRTG-Push-Sensor für Hyper-V-Replikation – VM-Replikationsstatus überwachen. |
+| **[MailStore-PRTG](https://github.com/adblocker-1/MailStore-PRTG)** | <sub>メール · E-Mail</sub><br>PRTG-Sensor für MailStore Server – Archivierungsprofile und Job-Status überwachen. |
+| **[Cove-Data-Protection-PRTG](https://github.com/adblocker-1/Cove-Data-Protection-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für N-able Cove Backups – Backup-Status, Fehler und Sicherungsalter. |
+| **[entra-Health-Check-PRTG](https://github.com/adblocker-1/entra-Health-Check-PRTG)** | <sub>クラウド · Cloud</sub><br>PRTG-Sensor für Microsoft Intune und Entra ID – Gerätebestand, Compliance und Sync-Status. |
+| **[UnifiController-PRTG](https://github.com/adblocker-1/UnifiController-PRTG)** | <sub>ネットワーク · Netzwerk</sub><br>PRTG-Sensor für UniFi Controller – plattformübergreifende Geräteüberwachung mit API-Key oder lokalem Login. |
 <!-- PROJEKTE:ENDE -->
 
-<div align="center">
-
-⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
-
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  統計  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
-
-<sub>【 S T A T I S T I K E N 】</sub>
-
-<sub>ฅ^•ﻌ•^ฅ  alle 6 Stunden frisch gezeichnet</sub>
-
-<img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/stats.svg" alt="GitHub Statistiken" />
-<img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/langs.svg" alt="Repositories nach Sprache" />
+<sub>Zuletzt aktualisierte Projekte stehen oben – die Liste pflegt sich per GitHub Action selbst.</sub>
 
 <br />
 
-<img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/recent.svg" alt="Zuletzt aktualisierte Repositories" width="98%" />
+<div align="center">
 
-<sub>Die Karten liegen als SVG im Repo und werden jede Nacht per GitHub Action neu gezeichnet ˎˊ˗</sub>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-stats-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-stats-light.svg" alt="四 統計 – Statistiken" width="100%" />
+</picture>
 
-<br /><br />
+</div>
 
-⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
+<div align="center">
 
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  へび  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/stats-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/stats-light.svg" alt="Statistiken zu Repositories, Sprachen und Themen" width="100%" />
+</picture>
 
-<sub>【 D I E   S C H L A N G E 】</sub>
+</div>
+
+<br />
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-trail-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-trail-light.svg" alt="五 足跡 – Spuren" width="100%" />
+</picture>
+
+</div>
+
+<div align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/output/snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/output/snake.svg" />
-  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/output/snake.svg" alt="Snake Animation" width="100%" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/output/snake.svg" alt="Schlange, die den Beitragskalender frisst" width="100%" />
 </picture>
 
-<sub>frisst jede Nacht meine Contributions ˎˊ˗</sub>
+<sub>蛇 · Jede Nacht frisst die Schlange meinen Beitragskalender.</sub>
+
+</div>
+
+<br />
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-contact-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/section-contact-light.svg" alt="六 連絡 – Kontakt" width="100%" />
+</picture>
+
+</div>
+
+<div align="center">
+
+Fragen zu einem Sensor, einen Fehler gefunden oder eine Idee?<br />
+Am besten direkt ein Issue im jeweiligen Repository eröffnen.
+
+<br />
+
+<a href="https://github.com/adblocker-1?tab=repositories"><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/button-repos.svg" alt="作品を見る – Repositories" width="280" /></a>
+&nbsp;
+<a href="https://github.com/adblocker-1?tab=followers"><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/button-follow.svg" alt="フォローする – Folgen" width="280" /></a>
 
 </div>
 
 <br />
 
 <details>
-<summary><b>🍓 秘密の小箱  ‧₊˚ Noch ein paar Kleinigkeiten über mich (aufklappen!) ˚₊‧</b></summary>
+<summary><b>🏮 名刺 · Steckbrief</b> <sub>(aufklappen)</sub></summary>
 
 <br />
 
-```text
- ╭─────────────────────────────────────────────────╮
- │                                                 │
- │   ♡  Lieblingssprache ..... PowerShell          │
- │   ♡  Lieblingswerkzeug .... PRTG + eine API     │
- │   ♡  Lieblingssatz ........ "Das automatisier   │
- │                              ich mal eben."     │
- │   ♡  Co-Autor ............. eine KI             │
- │   ♡  Aus .................. Deutschland         │
- │                                                 │
- ╰─────────────────────────────────────────────────╯
-```
-
-**得意なこと &nbsp;・&nbsp; Womit ich mich am liebsten beschäftige**
-
-- APIs, die eigentlich niemand dokumentiert hat, trotzdem zum Reden bringen
-- Sensoren so bauen, dass man sie einmal einrichtet und dann vergisst
-- READMEs schreiben, die man ohne Vorwissen durcharbeiten kann
-- Und ab und zu: ein kleines Spiel im Browser 🐦
-
-```
-     (\ (\
-     ( -.-)   noch wach? dann kommt hier der Rest ~
-     o_(")(")
-```
-
-**中身 &nbsp;・&nbsp; Was du in meinen Repos findest**
-
-- Eine einzelne `.ps1` – keine Module, keine Installation
-- Parameter für alles, sinnvolle Standardwerte für den Rest
-- Deutschsprachige Schritt-für-Schritt-Anleitungen
-- Ein `CHANGELOG.md`, das ehrlich ist
+| | |
+| :-- | :-- |
+| **名前** · Name | Adblocker |
+| **拠点** · Standort | Deutschland 🇩🇪 |
+| **得意** · Stärke | PowerShell + PRTG + eine API |
+| **相棒** · Co-Autor | Claude (KI) |
+| **座右の銘** · Motto | „Das automatisier ich mal eben.“ |
 
 </details>
 
@@ -221,40 +195,11 @@
 
 <div align="center">
 
-⋆｡°✩  ˗ˏˋ  ♡  ´ˎ˗  ✩°｡⋆
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/footer-dark.svg" />
+  <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/footer-light.svg" alt="一期一会 – ichi-go ichi-e: Jede Begegnung ist einmalig. Danke fürs Vorbeischauen!" width="100%" />
+</picture>
 
-### ⋆｡‧˚ʚ♡ɞ˚‧｡⋆  連絡先  ⋆｡‧˚ʚ♡ɞ˚‧｡⋆
-
-<sub>【 S C H R E I B   M I R 】</sub>
-
-<sub>(⁄ ⁄•⁄ω⁄•⁄ ⁄)  ich beiße nicht</sub>
-
-<a href="https://github.com/adblocker-1?tab=repositories">
-  <img src="https://img.shields.io/badge/Meine_Repos-FFB7C5?style=for-the-badge&logo=github&logoColor=white" alt="Repos" />
-</a>
-<a href="https://github.com/adblocker-1?tab=followers">
-  <img src="https://img.shields.io/badge/Folgen-CBA6F7?style=for-the-badge&logo=github&logoColor=white" alt="Folgen" />
-</a>
-<a href="https://github.com/adblocker-1/UnifiController-PRTG/issues">
-  <img src="https://img.shields.io/badge/Issue_eroeffnen-A0C4FF?style=for-the-badge&logo=github&logoColor=white" alt="Issues" />
-</a>
-
-<br /><br />
-
-**♡ 一期一会 ♡**
-
-<sub>„Ichigo ichie" – jede Begegnung ein einziges Mal, auch diese hier. Danke fürs Vorbeischauen!</sub>
-
-<sub>Wenn dir eines der Skripte den Tag gerettet hat, freue ich mich über einen ⭐</sub>
-
-<br />
-
-```
-        ∧,,,∧
-       ( ̳• · • ̳)
-       /    づ♡   bis bald!
-```
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=140&section=footer" width="100%" alt="Footer" />
+<sub>Alle Grafiken zeichnet <a href="https://github.com/adblocker-1/adblocker-1/blob/main/scripts/generate.py"><code>scripts/generate.py</code></a> selbst – ohne externe Dienste. Schrift: Shippori Mincho (SIL OFL 1.1).</sub>
 
 </div>
