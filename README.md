@@ -94,16 +94,16 @@ keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.
 <!-- PROJEKTE:START -->
 | 作品 · Projekt | 分野 · Thema und Beschreibung |
 | :-- | :-- |
-| **[Veeam-Backup365-PRTG](https://github.com/adblocker-1/Veeam-Backup365-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für Veeam Backup for Microsoft 365 – Job-Status und Objekt-Zählung. |
-| **[Veeam-backup-PRTG](https://github.com/adblocker-1/Veeam-backup-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für Veeam Backup & Replication – Job-Status und Repository-Auslastung. |
-| **[Sophos-Firewall-API-Documentation](https://github.com/adblocker-1/Sophos-Firewall-API-Documentation)** | <sub>防御 · Firewall</sub><br>PowerShell-Tool für Sophos-Firewall-Konfigurations-Export in Excel, JSON, XML. |
-| **[Sophos-Central-PRTG](https://github.com/adblocker-1/Sophos-Central-PRTG)** | <sub>防御 · Security</sub><br>PRTG-Sensor für Sophos Central – Endpoints, Server und Mobilgeräte mit Health und Alerts. |
-| **[Sophos-api-device-migration](https://github.com/adblocker-1/Sophos-api-device-migration)** | <sub>移行 · Migration</sub><br>PowerShell-Tool zur Sophos-Central-Geräte-Migration zwischen Tenants mit GUI. |
-| **[HyperVReplicaHealth-PRTG](https://github.com/adblocker-1/HyperVReplicaHealth-PRTG)** | <sub>仮想化 · Virtualisierung</sub><br>PRTG-Push-Sensor für Hyper-V-Replikation – VM-Replikationsstatus überwachen. |
-| **[MailStore-PRTG](https://github.com/adblocker-1/MailStore-PRTG)** | <sub>メール · E-Mail</sub><br>PRTG-Sensor für MailStore Server – Archivierungsprofile und Job-Status überwachen. |
-| **[Cove-Data-Protection-PRTG](https://github.com/adblocker-1/Cove-Data-Protection-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für N-able Cove Backups – Backup-Status, Fehler und Sicherungsalter. |
 | **[entra-Health-Check-PRTG](https://github.com/adblocker-1/entra-Health-Check-PRTG)** | <sub>クラウド · Cloud</sub><br>PRTG-Sensor für Microsoft Intune und Entra ID – Gerätebestand, Compliance und Sync-Status. |
 | **[UnifiController-PRTG](https://github.com/adblocker-1/UnifiController-PRTG)** | <sub>ネットワーク · Netzwerk</sub><br>PRTG-Sensor für UniFi Controller – plattformübergreifende Geräteüberwachung mit API-Key oder lokalem Login. |
+| **[HyperVReplicaHealth-PRTG](https://github.com/adblocker-1/HyperVReplicaHealth-PRTG)** | <sub>仮想化 · Virtualisierung</sub><br>PRTG-Push-Sensor für Hyper-V-Replikation – VM-Replikationsstatus überwachen. |
+| **[MailStore-PRTG](https://github.com/adblocker-1/MailStore-PRTG)** | <sub>メール · E-Mail</sub><br>PRTG-Sensor für MailStore Server – Archivierungsprofile und Job-Status überwachen. |
+| **[Sophos-Firewall-API-Documentation](https://github.com/adblocker-1/Sophos-Firewall-API-Documentation)** | <sub>防御 · Firewall</sub><br>PowerShell-Tool für Sophos-Firewall-Konfigurations-Export in Excel, JSON, XML. |
+| **[Cove-Data-Protection-PRTG](https://github.com/adblocker-1/Cove-Data-Protection-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für N-able Cove Backups – Backup-Status, Fehler und Sicherungsalter. |
+| **[Veeam-Backup365-PRTG](https://github.com/adblocker-1/Veeam-Backup365-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für Veeam Backup for Microsoft 365 – Job-Status und Objekt-Zählung. |
+| **[Sophos-api-device-migration](https://github.com/adblocker-1/Sophos-api-device-migration)** | <sub>移行 · Migration</sub><br>PowerShell-Tool zur Sophos-Central-Geräte-Migration zwischen Tenants mit GUI. |
+| **[Sophos-Central-PRTG](https://github.com/adblocker-1/Sophos-Central-PRTG)** | <sub>防御 · Security</sub><br>PRTG-Sensor für Sophos Central – Endpoints, Server und Mobilgeräte mit Health und Alerts. |
+| **[Veeam-backup-PRTG](https://github.com/adblocker-1/Veeam-backup-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für Veeam Backup & Replication – Job-Status und Repository-Auslastung. |
 <!-- PROJEKTE:ENDE -->
 
 <sub>Zuletzt aktualisierte Projekte stehen oben – die Liste pflegt sich per GitHub Action selbst.</sub>
