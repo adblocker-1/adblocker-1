@@ -1,29 +1,33 @@
-name: Snake
+name: Schlange
 
-# Erzeugt die Snake-Animation aus dem Contribution-Graph und legt sie
-# im Branch "output" ab. Der Branch wird beim ersten Lauf selbst angelegt.
+# Erzeugt die Snake-Animation aus dem Beitragskalender und legt sie im
+# Branch "output" ab (wird beim ersten Lauf automatisch angelegt).
+# Farben: Tag = Tusche auf Washi, Nacht = Gold auf Indigo.
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # jede Nacht um 03:00 UTC
-  workflow_dispatch:       # von Hand startbar (Tab "Actions")
+    - cron: "0 3 * * *"      # jede Nacht um 03:00 UTC
+  workflow_dispatch:
   push:
     branches:
       - main
+    paths:
+      - ".github/workflows/snake.yml"
+
+permissions:
+  contents: write
 
 jobs:
   generate:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Snake erzeugen
+      - name: Schlange erzeugen
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/snake.svg?palette=github-light&color_snake=#FFB7C5&color_dots=#FFF5F7,#FFDDE4,#FFB7C5,#E89AB3,#CBA6F7
-            dist/snake-dark.svg?palette=github-dark&color_snake=#FFB7C5&color_dots=#2B2233,#4A3A54,#8E6E9E,#CBA6F7,#FFB7C5
+            dist/snake.svg?palette=github-light&color_snake=#1F1B17&color_dots=#EDE3D0,#F2C4BD,#E48A80,#C0392B,#7D1D16
+            dist/snake-dark.svg?palette=github-dark&color_snake=#C9A45C&color_dots=#172A45,#4A2B35,#7D2E2B,#B8392F,#E0533F
 
       - name: In den Branch "output" schieben
         uses: crazy-max/ghaction-github-pages@v4
