@@ -104,24 +104,24 @@ keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.
 <!-- PROJEKTE:START -->
 <table>
 <tr>
-<td width="50%" valign="top"><sub>バックアップ · Backup</sub><br /><b><a href="https://github.com/adblocker-1/Veeam-Backup365-PRTG">Veeam-Backup365-PRTG</a></b><br />PRTG-Sensor für Veeam Backup for Microsoft 365 – Job-Status und Objekt-Zählung.<br /><sub>● PowerShell</sub></td>
-<td width="50%" valign="top"><sub>バックアップ · Backup</sub><br /><b><a href="https://github.com/adblocker-1/Veeam-backup-PRTG">Veeam-backup-PRTG</a></b><br />PRTG-Sensor für Veeam Backup &amp; Replication – Job-Status und Repository-Auslastung.<br /><sub>● PowerShell</sub></td>
+<td width="50%" valign="top"><sub>クラウド · Cloud</sub><br /><b><a href="https://github.com/adblocker-1/entra-Health-Check-PRTG">entra-Health-Check-PRTG</a></b><br />PRTG-Sensor für Microsoft Intune und Entra ID – Gerätebestand, Compliance und Sync-Status.<br /><sub>● PowerShell</sub></td>
+<td width="50%" valign="top"><sub>ネットワーク · Netzwerk</sub><br /><b><a href="https://github.com/adblocker-1/UnifiController-PRTG">UnifiController-PRTG</a></b><br />PRTG-Sensor für UniFi Controller – plattformübergreifende Geräteüberwachung mit API-Key oder lokalem Login.<br /><sub>● PowerShell</sub></td>
+</tr>
+<tr>
+<td width="50%" valign="top"><sub>仮想化 · Virtualisierung</sub><br /><b><a href="https://github.com/adblocker-1/HyperVReplicaHealth-PRTG">HyperVReplicaHealth-PRTG</a></b><br />PRTG-Push-Sensor für Hyper-V-Replikation – VM-Replikationsstatus überwachen.<br /><sub>● PowerShell</sub></td>
+<td width="50%" valign="top"><sub>メール · E-Mail</sub><br /><b><a href="https://github.com/adblocker-1/MailStore-PRTG">MailStore-PRTG</a></b><br />PRTG-Sensor für MailStore Server – Archivierungsprofile und Job-Status überwachen.<br /><sub>● PowerShell</sub></td>
 </tr>
 <tr>
 <td width="50%" valign="top"><sub>防御 · Firewall</sub><br /><b><a href="https://github.com/adblocker-1/Sophos-Firewall-API-Documentation">Sophos-Firewall-API-Documentation</a></b><br />PowerShell-Tool für Sophos-Firewall-Konfigurations-Export in Excel, JSON, XML.<br /><sub>● HTML</sub></td>
-<td width="50%" valign="top"><sub>防御 · Security</sub><br /><b><a href="https://github.com/adblocker-1/Sophos-Central-PRTG">Sophos-Central-PRTG</a></b><br />PRTG-Sensor für Sophos Central – Endpoints, Server und Mobilgeräte mit Health und Alerts.<br /><sub>● PowerShell</sub></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><sub>移行 · Migration</sub><br /><b><a href="https://github.com/adblocker-1/Sophos-api-device-migration">Sophos-api-device-migration</a></b><br />PowerShell-Tool zur Sophos-Central-Geräte-Migration zwischen Tenants mit GUI.<br /><sub>● PowerShell</sub></td>
-<td width="50%" valign="top"><sub>仮想化 · Virtualisierung</sub><br /><b><a href="https://github.com/adblocker-1/HyperVReplicaHealth-PRTG">HyperVReplicaHealth-PRTG</a></b><br />PRTG-Push-Sensor für Hyper-V-Replikation – VM-Replikationsstatus überwachen.<br /><sub>● PowerShell</sub></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><sub>メール · E-Mail</sub><br /><b><a href="https://github.com/adblocker-1/MailStore-PRTG">MailStore-PRTG</a></b><br />PRTG-Sensor für MailStore Server – Archivierungsprofile und Job-Status überwachen.<br /><sub>● PowerShell</sub></td>
 <td width="50%" valign="top"><sub>バックアップ · Backup</sub><br /><b><a href="https://github.com/adblocker-1/Cove-Data-Protection-PRTG">Cove-Data-Protection-PRTG</a></b><br />PRTG-Sensor für N-able Cove Backups – Backup-Status, Fehler und Sicherungsalter.<br /><sub>● PowerShell</sub></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><sub>クラウド · Cloud</sub><br /><b><a href="https://github.com/adblocker-1/entra-Health-Check-PRTG">entra-Health-Check-PRTG</a></b><br />PRTG-Sensor für Microsoft Intune und Entra ID – Gerätebestand, Compliance und Sync-Status.<br /><sub>● PowerShell</sub></td>
-<td width="50%" valign="top"><sub>ネットワーク · Netzwerk</sub><br /><b><a href="https://github.com/adblocker-1/UnifiController-PRTG">UnifiController-PRTG</a></b><br />PRTG-Sensor für UniFi Controller – plattformübergreifende Geräteüberwachung mit API-Key oder lokalem Login.<br /><sub>● PowerShell</sub></td>
+<td width="50%" valign="top"><sub>バックアップ · Backup</sub><br /><b><a href="https://github.com/adblocker-1/Veeam-Backup365-PRTG">Veeam-Backup365-PRTG</a></b><br />PRTG-Sensor für Veeam Backup for Microsoft 365 – Job-Status und Objekt-Zählung.<br /><sub>● PowerShell</sub></td>
+<td width="50%" valign="top"><sub>移行 · Migration</sub><br /><b><a href="https://github.com/adblocker-1/Sophos-api-device-migration">Sophos-api-device-migration</a></b><br />PowerShell-Tool zur Sophos-Central-Geräte-Migration zwischen Tenants mit GUI.<br /><sub>● PowerShell</sub></td>
+</tr>
+<tr>
+<td width="50%" valign="top"><sub>防御 · Security</sub><br /><b><a href="https://github.com/adblocker-1/Sophos-Central-PRTG">Sophos-Central-PRTG</a></b><br />PRTG-Sensor für Sophos Central – Endpoints, Server und Mobilgeräte mit Health und Alerts.<br /><sub>● PowerShell</sub></td>
+<td width="50%" valign="top"><sub>バックアップ · Backup</sub><br /><b><a href="https://github.com/adblocker-1/Veeam-backup-PRTG">Veeam-backup-PRTG</a></b><br />PRTG-Sensor für Veeam Backup &amp; Replication – Job-Status und Repository-Auslastung.<br /><sub>● PowerShell</sub></td>
 </tr>
 </table>
 <!-- PROJEKTE:ENDE -->
