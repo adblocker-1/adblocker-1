@@ -1,0 +1,155 @@
+/* 和風 - Farben wie in scripts/wafu.py: Washi bei Tag, Indigo bei Nacht */
+
+@font-face {
+  font-family: "Shippori Mincho";
+  src: url("fonts/shippori-mincho-500.woff2") format("woff2");
+  font-weight: 400 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Shippori Mincho";
+  src: url("fonts/shippori-mincho-800.woff2") format("woff2");
+  font-weight: 700 900;
+  font-display: swap;
+}
+
+:root {
+  --page: #FBF7EF;
+  --card: #F5EFE3;
+  --line: #D8C9AC;
+  --ink: #1F1B17;
+  --ink2: #4B443C;
+  --muted: #7A7064;
+  --shu: #C0392B;
+  --ai: #223D63;
+  --gold: #B8924A;
+  --link: #A93226;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #0B1220;
+    --card: #0F1724;
+    --line: #2B3A52;
+    --ink: #F0E8D8;
+    --ink2: #C9C0AF;
+    --muted: #8D96A6;
+    --shu: #E0533F;
+    --ai: #6D8FC2;
+    --gold: #C9A45C;
+    --link: #F07A68;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho",
+               "Noto Serif JP", Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { width: min(960px, 100% - 32px); margin-inline: auto; }
+
+img { max-width: 100%; height: auto; display: block; }
+.hero, .art { width: 100%; }
+.art { margin: 28px 0 0; }
+.snake { width: 100%; margin-top: 8px; }
+
+a { color: var(--link); text-underline-offset: 3px; }
+a:hover { color: var(--shu); }
+:focus-visible { outline: 2px solid var(--shu); outline-offset: 3px; border-radius: 4px; }
+
+.skip {
+  position: absolute; left: -9999px; top: 8px;
+  background: var(--shu); color: #FBF7EF; padding: 8px 14px; border-radius: 6px;
+}
+.skip:focus { left: 16px; z-index: 10; }
+
+header { padding-top: 24px; }
+
+nav {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px;
+  margin: 18px 0 8px;
+}
+nav a {
+  display: inline-flex; flex-direction: column; align-items: center;
+  min-width: 96px; padding: 8px 14px;
+  color: var(--ink2); text-decoration: none; font-size: .9rem; line-height: 1.3;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--card);
+}
+nav a span { color: var(--shu); font-weight: 800; font-size: 1.05rem; letter-spacing: .12em; }
+nav a:hover { border-color: var(--shu); color: var(--ink); }
+
+section { padding-top: 48px; scroll-margin-top: 12px; }
+
+h2.sec { margin: 0 0 18px; font-size: 1rem; }
+h2.sec img { width: 100%; }
+
+h3 { margin: 0 0 8px; font-size: 1.1rem; font-weight: 800; }
+h3 span, summary span { color: var(--shu); }
+
+.lead { margin: 0 0 18px; }
+
+blockquote {
+  margin: 0 0 24px; padding: 4px 0 4px 18px;
+  border-left: 3px solid var(--shu); color: var(--ink2);
+}
+
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 20px 24px;
+}
+.card ul { margin: 0; padding-left: 1.2em; }
+.card li::marker { color: var(--shu); content: "◆  "; font-size: .7em; }
+
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .pair { grid-template-columns: 1fr; } }
+
+/* Projektkarten */
+.works {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px;
+}
+.works a {
+  display: flex; flex-direction: column; gap: 6px; height: 100%;
+  padding: 18px 20px; text-decoration: none; color: var(--ink);
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  border-top: 3px solid var(--shu);
+  transition: transform .15s ease, border-color .15s ease;
+}
+.works a:hover { transform: translateY(-2px); border-color: var(--shu); color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .works a { transition: none; } .works a:hover { transform: none; } }
+.works .cat { font-size: .8rem; color: var(--muted); letter-spacing: .04em; }
+.works .cat span { color: var(--shu); font-weight: 800; }
+.works strong { font-size: 1.05rem; overflow-wrap: anywhere; }
+.works .desc { font-size: .95rem; color: var(--ink2); line-height: 1.6; flex: 1; }
+.works .lang { font-size: .8rem; color: var(--muted); }
+.works .lang::before {
+  content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 6px;
+  border-radius: 50%; background: var(--ai);
+}
+
+.note { font-size: .88rem; color: var(--muted); margin: 14px 0 0; }
+.center { text-align: center; }
+
+.buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 22px 0 28px; }
+.buttons img { width: 280px; }
+.buttons a { border-radius: 12px; }
+
+details summary { cursor: pointer; font-weight: 800; }
+details dl {
+  display: grid; grid-template-columns: max-content 1fr; gap: 6px 22px; margin: 16px 0 0;
+}
+details dt { color: var(--muted); }
+details dd { margin: 0; }
+@media (max-width: 480px) { details dl { grid-template-columns: 1fr; } details dd { margin-bottom: 8px; } }
+
+footer { padding: 56px 0 40px; }

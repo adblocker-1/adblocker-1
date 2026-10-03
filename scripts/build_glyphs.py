@@ -6,7 +6,9 @@ Warum Pfade statt <text>: Ein SVG, das GitHub als <img> einbindet, darf
 keine Webfonts nachladen. Mit <text> haengt die Darstellung der Kanji vom
 Betriebssystem des Besuchers ab - mit Pfaden sieht es ueberall gleich aus.
 
-Dieses Skript wird nur gebraucht, wenn neue Schriftzeichen dazukommen.
+Ausserdem legt es die gekuerzte Webschrift fuer die Webseite an
+(site/fonts/*.woff2). Das Skript wird nur gebraucht, wenn neue
+Schriftzeichen dazukommen.
 Die GitHub Action braucht es nicht (sie liest nur die JSON-Dateien).
 
   npm pack @fontsource/shippori-mincho && tar xzf fontsource-*.tgz
@@ -22,12 +24,14 @@ import re
 import sys
 from pathlib import Path
 
+from fontTools import subset
 from fontTools.pens.boundsPen import BoundsPen
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
 
 HERE = Path(__file__).resolve().parent
+SITE = HERE.parent / "site"
 WEIGHTS = (500, 800)
 # Reihenfolge = Vorrang: "japanese" deckt Kanji, Kana und ASCII ab.
 SUBSETS = ("japanese", "latin", "latin-ext")
@@ -112,6 +116,32 @@ def build(files_dir, weight, chars):
     }, missing
 
 
+def build_webfonts(files_dir, chars):
+    """Schrift fuer die Webseite: auf die benutzten Zeichen gekuerzt und
+    selbst gehostet (kein Google Fonts - nichts geht an Dritte)."""
+    chars = set(chars)
+    chars |= {chr(c) for c in range(0xA0, 0x100)}    # Latin-1
+    chars |= {chr(c) for c in range(0x2010, 0x2027)}  # Striche, Anfuehrung
+    for page in SITE.glob("*.html"):
+        chars |= set(page.read_text("utf-8"))
+    out_dir = SITE / "fonts"
+    out_dir.mkdir(exist_ok=True)
+    for w in WEIGHTS:
+        font = TTFont(files_dir / f"shippori-mincho-japanese-{w}-normal.woff")
+        opts = subset.Options()
+        opts.flavor = "woff2"
+        opts.layout_features = ["*"]
+        sub = subset.Subsetter(opts)
+        sub.populate(unicodes=sorted(ord(c) for c in chars))
+        sub.subset(font)
+        out = out_dir / f"shippori-mincho-{w}.woff2"
+        font.flavor = "woff2"
+        font.save(out)
+        print(f"site/fonts/{out.name}: {out.stat().st_size // 1024} KB")
+    (out_dir / "OFL.txt").write_text(
+        (HERE / "glyphs" / "OFL.txt").read_text("utf-8"), encoding="utf-8")
+
+
 def main():
     if len(sys.argv) != 2:
         sys.exit(__doc__)
@@ -127,6 +157,7 @@ def main():
               f"{out.stat().st_size // 1024} KB")
         if missing:
             print("  nicht in der Schrift:", "".join(missing))
+    build_webfonts(files_dir, chars)
 
 
 if __name__ == "__main__":

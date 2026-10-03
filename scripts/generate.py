@@ -22,6 +22,7 @@ import random
 import sys
 import urllib.request
 from collections import Counter
+from html import escape
 from datetime import datetime
 from pathlib import Path
 
@@ -33,6 +34,7 @@ USER = "adblocker-1"
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
 README = ROOT / "README.md"
+SITE = ROOT / "site" / "index.html"
 
 
 # =================================================================== Daten
@@ -564,22 +566,52 @@ def project_table(d):
     return "\n".join(rows)
 
 
-def update_readme(d):
-    """Ersetzt nur den Bereich zwischen den Markern. Fehlen sie, bleibt das
-    README unangetastet - lieber unveraendert als halb zerstoert."""
-    text = README.read_text(encoding="utf-8")
+def project_cards(d):
+    """Projektkarten fuer die Webseite (site/index.html)."""
+    cards = []
+    for r in sorted(d["repos"], key=lambda x: x["pushed_at"], reverse=True):
+        jp, de = category(r["name"])
+        desc = (r.get("description") or "").strip()
+        lang = (f'\n        <span class="lang">{escape(r["language"])}</span>'
+                if r.get("language") else "")
+        cards.append(
+            f'      <li><a href="https://github.com/{USER}/{escape(r["name"])}">\n'
+            f'        <span class="cat"><span lang="ja">{jp}</span> · {de}</span>\n'
+            f'        <strong>{escape(r["name"])}</strong>\n'
+            f'        <span class="desc">{escape(desc)}</span>{lang}\n'
+            f'      </a></li>')
+    return "\n".join(cards)
+
+
+def replace_between(path, content, label):
+    """Ersetzt nur den Bereich zwischen den Markern. Fehlen sie, bleibt die
+    Datei unangetastet - lieber unveraendert als halb zerstoert."""
+    if not path.exists():
+        print(f"{label}: fehlt - uebersprungen.")
+        return
+    text = path.read_text(encoding="utf-8")
     if MARK_START not in text or MARK_END not in text:
-        print("README.md: Marker fehlen - unveraendert gelassen.")
+        print(f"{label}: Marker fehlen - unveraendert gelassen.")
         return
     head, rest = text.split(MARK_START, 1)
     _, tail = rest.split(MARK_END, 1)
-    new = f"{head}{MARK_START}\n{project_table(d)}\n{MARK_END}{tail}"
+    new = f"{head}{MARK_START}\n{content}\n{MARK_END}{tail}"
     if new != text:
-        README.write_text(new, encoding="utf-8")
-        print(f"README.md: Projekttabelle aktualisiert "
-              f"({len(d['repos'])} Repos)")
+        path.write_text(new, encoding="utf-8")
+        print(f"{label}: Projektliste aktualisiert")
     else:
-        print("README.md: Projekttabelle ist aktuell")
+        print(f"{label}: Projektliste ist aktuell")
+
+
+def favicon():
+    """Kleiner Stempel 監 als Browser-Symbol."""
+    t = THEMES["light"]
+    s = Svg(64, 64, "監")
+    s.add(f'<rect width="64" height="64" rx="12" fill="{t["shu"]}"/>',
+          f'<rect x="5" y="5" width="54" height="54" rx="8" fill="none" '
+          f'stroke="{t["on_shu"]}" stroke-width="2"/>')
+    s.text("監", 32, 32 + 40 * .38, 40, BOLD, t["on_shu"], anchor="middle")
+    return s.render()
 
 
 # ==================================================================== Main
@@ -612,6 +644,7 @@ def main():
 
     for key, *args in BUTTONS:
         out[f"button-{key}"] = button(*args)
+    out["favicon"] = favicon()
 
     ASSETS.mkdir(exist_ok=True)
     for name, svg in out.items():
@@ -619,7 +652,8 @@ def main():
         if not path.exists() or path.read_text(encoding="utf-8") != svg:
             path.write_text(svg, encoding="utf-8")
             print(f"assets/{name}.svg geschrieben")
-    update_readme(d)
+    replace_between(README, project_table(d), "README.md")
+    replace_between(SITE, project_cards(d), "site/index.html")
 
 
 if __name__ == "__main__":

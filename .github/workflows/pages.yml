@@ -1,0 +1,65 @@
+name: Webseite
+
+# Veroeffentlicht site/ zusammen mit assets/ und der Schlange aus dem
+# Branch "output" auf GitHub Pages. Laeuft auch nach jedem Lauf von
+# "Profil aktualisieren" und "Schlange", damit die Seite deren neue
+# Daten bekommt (Commits per GITHUB_TOKEN loesen sonst nichts aus).
+#
+# Einmalig noetig: Settings > Pages > Source = "GitHub Actions".
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "site/**"
+      - "assets/**"
+      - ".github/workflows/pages.yml"
+  workflow_run:
+    workflows: ["Profil aktualisieren", "Schlange"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Schlange holen
+        uses: actions/checkout@v5
+        with:
+          ref: output
+          path: _snake
+
+      - name: Seite zusammenstellen
+        run: |
+          mkdir _site
+          cp -r site/. _site/
+          cp -r assets _site/assets
+          cp _snake/snake.svg _snake/snake-dark.svg _site/assets/
+          ls -R _site | head -50
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
