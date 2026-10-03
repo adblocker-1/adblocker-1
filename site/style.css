@@ -321,3 +321,34 @@ footer { padding: 64px 0 40px; }
   border-radius: 6px; box-shadow: inset 0 0 0 3px var(--shu), inset 0 0 0 4.5px var(--on-shu);
 }
 @media (max-width: 520px) { .seal { top: 14px; right: 14px; font-size: .9rem; } }
+
+/* ------------------------------------------- Impressum / Datenschutz */
+.legal-head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 12px; padding-top: 24px;
+}
+.legal-head nav { margin: 0; display: flex; }
+.home {
+  display: inline-flex; align-items: center; gap: 12px;
+  color: var(--ink); text-decoration: none; font-weight: 800; font-size: 1.5rem;
+}
+.home:hover { color: var(--ink); }
+.stamp {
+  display: grid; place-items: center; width: 42px; height: 42px; border-radius: 7px;
+  background: var(--shu); color: var(--on-shu); font-size: 1.4rem;
+  box-shadow: inset 0 0 0 3px var(--shu), inset 0 0 0 4.5px var(--on-shu);
+  transform: rotate(-4deg);
+}
+.legal { padding-top: 40px; max-width: 760px; }
+.legal h1 {
+  display: flex; flex-direction: column; margin: 0 0 24px;
+  font-size: clamp(1.55rem, 7vw, 2.1rem); font-weight: 800; line-height: 1.25;
+  hyphens: auto; -webkit-hyphens: auto;
+}
+.legal h1 span { color: var(--shu); font-size: 1rem; letter-spacing: .3em; }
+.legal h2 { margin: 28px 0 8px; font-size: 1.1rem; font-weight: 800; color: var(--shu); }
+.legal .card > h2:first-child { margin-top: 0; }
+.legal p { color: var(--ink2); }
+.legal code { font-size: .9em; padding: 1px 5px; border-radius: 4px; background: var(--track); color: var(--ink); }
+.todo { padding: 1px 6px; border-radius: 4px; background: var(--shu); color: var(--on-shu); }
+.legal-foot { padding: 40px 0; }
