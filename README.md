@@ -5,10 +5,18 @@
   <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/header-light.svg" alt="Adblocker – PowerShell · PRTG · Monitoring · Automatisierung" width="100%" />
 </picture>
 
+<a href="#ueber-mich"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-about-dark.svg" /><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-about-light.svg" alt="自己紹介 – Über mich" width="120" /></picture></a>
+<a href="#werkzeuge"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-tools-dark.svg" /><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-tools-light.svg" alt="道具箱 – Werkzeuge" width="120" /></picture></a>
+<a href="#projekte"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-works-dark.svg" /><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-works-light.svg" alt="作品 – Projekte" width="120" /></picture></a>
+<a href="#statistik"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-stats-dark.svg" /><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-stats-light.svg" alt="統計 – Statistik" width="120" /></picture></a>
+<a href="#kontakt"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-contact-dark.svg" /><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-contact-light.svg" alt="連絡 – Kontakt" width="120" /></picture></a>
+<a href="https://dev.buch-mail.xyz"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-site-dark.svg" /><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-site-light.svg" alt="ウェブ – Webseite" width="120" /></picture></a>
+
 </div>
 
 <br />
 
+<a name="ueber-mich"></a>
 <div align="center">
 
 <picture>
@@ -23,14 +31,14 @@ für alles, was in einer IT-Umgebung überwacht werden will: Backups, Firewalls,
 Endpoints, Netzwerk, E-Mail-Archiv und Virtualisierung. Ein Skript pro Sensor,
 keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.
 
-> *Just trying some Claude – all done by AI.* Dieses Profil und viele meiner
+> *Just trying some Claude – all done by AI.* Diese Seite und viele meiner
 > Skripte sind zusammen mit einer KI entstanden.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-**🎋 取り組み · Woran ich arbeite**
+**取り組み · Woran ich arbeite**
 
 - PRTG-Sensoren (EXE/Script Advanced)
 - REST- und XML-APIs anzapfen
@@ -40,7 +48,7 @@ keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.
 </td>
 <td width="50%" valign="top">
 
-**🍵 流儀 · Wie ich arbeite**
+**流儀 · Wie ich arbeite**
 
 - Eine Datei, keine Abhängigkeiten
 - Verständliche Fehlermeldungen statt Abstürze
@@ -62,6 +70,7 @@ keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.
 
 <br />
 
+<a name="werkzeuge"></a>
 <div align="center">
 
 <picture>
@@ -82,6 +91,7 @@ keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.
 
 <br />
 
+<a name="projekte"></a>
 <div align="center">
 
 <picture>
@@ -92,24 +102,35 @@ keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.
 </div>
 
 <!-- PROJEKTE:START -->
-| 作品 · Projekt | 分野 · Thema und Beschreibung |
-| :-- | :-- |
-| **[entra-Health-Check-PRTG](https://github.com/adblocker-1/entra-Health-Check-PRTG)** | <sub>クラウド · Cloud</sub><br>PRTG-Sensor für Microsoft Intune und Entra ID – Gerätebestand, Compliance und Sync-Status. |
-| **[UnifiController-PRTG](https://github.com/adblocker-1/UnifiController-PRTG)** | <sub>ネットワーク · Netzwerk</sub><br>PRTG-Sensor für UniFi Controller – plattformübergreifende Geräteüberwachung mit API-Key oder lokalem Login. |
-| **[HyperVReplicaHealth-PRTG](https://github.com/adblocker-1/HyperVReplicaHealth-PRTG)** | <sub>仮想化 · Virtualisierung</sub><br>PRTG-Push-Sensor für Hyper-V-Replikation – VM-Replikationsstatus überwachen. |
-| **[MailStore-PRTG](https://github.com/adblocker-1/MailStore-PRTG)** | <sub>メール · E-Mail</sub><br>PRTG-Sensor für MailStore Server – Archivierungsprofile und Job-Status überwachen. |
-| **[Sophos-Firewall-API-Documentation](https://github.com/adblocker-1/Sophos-Firewall-API-Documentation)** | <sub>防御 · Firewall</sub><br>PowerShell-Tool für Sophos-Firewall-Konfigurations-Export in Excel, JSON, XML. |
-| **[Cove-Data-Protection-PRTG](https://github.com/adblocker-1/Cove-Data-Protection-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für N-able Cove Backups – Backup-Status, Fehler und Sicherungsalter. |
-| **[Veeam-Backup365-PRTG](https://github.com/adblocker-1/Veeam-Backup365-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für Veeam Backup for Microsoft 365 – Job-Status und Objekt-Zählung. |
-| **[Sophos-api-device-migration](https://github.com/adblocker-1/Sophos-api-device-migration)** | <sub>移行 · Migration</sub><br>PowerShell-Tool zur Sophos-Central-Geräte-Migration zwischen Tenants mit GUI. |
-| **[Sophos-Central-PRTG](https://github.com/adblocker-1/Sophos-Central-PRTG)** | <sub>防御 · Security</sub><br>PRTG-Sensor für Sophos Central – Endpoints, Server und Mobilgeräte mit Health und Alerts. |
-| **[Veeam-backup-PRTG](https://github.com/adblocker-1/Veeam-backup-PRTG)** | <sub>バックアップ · Backup</sub><br>PRTG-Sensor für Veeam Backup & Replication – Job-Status und Repository-Auslastung. |
+<table>
+<tr>
+<td width="50%" valign="top"><sub>バックアップ · Backup</sub><br /><b><a href="https://github.com/adblocker-1/Veeam-Backup365-PRTG">Veeam-Backup365-PRTG</a></b><br />PRTG-Sensor für Veeam Backup for Microsoft 365 – Job-Status und Objekt-Zählung.<br /><sub>● PowerShell</sub></td>
+<td width="50%" valign="top"><sub>バックアップ · Backup</sub><br /><b><a href="https://github.com/adblocker-1/Veeam-backup-PRTG">Veeam-backup-PRTG</a></b><br />PRTG-Sensor für Veeam Backup &amp; Replication – Job-Status und Repository-Auslastung.<br /><sub>● PowerShell</sub></td>
+</tr>
+<tr>
+<td width="50%" valign="top"><sub>防御 · Firewall</sub><br /><b><a href="https://github.com/adblocker-1/Sophos-Firewall-API-Documentation">Sophos-Firewall-API-Documentation</a></b><br />PowerShell-Tool für Sophos-Firewall-Konfigurations-Export in Excel, JSON, XML.<br /><sub>● HTML</sub></td>
+<td width="50%" valign="top"><sub>防御 · Security</sub><br /><b><a href="https://github.com/adblocker-1/Sophos-Central-PRTG">Sophos-Central-PRTG</a></b><br />PRTG-Sensor für Sophos Central – Endpoints, Server und Mobilgeräte mit Health und Alerts.<br /><sub>● PowerShell</sub></td>
+</tr>
+<tr>
+<td width="50%" valign="top"><sub>移行 · Migration</sub><br /><b><a href="https://github.com/adblocker-1/Sophos-api-device-migration">Sophos-api-device-migration</a></b><br />PowerShell-Tool zur Sophos-Central-Geräte-Migration zwischen Tenants mit GUI.<br /><sub>● PowerShell</sub></td>
+<td width="50%" valign="top"><sub>仮想化 · Virtualisierung</sub><br /><b><a href="https://github.com/adblocker-1/HyperVReplicaHealth-PRTG">HyperVReplicaHealth-PRTG</a></b><br />PRTG-Push-Sensor für Hyper-V-Replikation – VM-Replikationsstatus überwachen.<br /><sub>● PowerShell</sub></td>
+</tr>
+<tr>
+<td width="50%" valign="top"><sub>メール · E-Mail</sub><br /><b><a href="https://github.com/adblocker-1/MailStore-PRTG">MailStore-PRTG</a></b><br />PRTG-Sensor für MailStore Server – Archivierungsprofile und Job-Status überwachen.<br /><sub>● PowerShell</sub></td>
+<td width="50%" valign="top"><sub>バックアップ · Backup</sub><br /><b><a href="https://github.com/adblocker-1/Cove-Data-Protection-PRTG">Cove-Data-Protection-PRTG</a></b><br />PRTG-Sensor für N-able Cove Backups – Backup-Status, Fehler und Sicherungsalter.<br /><sub>● PowerShell</sub></td>
+</tr>
+<tr>
+<td width="50%" valign="top"><sub>クラウド · Cloud</sub><br /><b><a href="https://github.com/adblocker-1/entra-Health-Check-PRTG">entra-Health-Check-PRTG</a></b><br />PRTG-Sensor für Microsoft Intune und Entra ID – Gerätebestand, Compliance und Sync-Status.<br /><sub>● PowerShell</sub></td>
+<td width="50%" valign="top"><sub>ネットワーク · Netzwerk</sub><br /><b><a href="https://github.com/adblocker-1/UnifiController-PRTG">UnifiController-PRTG</a></b><br />PRTG-Sensor für UniFi Controller – plattformübergreifende Geräteüberwachung mit API-Key oder lokalem Login.<br /><sub>● PowerShell</sub></td>
+</tr>
+</table>
 <!-- PROJEKTE:ENDE -->
 
 <sub>Zuletzt aktualisierte Projekte stehen oben – die Liste pflegt sich per GitHub Action selbst.</sub>
 
 <br />
 
+<a name="statistik"></a>
 <div align="center">
 
 <picture>
@@ -130,6 +151,7 @@ keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.
 
 <br />
 
+<a name="spuren"></a>
 <div align="center">
 
 <picture>
@@ -152,6 +174,7 @@ keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.
 
 <br />
 
+<a name="kontakt"></a>
 <div align="center">
 
 <picture>
@@ -169,22 +192,22 @@ Am besten direkt ein Issue im jeweiligen Repository eröffnen.
 <br />
 
 <a href="https://github.com/adblocker-1?tab=repositories"><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/button-repos.svg" alt="作品を見る – Repositories" width="280" /></a>
-&nbsp;
 <a href="https://github.com/adblocker-1?tab=followers"><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/button-follow.svg" alt="フォローする – Folgen" width="280" /></a>
+<a href="https://dev.buch-mail.xyz"><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/button-site.svg" alt="サイトを見る – Webseite" width="280" /></a>
 
 </div>
 
 <br />
 
 <details>
-<summary><b>🏮 名刺 · Steckbrief</b> <sub>(aufklappen)</sub></summary>
+<summary><b>名刺 · Steckbrief</b></summary>
 
 <br />
 
 | | |
 | :-- | :-- |
 | **名前** · Name | Adblocker |
-| **拠点** · Standort | Deutschland 🇩🇪 |
+| **拠点** · Standort | Deutschland |
 | **得意** · Stärke | PowerShell + PRTG + eine API |
 | **相棒** · Co-Autor | Claude (KI) |
 | **座右の銘** · Motto | „Das automatisier ich mal eben.“ |
@@ -199,5 +222,7 @@ Am besten direkt ein Issue im jeweiligen Repository eröffnen.
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/footer-dark.svg" />
   <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/footer-light.svg" alt="一期一会 – ichi-go ichi-e: Jede Begegnung ist einmalig. Danke fürs Vorbeischauen!" width="100%" />
 </picture>
+
+<sub><a href="https://dev.buch-mail.xyz">dev.buch-mail.xyz</a> · Schrift: Shippori Mincho (SIL OFL 1.1)</sub>
 
 </div>

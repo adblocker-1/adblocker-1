@@ -519,7 +519,31 @@ def stats(theme, d):
 BUTTONS = [
     ("repos", "作", "作品を見る", "Repositories"),
     ("follow", "縁", "フォローする", "Folgen"),
+    ("site", "網", "サイトを見る", "Webseite"),
 ]
+
+# Navigation im README - dieselben Punkte wie auf der Webseite. Statt des
+# Tag/Nacht-Knopfs (im README nicht moeglich) ein Link zur Webseite.
+NAV = [
+    ("about", "自己紹介", "Über mich"),
+    ("tools", "道具箱", "Werkzeuge"),
+    ("works", "作品", "Projekte"),
+    ("stats", "統計", "Statistik"),
+    ("contact", "連絡", "Kontakt"),
+    ("site", "ウェブ", "Webseite"),
+]
+
+
+def nav_pill(theme, jp, de, dashed=False):
+    """Navigationsknopf wie auf der Webseite: Kanji oben, Deutsch darunter."""
+    t = THEMES[theme]
+    s = Svg(132, 60, f"{jp} - {de}")
+    dash = ' stroke-dasharray="4 3"' if dashed else ""
+    s.add(f'<rect x=".75" y=".75" width="130.5" height="58.5" rx="10" '
+          f'fill="{t["bg"]}" stroke="{t["line"]}" stroke-width="1.5"{dash}/>')
+    s.text(jp, 66, 27, 17, BOLD, t["shu"], anchor="middle", spacing=.12)
+    s.text(de, 66, 48, 14, MEDIUM, t["ink2"], anchor="middle")
+    return s.render()
 
 
 def button(seal, jp, de):
@@ -593,19 +617,28 @@ def describe(r):
         return "&nbsp;"
     if len(text) > MAX_DESC:
         text = text[:MAX_DESC].rsplit(" ", 1)[0].rstrip(" .,;-") + " …"
-    # Ein rohes | wuerde die Markdown-Tabelle sprengen, < und > HTML.
-    return (text.replace("|", "\\|").replace("<", "&lt;")
-            .replace(">", "&gt;"))
+    return escape(text, quote=False)
 
 
 def project_table(d):
-    rows = ["| 作品 · Projekt | 分野 · Thema und Beschreibung |",
-            "| :-- | :-- |"]
-    for r in sorted(d["repos"], key=lambda x: x["pushed_at"], reverse=True):
-        jp, de = category(r["name"])
-        url = f"https://github.com/{USER}/{r['name']}"
-        rows.append(f"| **[{r['name']}]({url})** "
-                    f"| <sub>{jp} · {de}</sub><br>{describe(r)} |")
+    """Projektkarten fuers README: zwei Spalten wie das Raster der Webseite
+    (Thema, Name, Beschreibung, Sprache)."""
+    repos = sorted(d["repos"], key=lambda x: x["pushed_at"], reverse=True)
+    rows = ["<table>"]
+    for i in range(0, len(repos), 2):
+        rows.append("<tr>")
+        for r in repos[i:i + 2]:
+            jp, de = category(r["name"])
+            url = f"https://github.com/{USER}/{escape(r['name'])}"
+            lang = (f"<br /><sub>● {escape(r['language'])}</sub>"
+                    if r.get("language") else "")
+            rows.append(f'<td width="50%" valign="top"><sub>{jp} · {de}</sub>'
+                        f'<br /><b><a href="{url}">{escape(r["name"])}</a></b>'
+                        f'<br />{describe(r)}{lang}</td>')
+        if len(repos[i:i + 2]) == 1:
+            rows.append('<td width="50%"></td>')
+        rows.append("</tr>")
+    rows.append("</table>")
     return "\n".join(rows)
 
 
@@ -746,6 +779,10 @@ def main():
 
     for key, *args in BUTTONS:
         out[f"button-{key}"] = button(*args)
+    for theme in THEMES:
+        for key, jp, de in NAV:
+            out[f"nav-{key}-{theme}"] = nav_pill(theme, jp, de,
+                                                 dashed=key == "site")
     out["favicon"] = favicon()
 
     ASSETS.mkdir(exist_ok=True)
