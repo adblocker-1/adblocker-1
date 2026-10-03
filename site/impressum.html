@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum · Adblocker</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B1220">
+<script>
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="wrap legal-head">
+  <a class="home" href="./"><span class="stamp" lang="ja">監</span>Adblocker</a>
+  <nav aria-label="Seite">
+    <a href="./"><span lang="ja">戻る</span>Startseite</a>
+    <button class="theme" type="button"><span lang="ja">昼</span>Tag</button>
+  </nav>
+</header>
+
+<main id="inhalt" class="wrap legal">
+  <h1><span lang="ja">運営者情報</span>Impressum</h1>
+
+  <div class="card">
+    <h2>Angaben gemäß § 5 DDG</h2>
+    <p>
+      Felix Buch<br>
+      <!-- ANSCHRIFT: die beiden Zeilen unten durch Straße/Hausnummer und PLZ/Ort ersetzen -->
+      <span class="todo">Anschrift folgt</span><br>
+      Deutschland
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>E-Mail: <a href="mailto:admin@buch-mail.xyz">admin@buch-mail.xyz</a></p>
+
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>Felix Buch, Anschrift wie oben</p>
+
+    <h2>Haftung für Links</h2>
+    <p>Diese Seite enthält Links zu externen Webseiten, vor allem zu GitHub.
+      Auf deren Inhalte habe ich keinen Einfluss; verantwortlich ist der jeweilige
+      Anbieter. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar.
+      Werden mir solche bekannt, entferne ich den Link umgehend.</p>
+
+    <h2>Lizenzen</h2>
+    <p>Die Schrift Shippori Mincho steht unter der SIL Open Font License 1.1
+      (<a href="fonts/OFL.txt">Lizenztext</a>). Für die verlinkten Projekte gilt
+      die jeweils im Repository angegebene Lizenz.</p>
+  </div>
+
+  <p class="note">Zur <a href="datenschutz.html">Datenschutzerklärung</a></p>
+</main>
+
+<footer class="wrap legal-foot">
+  <p class="note center">
+    <a href="./">Startseite</a> ·
+    <a href="impressum.html">Impressum</a> ·
+    <a href="datenschutz.html">Datenschutz</a>
+  </p>
+</footer>
+
+<script src="theme.js"></script>
+</body>
+</html>
