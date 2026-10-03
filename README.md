@@ -200,6 +200,4 @@ Am besten direkt ein Issue im jeweiligen Repository eröffnen.
   <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/footer-light.svg" alt="一期一会 – ichi-go ichi-e: Jede Begegnung ist einmalig. Danke fürs Vorbeischauen!" width="100%" />
 </picture>
 
-<sub>Alle Grafiken zeichnet <a href="https://github.com/adblocker-1/adblocker-1/blob/main/scripts/generate.py"><code>scripts/generate.py</code></a> selbst – ohne externe Dienste. Schrift: Shippori Mincho (SIL OFL 1.1).</sub>
-
 </div>
