@@ -114,10 +114,13 @@ def torii(cx, base, w, h, t):
         '</g>')
 
 
-def header(theme):
+def header(theme, mobile=False):
+    """Kopfbild. mobile=True: Hochformat fuer Handys - Titel oben, darunter
+    dieselbe Szene, auf den rechten Teil zugeschnitten."""
     t = THEMES[theme]
     night = theme == "dark"
-    W, H, G = 1200, 420, 340                 # G = Wasserlinie
+    W, H = (640, 720) if mobile else (1200, 420)
+    G = 340                                  # Wasserlinie (Szenen-Koordinaten)
     s = Svg(W, H, "Adblocker - PowerShell, PRTG, Monitoring und "
                   "Automatisierung",
             "Berg Fuji vor " + ("dem Mond" if night else "der Sonne") +
@@ -141,11 +144,25 @@ def header(theme):
         ".tw{animation:none}}")
     s.add('<g clip-path="url(#hc)">',
           f'<rect width="{W}" height="{H}" fill="url(#sky)"/>')
+    if mobile:
+        if night:                            # Sterne auch ueber dem Titel
+            r2 = random.Random(11)
+            for i in range(40):
+                x, y = r2.uniform(12, W - 12), r2.uniform(12, 330)
+                tw = (f' class="tw" style="animation-duration:'
+                      f'{r2.uniform(2.5, 6):.1f}s"') if i % 4 == 0 else ""
+                s.add(f'<circle cx="{num(x)}" cy="{num(y)}" '
+                      f'r="{r2.choice((.7, .9, 1.1, 1.4))}" fill="#F2E7C9"'
+                      f'{tw} opacity=".7"/>')
+        # Szenenausschnitt x 480..1200 auf volle Breite, unten buendig
+        k = W / 720
+        s.add(f'<g transform="translate({num(-480 * k)} {num(H - 420 * k)}) '
+              f'scale({k:.5g})">')
 
     # --- Sterne (nur nachts)
     if night:
         for i in range(70):
-            x, y = rnd.uniform(20, W - 20), rnd.uniform(14, G - 90)
+            x, y = rnd.uniform(20, 1180), rnd.uniform(14, G - 90)
             if math.hypot(x - 900, y - 180) < 130:
                 continue
             r = rnd.choice((.7, .9, 1.1, 1.4, 1.8))
@@ -210,7 +227,7 @@ def header(theme):
     s.add(torii(662, G + 2, 70, 82, t))
 
     # --- Wellen
-    s.add(seigaiha(s, t, 0, G + 18, W, H, r=22))
+    s.add(seigaiha(s, t, 0, G + 18, 1200, 420, r=22))
 
     # --- Kirschzweig oben rechts
     br = t["branch"]
@@ -241,6 +258,28 @@ def header(theme):
               f'<path class="pf" d="{petal_path(size)}" fill="{t["sakura"]}" '
               f'style="animation-duration:{dur:.1f}s;'
               f'animation-delay:{delay:.1f}s"/></g>')
+
+    if mobile:
+        s.add("</g>")
+        # --- Titelblock oben, zentriert
+        s.text("ようこそ", W / 2, 84, 24, BOLD, t["shu"], anchor="middle",
+               spacing=.3)
+        s.text("WILLKOMMEN", W / 2, 112, 13, MEDIUM, t["muted"],
+               anchor="middle", spacing=.35)
+        w = BOLD.width("Adblocker", 92)
+        x0 = W / 2 - (w + 18 + 60) / 2
+        s.text("Adblocker", x0, 214, 92, BOLD, t["ink"])
+        hanko(s, x0 + w + 18, 148, 60, "監視", t)
+        s.text("アドブロッカー", W / 2, 262, 26, MEDIUM, t["ink2"],
+               anchor="middle", spacing=.45)
+        s.add(f'<rect x="170" y="284" width="300" height="1.2" '
+              f'fill="{t["line"]}"/>')
+        s.text("PowerShell · PRTG · Monitoring · Automatisierung", W / 2, 318,
+               19, MEDIUM, t["ink2"], anchor="middle")
+        s.text("監視と自動化、一行ずつ。", W / 2, 350, 18, MEDIUM, t["muted"],
+               anchor="middle", spacing=.2)
+        s.add("</g>")
+        return s.render()
 
     # --- Titelblock links
     s.add(f'<rect x="64" y="86" width="36" height="3" fill="{t["shu"]}"/>')
@@ -387,8 +426,8 @@ def tools(theme):
 
 
 # ================================================================ Statistik
-def stats(theme, d):
-    t = THEMES[theme]
+def stats_data(d):
+    """Kennzahlen fuer Statistik-Karte (SVG) und Webseite (HTML)."""
     repos = d["repos"]
     since = parse_time(d["user"]["created_at"])
     last = max(parse_time(r["pushed_at"]) for r in repos)
@@ -404,6 +443,14 @@ def stats(theme, d):
         ("更新", last.strftime("%d.%m.%Y"), "Letzter Push"),
     ]
     themes = Counter(category(r["name"]) for r in repos)
+    # bei Gleichstand alphabetisch, damit die Reihenfolge stabil bleibt
+    ranked = sorted(themes.items(), key=lambda kv: (-kv[1], kv[0][1]))
+    return cells, counts, total, themes, ranked
+
+
+def stats(theme, d):
+    t = THEMES[theme]
+    cells, counts, total, themes, ranked = stats_data(d)
 
     s = Svg(900, 320, "Statistiken: " + ", ".join(
         f"{de} {v}" for _, v, de in cells) + "; Sprachen: " + ", ".join(
@@ -457,8 +504,6 @@ def stats(theme, d):
     s.text("分野", X0, 186, 16, BOLD, t["shu"], spacing=.15)
     s.text("Themen der Projekte", X0 + 48, 185, 13, MEDIUM, t["muted"])
     top = max(themes.values())
-    # bei Gleichstand alphabetisch, damit die Reihenfolge stabil bleibt
-    ranked = sorted(themes.items(), key=lambda kv: (-kv[1], kv[0][1]))
     for i, ((jp, de), n) in enumerate(ranked[:8]):
         cx = X0 + (i % 2) * 188
         cy = 214 + (i // 2) * 24
@@ -516,8 +561,6 @@ def footer(theme):
 
 
 # ========================================================= Projekttabelle
-MARK_START = "<!-- PROJEKTE:START -->"
-MARK_END = "<!-- PROJEKTE:ENDE -->"
 # Erster Treffer im Repo-Namen gewinnt - Reihenfolge ist Absicht.
 CATEGORIES = [
     ("migration", "移行", "Migration"),
@@ -583,24 +626,81 @@ def project_cards(d):
     return "\n".join(cards)
 
 
-def replace_between(path, content, label):
+def stats_html(d):
+    """Statistik als HTML fuer die Webseite - bleibt auf dem Handy lesbar,
+    anders als die breite SVG-Karte."""
+    cells, counts, total, _, ranked = stats_data(d)
+    out = ['      <dl class="cells">']
+    for kanji, value, de in cells:
+        out.append(f'        <div><dt lang="ja">{kanji}</dt>'
+                   f'<dd class="v">{value}</dd><dd class="l">{de}</dd></div>')
+    out.append("      </dl>")
+    langs = counts.most_common()
+    colors = {}
+    for i, (lang, _) in enumerate(langs):
+        fb = FALLBACK_COLORS[i % len(FALLBACK_COLORS)]
+        colors[lang] = (LANG_COLORS["light"].get(lang, fb),
+                        LANG_COLORS["dark"].get(lang, fb))
+    seg = "".join(
+        f'<span style="width:{100 * n / total:.2f}%;--c:{colors[lang][0]};'
+        f'--cd:{colors[lang][1]}" title="{escape(lang)}"></span>'
+        for lang, n in langs)
+    out += ['      <div class="langs">',
+            '        <h3><span lang="ja">言語</span> Sprachen nach Repositories</h3>',
+            f'        <div class="bar">{seg}</div>',
+            '        <ul>']
+    for lang, n in langs:
+        out.append(f'          <li><i style="--c:{colors[lang][0]};'
+                   f'--cd:{colors[lang][1]}"></i>{escape(lang)}'
+                   f'<b>{100 * n / total:.0f} %</b></li>')
+    out += ['        </ul>', '      </div>',
+            '      <div class="themes">',
+            '        <h3><span lang="ja">分野</span> Themen der Projekte</h3>',
+            '        <ul>']
+    top = ranked[0][1]
+    for (jp, de), n in ranked:
+        out.append(f'          <li><span lang="ja">{jp}</span> {de}'
+                   f'<i style="width:{100 * n / top:.0f}%"></i><b>{n}</b></li>')
+    out += ['        </ul>', '      </div>']
+    return "\n".join(out)
+
+
+def tools_html():
+    out = []
+    for kanji, de, items in TOOLS:
+        tags = "".join(f"<li>{escape(i)}</li>" for i in items)
+        out.append(f'      <div class="row"><h3><span lang="ja">{kanji}</span>'
+                   f'<small>{de}</small></h3><ul class="tags">{tags}</ul></div>')
+    return "\n".join(out)
+
+
+def wave_strip(theme):
+    """Kachelbarer Seigaiha-Streifen fuer CSS-Hintergruende (repeat-x)."""
+    t = THEMES[theme]
+    s = Svg(216, 62, "Seigaiha-Wellen")    # 216 = 6 Schuppen a 36 px
+    s.add(seigaiha(s, t, 0, 18, 216, 62, r=18))
+    return s.render()
+
+
+def replace_between(path, content, label, name="PROJEKTE"):
     """Ersetzt nur den Bereich zwischen den Markern. Fehlen sie, bleibt die
     Datei unangetastet - lieber unveraendert als halb zerstoert."""
+    start, end = f"<!-- {name}:START -->", f"<!-- {name}:ENDE -->"
     if not path.exists():
         print(f"{label}: fehlt - uebersprungen.")
         return
     text = path.read_text(encoding="utf-8")
-    if MARK_START not in text or MARK_END not in text:
-        print(f"{label}: Marker fehlen - unveraendert gelassen.")
+    if start not in text or end not in text:
+        print(f"{label}: Marker {name} fehlen - unveraendert gelassen.")
         return
-    head, rest = text.split(MARK_START, 1)
-    _, tail = rest.split(MARK_END, 1)
-    new = f"{head}{MARK_START}\n{content}\n{MARK_END}{tail}"
+    head, rest = text.split(start, 1)
+    _, tail = rest.split(end, 1)
+    new = f"{head}{start}\n{content}\n{end}{tail}"
     if new != text:
         path.write_text(new, encoding="utf-8")
-        print(f"{label}: Projektliste aktualisiert")
+        print(f"{label}: {name} aktualisiert")
     else:
-        print(f"{label}: Projektliste ist aktuell")
+        print(f"{label}: {name} ist aktuell")
 
 
 def favicon():
@@ -635,6 +735,8 @@ def main():
     out = {}
     for theme in THEMES:
         out[f"header-{theme}"] = header(theme)
+        out[f"header-mobile-{theme}"] = header(theme, mobile=True)
+        out[f"wave-{theme}"] = wave_strip(theme)
         out[f"haiku-{theme}"] = haiku(theme)
         out[f"tools-{theme}"] = tools(theme)
         out[f"stats-{theme}"] = stats(theme, d)
@@ -654,6 +756,8 @@ def main():
             print(f"assets/{name}.svg geschrieben")
     replace_between(README, project_table(d), "README.md")
     replace_between(SITE, project_cards(d), "site/index.html")
+    replace_between(SITE, stats_html(d), "site/index.html", "STATISTIK")
+    replace_between(SITE, tools_html(), "site/index.html", "WERKZEUGE")
 
 
 if __name__ == "__main__":
