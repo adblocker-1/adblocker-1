@@ -1,7 +1,8 @@
 name: Profil aktualisieren
 
-# Zeichnet assets/*.svg neu und traegt die Projekttabelle zwischen den
-# PROJEKTE-Markern im README nach - beides aus den aktuellen GitHub-Daten.
+# Zeichnet assets/*.svg neu und traegt die Projektliste zwischen den
+# PROJEKTE-Markern in README.md und site/index.html nach - alles aus den
+# aktuellen GitHub-Daten.
 # Committet nur, wenn sich wirklich etwas geaendert hat.
 
 on:
@@ -37,7 +38,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets README.md
+          git add assets README.md site/index.html
           if git diff --cached --quiet; then
             echo "Keine Aenderung - nichts zu committen."
           else

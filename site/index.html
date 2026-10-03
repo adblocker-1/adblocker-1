@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adblocker · 監視と自動化</title>
+<meta name="description" content="PowerShell-Sensoren für PRTG Network Monitor – Backups, Firewalls, Endpoints, Netzwerk und Virtualisierung überwachen. Ein Skript pro Sensor, keine Zusatzmodule.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F5EFE3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1724" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Adblocker · 監視と自動化">
+<meta property="og:description" content="PowerShell-Sensoren für PRTG – Monitoring und Automatisierung, ein Skript pro Sensor.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/shippori-mincho-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<header class="wrap">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+    <img class="hero" src="assets/header-light.svg" width="1200" height="420"
+         alt="Adblocker – PowerShell · PRTG · Monitoring · Automatisierung. Berg Fuji, Torii und Kirschblüten über Seigaiha-Wellen.">
+  </picture>
+  <nav aria-label="Abschnitte">
+    <a href="#ueber-mich"><span lang="ja">自己紹介</span>Über mich</a>
+    <a href="#werkzeuge"><span lang="ja">道具箱</span>Werkzeuge</a>
+    <a href="#projekte"><span lang="ja">作品</span>Projekte</a>
+    <a href="#statistik"><span lang="ja">統計</span>Statistik</a>
+    <a href="#kontakt"><span lang="ja">連絡</span>Kontakt</a>
+  </nav>
+</header>
+
+<main id="inhalt" class="wrap">
+
+  <section id="ueber-mich">
+    <h2 class="sec">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/section-about-dark.svg">
+        <img src="assets/section-about-light.svg" width="900" height="96" alt="一 自己紹介 – Über mich">
+      </picture>
+    </h2>
+    <p class="lead"><strong><span lang="ja">こんにちは</span> – Hallo!</strong>
+      Ich schreibe <strong>PowerShell-Sensoren für PRTG Network Monitor</strong> –
+      für alles, was in einer IT-Umgebung überwacht werden will: Backups, Firewalls,
+      Endpoints, Netzwerk, E-Mail-Archiv und Virtualisierung. Ein Skript pro Sensor,
+      keine Zusatzmodule, keine Lookup-Dateien. Kopieren, Parameter setzen, läuft.</p>
+    <blockquote><em>Just trying some Claude – all done by AI.</em>
+      Diese Seite und viele meiner Skripte sind zusammen mit einer KI entstanden.</blockquote>
+
+    <div class="pair">
+      <article class="card">
+        <h3><span lang="ja">取り組み</span> · Woran ich arbeite</h3>
+        <ul>
+          <li>PRTG-Sensoren (EXE/Script Advanced)</li>
+          <li>REST- und XML-APIs anzapfen</li>
+          <li>Backup-, Netzwerk- und Security-Monitoring</li>
+          <li>Kleine Tools, die Handgriffe sparen</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3><span lang="ja">流儀</span> · Wie ich arbeite</h3>
+        <ul>
+          <li>Eine Datei, keine Abhängigkeiten</li>
+          <li>Verständliche Fehlermeldungen statt Abstürze</li>
+          <li>Ausführliche Anleitungen auf Deutsch</li>
+          <li>Sinnvolle Grenzwerte ab Werk</li>
+        </ul>
+      </article>
+    </div>
+
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/haiku-dark.svg">
+      <img class="art" src="assets/haiku-light.svg" width="900" height="300" loading="lazy"
+           alt="Haiku: 夜の番 / 静かに光る / 緑の灯 – Nachtwache, still leuchten sie, die grünen Lichter.">
+    </picture>
+  </section>
+
+  <section id="werkzeuge">
+    <h2 class="sec">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/section-tools-dark.svg">
+        <img src="assets/section-tools-light.svg" width="900" height="96" loading="lazy" alt="二 道具箱 – Werkzeugkasten">
+      </picture>
+    </h2>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/tools-dark.svg">
+      <img class="art" src="assets/tools-light.svg" loading="lazy"
+           alt="Werkzeugkasten: PowerShell, Python, JavaScript, HTML, JSON · PRTG, UniFi, Sophos, Veeam, MailStore, Cove, Hyper-V, Intune, Entra ID · Git, GitHub Actions, VS Code, REST-APIs, Windows Server, Claude">
+    </picture>
+  </section>
+
+  <section id="projekte">
+    <h2 class="sec">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/section-works-dark.svg">
+        <img src="assets/section-works-light.svg" width="900" height="96" loading="lazy" alt="三 作品 – Projekte">
+      </picture>
+    </h2>
+    <ul class="works">
+<!-- PROJEKTE:START -->
+      <li><a href="https://github.com/adblocker-1/Veeam-Backup365-PRTG">
+        <span class="cat"><span lang="ja">バックアップ</span> · Backup</span>
+        <strong>Veeam-Backup365-PRTG</strong>
+        <span class="desc">PRTG-Sensor für Veeam Backup for Microsoft 365 – Job-Status und Objekt-Zählung.</span>
+        <span class="lang">PowerShell</span>
+      </a></li>
+      <li><a href="https://github.com/adblocker-1/Veeam-backup-PRTG">
+        <span class="cat"><span lang="ja">バックアップ</span> · Backup</span>
+        <strong>Veeam-backup-PRTG</strong>
+        <span class="desc">PRTG-Sensor für Veeam Backup &amp; Replication – Job-Status und Repository-Auslastung.</span>
+        <span class="lang">PowerShell</span>
+      </a></li>
+      <li><a href="https://github.com/adblocker-1/Sophos-Firewall-API-Documentation">
+        <span class="cat"><span lang="ja">防御</span> · Firewall</span>
+        <strong>Sophos-Firewall-API-Documentation</strong>
+        <span class="desc">PowerShell-Tool für Sophos-Firewall-Konfigurations-Export in Excel, JSON, XML.</span>
+        <span class="lang">HTML</span>
+      </a></li>
+      <li><a href="https://github.com/adblocker-1/Sophos-Central-PRTG">
+        <span class="cat"><span lang="ja">防御</span> · Security</span>
+        <strong>Sophos-Central-PRTG</strong>
+        <span class="desc">PRTG-Sensor für Sophos Central – Endpoints, Server und Mobilgeräte mit Health und Alerts.</span>
+        <span class="lang">PowerShell</span>
+      </a></li>
+      <li><a href="https://github.com/adblocker-1/Sophos-api-device-migration">
+        <span class="cat"><span lang="ja">移行</span> · Migration</span>
+        <strong>Sophos-api-device-migration</strong>
+        <span class="desc">PowerShell-Tool zur Sophos-Central-Geräte-Migration zwischen Tenants mit GUI.</span>
+        <span class="lang">PowerShell</span>
+      </a></li>
+      <li><a href="https://github.com/adblocker-1/HyperVReplicaHealth-PRTG">
+        <span class="cat"><span lang="ja">仮想化</span> · Virtualisierung</span>
+        <strong>HyperVReplicaHealth-PRTG</strong>
+        <span class="desc">PRTG-Push-Sensor für Hyper-V-Replikation – VM-Replikationsstatus überwachen.</span>
+        <span class="lang">PowerShell</span>
+      </a></li>
+      <li><a href="https://github.com/adblocker-1/MailStore-PRTG">
+        <span class="cat"><span lang="ja">メール</span> · E-Mail</span>
+        <strong>MailStore-PRTG</strong>
+        <span class="desc">PRTG-Sensor für MailStore Server – Archivierungsprofile und Job-Status überwachen.</span>
+        <span class="lang">PowerShell</span>
+      </a></li>
+      <li><a href="https://github.com/adblocker-1/Cove-Data-Protection-PRTG">
+        <span class="cat"><span lang="ja">バックアップ</span> · Backup</span>
+        <strong>Cove-Data-Protection-PRTG</strong>
+        <span class="desc">PRTG-Sensor für N-able Cove Backups – Backup-Status, Fehler und Sicherungsalter.</span>
+        <span class="lang">PowerShell</span>
+      </a></li>
+      <li><a href="https://github.com/adblocker-1/entra-Health-Check-PRTG">
+        <span class="cat"><span lang="ja">クラウド</span> · Cloud</span>
+        <strong>entra-Health-Check-PRTG</strong>
+        <span class="desc">PRTG-Sensor für Microsoft Intune und Entra ID – Gerätebestand, Compliance und Sync-Status.</span>
+        <span class="lang">PowerShell</span>
+      </a></li>
+      <li><a href="https://github.com/adblocker-1/UnifiController-PRTG">
+        <span class="cat"><span lang="ja">ネットワーク</span> · Netzwerk</span>
+        <strong>UnifiController-PRTG</strong>
+        <span class="desc">PRTG-Sensor für UniFi Controller – plattformübergreifende Geräteüberwachung mit API-Key oder lokalem Login.</span>
+        <span class="lang">PowerShell</span>
+      </a></li>
+<!-- PROJEKTE:ENDE -->
+    </ul>
+    <p class="note">Zuletzt aktualisierte Projekte stehen oben – die Liste pflegt sich per GitHub Action selbst.</p>
+  </section>
+
+  <section id="statistik">
+    <h2 class="sec">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/section-stats-dark.svg">
+        <img src="assets/section-stats-light.svg" width="900" height="96" loading="lazy" alt="四 統計 – Statistiken">
+      </picture>
+    </h2>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
+      <img class="art" src="assets/stats-light.svg" width="900" height="320" loading="lazy"
+           alt="Statistiken zu Repositories, Sprachen und Themen">
+    </picture>
+  </section>
+
+  <section id="spuren">
+    <h2 class="sec">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/section-trail-dark.svg">
+        <img src="assets/section-trail-light.svg" width="900" height="96" loading="lazy" alt="五 足跡 – Spuren">
+      </picture>
+    </h2>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg">
+      <img class="snake" src="assets/snake.svg" loading="lazy" alt="Schlange, die den Beitragskalender frisst">
+    </picture>
+    <p class="note center"><span lang="ja">蛇</span> · Jede Nacht frisst die Schlange meinen Beitragskalender.</p>
+  </section>
+
+  <section id="kontakt">
+    <h2 class="sec">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/section-contact-dark.svg">
+        <img src="assets/section-contact-light.svg" width="900" height="96" loading="lazy" alt="六 連絡 – Kontakt">
+      </picture>
+    </h2>
+    <p class="center">Fragen zu einem Sensor, einen Fehler gefunden oder eine Idee?<br>
+      Am besten direkt ein Issue im jeweiligen Repository eröffnen.</p>
+    <p class="buttons">
+      <a href="https://github.com/adblocker-1?tab=repositories"><img src="assets/button-repos.svg" width="280" height="64" alt="作品を見る – Repositories"></a>
+      <a href="https://github.com/adblocker-1?tab=followers"><img src="assets/button-follow.svg" width="280" height="64" alt="フォローする – Folgen"></a>
+    </p>
+
+    <details class="card">
+      <summary><span lang="ja">名刺</span> · Steckbrief</summary>
+      <dl>
+        <dt><span lang="ja">名前</span> · Name</dt><dd>Adblocker</dd>
+        <dt><span lang="ja">拠点</span> · Standort</dt><dd>Deutschland</dd>
+        <dt><span lang="ja">得意</span> · Stärke</dt><dd>PowerShell + PRTG + eine API</dd>
+        <dt><span lang="ja">相棒</span> · Co-Autor</dt><dd>Claude (KI)</dd>
+        <dt><span lang="ja">座右の銘</span> · Motto</dt><dd>„Das automatisier ich mal eben.“</dd>
+      </dl>
+    </details>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg">
+    <img class="hero" src="assets/footer-light.svg" width="1200" height="300" loading="lazy"
+         alt="一期一会 – ichi-go ichi-e: Jede Begegnung ist einmalig. Danke fürs Vorbeischauen!">
+  </picture>
+  <p class="note center">
+    <a href="https://github.com/adblocker-1">GitHub</a> ·
+    Ohne Cookies, ohne Tracking, ohne externe Dienste ·
+    Schrift: Shippori Mincho (SIL OFL 1.1)
+  </p>
+</footer>
+
+</body>
+</html>
