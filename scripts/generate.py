@@ -34,7 +34,6 @@ USER = "adblocker-1"
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
 README = ROOT / "README.md"
-SITE = ROOT / "site" / "index.html"
 
 
 # =================================================================== Daten
@@ -114,13 +113,10 @@ def torii(cx, base, w, h, t):
         '</g>')
 
 
-def header(theme, mobile=False):
-    """Kopfbild. mobile=True: Hochformat fuer Handys - Titel oben, darunter
-    dieselbe Szene, auf den rechten Teil zugeschnitten."""
+def header(theme):
     t = THEMES[theme]
     night = theme == "dark"
-    W, H = (640, 720) if mobile else (1200, 420)
-    G = 340                                  # Wasserlinie (Szenen-Koordinaten)
+    W, H, G = 1200, 420, 340                 # G = Wasserlinie
     s = Svg(W, H, "Adblocker - PowerShell, PRTG, Monitoring und "
                   "Automatisierung",
             "Berg Fuji vor " + ("dem Mond" if night else "der Sonne") +
@@ -144,21 +140,6 @@ def header(theme, mobile=False):
         ".tw{animation:none}}")
     s.add('<g clip-path="url(#hc)">',
           f'<rect width="{W}" height="{H}" fill="url(#sky)"/>')
-    if mobile:
-        if night:                            # Sterne auch ueber dem Titel
-            r2 = random.Random(11)
-            for i in range(40):
-                x, y = r2.uniform(12, W - 12), r2.uniform(12, 330)
-                tw = (f' class="tw" style="animation-duration:'
-                      f'{r2.uniform(2.5, 6):.1f}s"') if i % 4 == 0 else ""
-                s.add(f'<circle cx="{num(x)}" cy="{num(y)}" '
-                      f'r="{r2.choice((.7, .9, 1.1, 1.4))}" fill="#F2E7C9"'
-                      f'{tw} opacity=".7"/>')
-        # Szenenausschnitt x 480..1200 auf volle Breite, unten buendig
-        k = W / 720
-        s.add(f'<g transform="translate({num(-480 * k)} {num(H - 420 * k)}) '
-              f'scale({k:.5g})">')
-
     # --- Sterne (nur nachts)
     if night:
         for i in range(70):
@@ -258,28 +239,6 @@ def header(theme, mobile=False):
               f'<path class="pf" d="{petal_path(size)}" fill="{t["sakura"]}" '
               f'style="animation-duration:{dur:.1f}s;'
               f'animation-delay:{delay:.1f}s"/></g>')
-
-    if mobile:
-        s.add("</g>")
-        # --- Titelblock oben, zentriert
-        s.text("ようこそ", W / 2, 84, 24, BOLD, t["shu"], anchor="middle",
-               spacing=.3)
-        s.text("WILLKOMMEN", W / 2, 112, 13, MEDIUM, t["muted"],
-               anchor="middle", spacing=.35)
-        w = BOLD.width("Adblocker", 92)
-        x0 = W / 2 - (w + 18 + 60) / 2
-        s.text("Adblocker", x0, 214, 92, BOLD, t["ink"])
-        hanko(s, x0 + w + 18, 148, 60, "監視", t)
-        s.text("アドブロッカー", W / 2, 262, 26, MEDIUM, t["ink2"],
-               anchor="middle", spacing=.45)
-        s.add(f'<rect x="170" y="284" width="300" height="1.2" '
-              f'fill="{t["line"]}"/>')
-        s.text("PowerShell · PRTG · Monitoring · Automatisierung", W / 2, 318,
-               19, MEDIUM, t["ink2"], anchor="middle")
-        s.text("監視と自動化、一行ずつ。", W / 2, 350, 18, MEDIUM, t["muted"],
-               anchor="middle", spacing=.2)
-        s.add("</g>")
-        return s.render()
 
     # --- Titelblock links
     s.add(f'<rect x="64" y="86" width="36" height="3" fill="{t["shu"]}"/>')
@@ -519,28 +478,24 @@ def stats(theme, d):
 BUTTONS = [
     ("repos", "作", "作品を見る", "Repositories"),
     ("follow", "縁", "フォローする", "Folgen"),
-    ("site", "網", "サイトを見る", "Webseite"),
 ]
 
-# Navigation im README - dieselben Punkte wie auf der Webseite. Statt des
-# Tag/Nacht-Knopfs (im README nicht moeglich) ein Link zur Webseite.
+# Sprungmarken fuer die Navigation im README.
 NAV = [
     ("about", "自己紹介", "Über mich"),
     ("tools", "道具箱", "Werkzeuge"),
     ("works", "作品", "Projekte"),
     ("stats", "統計", "Statistik"),
     ("contact", "連絡", "Kontakt"),
-    ("site", "ウェブ", "Webseite"),
 ]
 
 
-def nav_pill(theme, jp, de, dashed=False):
-    """Navigationsknopf wie auf der Webseite: Kanji oben, Deutsch darunter."""
+def nav_pill(theme, jp, de):
+    """Navigationsknopf: Kanji oben, Deutsch darunter."""
     t = THEMES[theme]
     s = Svg(132, 60, f"{jp} - {de}")
-    dash = ' stroke-dasharray="4 3"' if dashed else ""
     s.add(f'<rect x=".75" y=".75" width="130.5" height="58.5" rx="10" '
-          f'fill="{t["bg"]}" stroke="{t["line"]}" stroke-width="1.5"{dash}/>')
+          f'fill="{t["bg"]}" stroke="{t["line"]}" stroke-width="1.5"/>')
     s.text(jp, 66, 27, 17, BOLD, t["shu"], anchor="middle", spacing=.12)
     s.text(de, 66, 48, 14, MEDIUM, t["ink2"], anchor="middle")
     return s.render()
@@ -642,79 +597,6 @@ def project_table(d):
     return "\n".join(rows)
 
 
-def project_cards(d):
-    """Projektkarten fuer die Webseite (site/index.html)."""
-    cards = []
-    for r in sorted(d["repos"], key=lambda x: x["pushed_at"], reverse=True):
-        jp, de = category(r["name"])
-        desc = (r.get("description") or "").strip()
-        lang = (f'\n        <span class="lang">{escape(r["language"])}</span>'
-                if r.get("language") else "")
-        cards.append(
-            f'      <li><a href="https://github.com/{USER}/{escape(r["name"])}">\n'
-            f'        <span class="cat"><span lang="ja">{jp}</span> · {de}</span>\n'
-            f'        <strong>{escape(r["name"])}</strong>\n'
-            f'        <span class="desc">{escape(desc)}</span>{lang}\n'
-            f'      </a></li>')
-    return "\n".join(cards)
-
-
-def stats_html(d):
-    """Statistik als HTML fuer die Webseite - bleibt auf dem Handy lesbar,
-    anders als die breite SVG-Karte."""
-    cells, counts, total, _, ranked = stats_data(d)
-    out = ['      <dl class="cells">']
-    for kanji, value, de in cells:
-        out.append(f'        <div><dt lang="ja">{kanji}</dt>'
-                   f'<dd class="v">{value}</dd><dd class="l">{de}</dd></div>')
-    out.append("      </dl>")
-    langs = counts.most_common()
-    colors = {}
-    for i, (lang, _) in enumerate(langs):
-        fb = FALLBACK_COLORS[i % len(FALLBACK_COLORS)]
-        colors[lang] = (LANG_COLORS["light"].get(lang, fb),
-                        LANG_COLORS["dark"].get(lang, fb))
-    seg = "".join(
-        f'<span style="width:{100 * n / total:.2f}%;--c:{colors[lang][0]};'
-        f'--cd:{colors[lang][1]}" title="{escape(lang)}"></span>'
-        for lang, n in langs)
-    out += ['      <div class="langs">',
-            '        <h3><span lang="ja">言語</span> Sprachen nach Repositories</h3>',
-            f'        <div class="bar">{seg}</div>',
-            '        <ul>']
-    for lang, n in langs:
-        out.append(f'          <li><i style="--c:{colors[lang][0]};'
-                   f'--cd:{colors[lang][1]}"></i>{escape(lang)}'
-                   f'<b>{100 * n / total:.0f} %</b></li>')
-    out += ['        </ul>', '      </div>',
-            '      <div class="themes">',
-            '        <h3><span lang="ja">分野</span> Themen der Projekte</h3>',
-            '        <ul>']
-    top = ranked[0][1]
-    for (jp, de), n in ranked:
-        out.append(f'          <li><span lang="ja">{jp}</span> {de}'
-                   f'<i style="width:{100 * n / top:.0f}%"></i><b>{n}</b></li>')
-    out += ['        </ul>', '      </div>']
-    return "\n".join(out)
-
-
-def tools_html():
-    out = []
-    for kanji, de, items in TOOLS:
-        tags = "".join(f"<li>{escape(i)}</li>" for i in items)
-        out.append(f'      <div class="row"><h3><span lang="ja">{kanji}</span>'
-                   f'<small>{de}</small></h3><ul class="tags">{tags}</ul></div>')
-    return "\n".join(out)
-
-
-def wave_strip(theme):
-    """Kachelbarer Seigaiha-Streifen fuer CSS-Hintergruende (repeat-x)."""
-    t = THEMES[theme]
-    s = Svg(216, 62, "Seigaiha-Wellen")    # 216 = 6 Schuppen a 36 px
-    s.add(seigaiha(s, t, 0, 18, 216, 62, r=18))
-    return s.render()
-
-
 def replace_between(path, content, label, name="PROJEKTE"):
     """Ersetzt nur den Bereich zwischen den Markern. Fehlen sie, bleibt die
     Datei unangetastet - lieber unveraendert als halb zerstoert."""
@@ -734,17 +616,6 @@ def replace_between(path, content, label, name="PROJEKTE"):
         print(f"{label}: {name} aktualisiert")
     else:
         print(f"{label}: {name} ist aktuell")
-
-
-def favicon():
-    """Kleiner Stempel 監 als Browser-Symbol."""
-    t = THEMES["light"]
-    s = Svg(64, 64, "監")
-    s.add(f'<rect width="64" height="64" rx="12" fill="{t["shu"]}"/>',
-          f'<rect x="5" y="5" width="54" height="54" rx="8" fill="none" '
-          f'stroke="{t["on_shu"]}" stroke-width="2"/>')
-    s.text("監", 32, 32 + 40 * .38, 40, BOLD, t["on_shu"], anchor="middle")
-    return s.render()
 
 
 # ==================================================================== Main
@@ -768,8 +639,6 @@ def main():
     out = {}
     for theme in THEMES:
         out[f"header-{theme}"] = header(theme)
-        out[f"header-mobile-{theme}"] = header(theme, mobile=True)
-        out[f"wave-{theme}"] = wave_strip(theme)
         out[f"haiku-{theme}"] = haiku(theme)
         out[f"tools-{theme}"] = tools(theme)
         out[f"stats-{theme}"] = stats(theme, d)
@@ -781,9 +650,7 @@ def main():
         out[f"button-{key}"] = button(*args)
     for theme in THEMES:
         for key, jp, de in NAV:
-            out[f"nav-{key}-{theme}"] = nav_pill(theme, jp, de,
-                                                 dashed=key == "site")
-    out["favicon"] = favicon()
+            out[f"nav-{key}-{theme}"] = nav_pill(theme, jp, de)
 
     ASSETS.mkdir(exist_ok=True)
     for name, svg in out.items():
@@ -792,9 +659,6 @@ def main():
             path.write_text(svg, encoding="utf-8")
             print(f"assets/{name}.svg geschrieben")
     replace_between(README, project_table(d), "README.md")
-    replace_between(SITE, project_cards(d), "site/index.html")
-    replace_between(SITE, stats_html(d), "site/index.html", "STATISTIK")
-    replace_between(SITE, tools_html(), "site/index.html", "WERKZEUGE")
 
 
 if __name__ == "__main__":
