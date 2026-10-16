@@ -10,7 +10,6 @@
 <a href="#projekte"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-works-dark.svg" /><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-works-light.svg" alt="作品 – Projekte" width="120" /></picture></a>
 <a href="#statistik"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-stats-dark.svg" /><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-stats-light.svg" alt="統計 – Statistik" width="120" /></picture></a>
 <a href="#kontakt"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-contact-dark.svg" /><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-contact-light.svg" alt="連絡 – Kontakt" width="120" /></picture></a>
-<a href="https://dev.buch-mail.xyz"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-site-dark.svg" /><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/nav-site-light.svg" alt="ウェブ – Webseite" width="120" /></picture></a>
 
 </div>
 
@@ -193,7 +192,6 @@ Am besten direkt ein Issue im jeweiligen Repository eröffnen.
 
 <a href="https://github.com/adblocker-1?tab=repositories"><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/button-repos.svg" alt="作品を見る – Repositories" width="280" /></a>
 <a href="https://github.com/adblocker-1?tab=followers"><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/button-follow.svg" alt="フォローする – Folgen" width="280" /></a>
-<a href="https://dev.buch-mail.xyz"><img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/button-site.svg" alt="サイトを見る – Webseite" width="280" /></a>
 
 </div>
 
@@ -223,6 +221,6 @@ Am besten direkt ein Issue im jeweiligen Repository eröffnen.
   <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/main/assets/footer-light.svg" alt="一期一会 – ichi-go ichi-e: Jede Begegnung ist einmalig. Danke fürs Vorbeischauen!" width="100%" />
 </picture>
 
-<sub><a href="https://dev.buch-mail.xyz">dev.buch-mail.xyz</a> · Schrift: Shippori Mincho (SIL OFL 1.1)</sub>
+<sub>Schrift: Shippori Mincho (SIL OFL 1.1)</sub>
 
 </div>
