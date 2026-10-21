@@ -13,7 +13,8 @@ from textwrap import wrap
 from xml.sax.saxutils import escape
 
 OUT = Path(__file__).resolve().parent.parent / "assets"
-# Vendor logos, taken from the theSVG icon set (MIT). The marks belong to their owners.
+# Vendor logos from theSVG (MIT), selfh.st icons (MailStore, CC BY 4.0) and
+# Dashboard Icons (N-able, Apache 2.0). The marks belong to their owners.
 LOGOS = Path(__file__).resolve().parent / "logos"
 
 SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
@@ -61,9 +62,9 @@ PROJECTS = [
      "Replication health of every Hyper-V virtual machine."),
     ("UnifiController-PRTG", "Network", "PRTG sensor", "ubiquiti",
      "UniFi devices across platforms, via API key or local login."),
-    ("Sophos-api-device-migration", "Admin tool", "GUI tool", None,
+    ("Sophos-api-device-migration", "Admin tool", "GUI tool", "sophos",
      "Moves Sophos Central devices between tenants with a few clicks."),
-    ("Sophos-Firewall-API-Documentation", "Admin tool", "Export tool", None,
+    ("Sophos-Firewall-API-Documentation", "Admin tool", "Export tool", "sophos",
      "Exports a Sophos Firewall configuration to Excel, JSON and XML."),
 ]
 
