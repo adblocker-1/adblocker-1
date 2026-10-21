@@ -70,15 +70,6 @@ Ready-to-use custom sensors for [Paessler PRTG](https://www.paessler.com/prtg). 
   <img src="https://img.shields.io/badge/PipeWire-4A86CF?style=for-the-badge" alt="PipeWire">
 </p>
 
-## 🐍 Contribution snake
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/adblocker-1/adblocker-1/output/github-snake-dark.svg">
-    <img src="https://raw.githubusercontent.com/adblocker-1/adblocker-1/output/github-snake.svg" width="100%" alt="Snake eating my contribution graph">
-  </picture>
-</p>
-
 <p align="center">
   <sub>⭐ If one of my tools saved you time, a star is the best thank-you.</sub>
 </p>
