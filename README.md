@@ -77,7 +77,7 @@ Ready-to-use custom sensors for [Paessler PRTG](https://www.paessler.com/prtg). 
 **Platforms and products**<br>
 <img src="https://img.shields.io/badge/PRTG-0B3B5F?style=for-the-badge&logoColor=white" alt="PRTG">
 <img src="https://img.shields.io/badge/Microsoft_365-D83B01?style=for-the-badge" alt="Microsoft 365">
-<img src="https://img.shields.io/badge/Entra_ID_&_Intune-0078D4?style=for-the-badge" alt="Entra ID and Intune">
+<img src="https://img.shields.io/badge/Entra_ID_%26_Intune-0078D4?style=for-the-badge" alt="Entra ID and Intune">
 <img src="https://img.shields.io/badge/Hyper--V-0078D6?style=for-the-badge" alt="Hyper-V">
 <img src="https://img.shields.io/badge/Veeam-00B336?style=for-the-badge&logoColor=white" alt="Veeam">
 <img src="https://img.shields.io/badge/Sophos-0055A4?style=for-the-badge&logo=sophos&logoColor=white" alt="Sophos">
