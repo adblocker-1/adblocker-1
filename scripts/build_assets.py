@@ -7,11 +7,14 @@ switch between them with <picture> and prefers-color-scheme.
 Usage: python3 scripts/build_assets.py
 """
 
+import re
 from pathlib import Path
 from textwrap import wrap
 from xml.sax.saxutils import escape
 
 OUT = Path(__file__).resolve().parent.parent / "assets"
+# Vendor logos, taken from the theSVG icon set (MIT). The marks belong to their owners.
+LOGOS = Path(__file__).resolve().parent / "logos"
 
 SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
 MONO = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace"
@@ -42,25 +45,25 @@ CATEGORY_COLORS = {
 POWERSHELL = "#5391fe"
 
 PROJECTS = [
-    ("Veeam-backup-PRTG", "Backup", "PRTG sensor",
+    ("Veeam-backup-PRTG", "Backup", "PRTG sensor", "veeam",
      "Job status and repository usage for Veeam Backup & Replication."),
-    ("Veeam-Backup365-PRTG", "Backup", "PRTG sensor",
+    ("Veeam-Backup365-PRTG", "Backup", "PRTG sensor", "veeam",
      "Job status and object counts for Veeam Backup for Microsoft 365."),
-    ("Cove-Data-Protection-PRTG", "Backup", "PRTG sensor",
+    ("Cove-Data-Protection-PRTG", "Backup", "PRTG sensor", "n-able",
      "Backup status, errors and backup age for N-able Cove Data Protection."),
-    ("MailStore-PRTG", "Mail", "PRTG sensor",
+    ("MailStore-PRTG", "Mail", "PRTG sensor", "mailstore",
      "Archiving profiles and job status for MailStore Server."),
-    ("Sophos-Central-PRTG", "Security", "PRTG sensor",
+    ("Sophos-Central-PRTG", "Security", "PRTG sensor", "sophos",
      "Endpoints, servers and mobile devices in Sophos Central, with health and alerts."),
-    ("entra-Health-Check-PRTG", "Cloud", "PRTG sensor",
+    ("entra-Health-Check-PRTG", "Cloud", "PRTG sensor", "intune",
      "Device inventory, compliance and sync status for Microsoft Intune and Entra ID."),
-    ("HyperVReplicaHealth-PRTG", "Virtualization", "PRTG push sensor",
+    ("HyperVReplicaHealth-PRTG", "Virtualization", "PRTG push sensor", "hyper-v",
      "Replication health of every Hyper-V virtual machine."),
-    ("UnifiController-PRTG", "Network", "PRTG sensor",
+    ("UnifiController-PRTG", "Network", "PRTG sensor", "ubiquiti",
      "UniFi devices across platforms, via API key or local login."),
-    ("Sophos-api-device-migration", "Admin tool", "GUI tool",
+    ("Sophos-api-device-migration", "Admin tool", "GUI tool", None,
      "Moves Sophos Central devices between tenants with a few clicks."),
-    ("Sophos-Firewall-API-Documentation", "Admin tool", "Export tool",
+    ("Sophos-Firewall-API-Documentation", "Admin tool", "Export tool", None,
      "Exports a Sophos Firewall configuration to Excel, JSON and XML."),
 ]
 
@@ -154,7 +157,27 @@ def header(t):
     return svg(w, h, "Hi, I'm Adblocker: Systems Engineer, Monitoring, PowerShell Automation", body, style)
 
 
-def card(t, name, category, kind, desc, delay):
+def logo_tile(t, stem, x, y, size, color):
+    """Vendor logo from scripts/logos/<stem>.svg on a white tile.
+
+    Without a logo file the tile shows the vendor's initial instead, so a
+    logo can be added later by dropping the SVG in and re-running the script.
+    """
+    tile = f'<rect x="{x + .5}" y="{y + .5}" width="{size - 1}" height="{size - 1}" rx="12" fill="#ffffff" stroke="{t["border"]}"/>'
+    src = LOGOS / f"{stem}.svg"
+    if not src.exists():
+        return tile + (f'\n<text x="{x + size / 2:.0f}" y="{y + size / 2 + 9:.0f}" class="sans" font-size="26" '
+                       f'font-weight="700" fill="{color}" text-anchor="middle">{stem[0].upper()}</text>')
+    # Less padding at the sides, so wide wordmarks get more room than square icons.
+    px, py = 5, 8
+    logo = re.sub(r"<\?xml[^>]*>|<title>.*?</title>", "", src.read_text(), flags=re.S).strip()
+    # Drop the logo's own size and place it inside the tile; the viewBox keeps it in proportion.
+    logo = re.sub(r"<svg\b[^>]*>", lambda m: re.sub(r'\s(width|height|id|role)="[^"]*"', "", m.group(0))[:-1]
+                  + f' x="{x + px}" y="{y + py}" width="{size - 2 * px}" height="{size - 2 * py}">', logo, count=1)
+    return f"{tile}\n{logo}"
+
+
+def card(t, name, category, kind, logo, desc, delay):
     w, h = 460, 156
     color = CATEGORY_COLORS[category]
     # Narrowest width that keeps the line count, so the lines come out balanced.
@@ -167,11 +190,15 @@ def card(t, name, category, kind, desc, delay):
     body = f"""<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="12" fill="{t['panel']}" stroke="{t['border']}"/>
 <rect x="24" y="20" width="{len(category) * 7.6 + 20:.0f}" height="22" rx="11" fill="{color}" fill-opacity=".14"/>
 <text x="{24 + (len(category) * 7.6 + 20) / 2:.0f}" y="35" class="sans" font-size="11.5" font-weight="600" fill="{color}" text-anchor="middle" letter-spacing=".6">{category.upper()}</text>
-<circle cx="{w - 30}" cy="31" r="5" fill="{t['ok']}" class="pulse" style="animation-delay:{delay:.1f}s"/>
+{logo_tile(t, logo, w - 76, 20, 52, color) if logo else f'<circle cx="{w - 30}" cy="31" r="5" fill="{t["ok"]}" class="pulse" style="animation-delay:{delay:.1f}s"/>'}
 <text x="24" y="68" class="sans" font-size="19" font-weight="700" fill="{t['accent1']}">{escape(name)}</text>{desc_svg}
 <circle cx="30" cy="{h - 22}" r="6" fill="{POWERSHELL}"/>
 <text x="43" y="{h - 17}" class="sans" font-size="13" fill="{t['muted']}">PowerShell</text>
 <text x="{w - 24}" y="{h - 17}" class="mono" font-size="12" fill="{t['muted']}" text-anchor="end">{escape(kind)}</text>"""
+    if logo:
+        # The logo takes the top corner, so the status light moves next to the sensor type.
+        body += f'''
+<circle cx="{w - 34 - len(kind) * 7.2:.0f}" cy="{h - 21}" r="4" fill="{t['ok']}" class="pulse" style="animation-delay:{delay:.1f}s"/>'''
     return svg(w, h, f"{name}: {desc}", body)
 
 
@@ -232,8 +259,8 @@ def main():
     for theme, t in THEMES.items():
         (OUT / f"header-{theme}.svg").write_text(header(t))
         (OUT / f"freestream-{theme}.svg").write_text(spotlight(t))
-        for i, (name, cat, kind, desc) in enumerate(PROJECTS):
-            (OUT / f"card-{name.lower()}-{theme}.svg").write_text(card(t, name, cat, kind, desc, i * .3))
+        for i, (name, cat, kind, logo, desc) in enumerate(PROJECTS):
+            (OUT / f"card-{name.lower()}-{theme}.svg").write_text(card(t, name, cat, kind, logo, desc, i * .3))
     print(f"Wrote {len(list(OUT.glob('*.svg')))} SVGs to {OUT}")
 
 
