@@ -43,6 +43,7 @@ Ready-to-use custom sensors for [Paessler PRTG](https://www.paessler.com/prtg). 
   <a href="https://github.com/adblocker-1/Sophos-api-device-migration"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-sophos-api-device-migration-dark.svg"><img src="assets/card-sophos-api-device-migration-light.svg" width="49%" alt="Sophos-api-device-migration: Moves Sophos Central devices between tenants with a few clicks."></picture></a>
   <a href="https://github.com/adblocker-1/Sophos-Firewall-API-Documentation"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-sophos-firewall-api-documentation-dark.svg"><img src="assets/card-sophos-firewall-api-documentation-light.svg" width="49%" alt="Sophos-Firewall-API-Documentation: Exports a Sophos Firewall configuration to Excel, JSON and XML."></picture></a>
   <a href="https://github.com/adblocker-1/WipeOS"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-wipeos-dark.svg"><img src="assets/card-wipeos-light.svg" width="49%" alt="WipeOS: Bootable USB stick that securely erases drives and writes a PDF erasure report."></picture></a>
+  <img src="assets/spacer.svg" width="49%" alt="">
 </p>
 
 ## 🎛️ Side project
