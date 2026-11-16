@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/adblocker-1?tab=repositories"><img src="https://img.shields.io/badge/Repositories-12-2f81f7?style=flat-square&logo=github" alt="Repositories"></a>
+  <a href="https://github.com/adblocker-1?tab=repositories"><img src="https://img.shields.io/badge/Repositories-13-2f81f7?style=flat-square&logo=github" alt="Repositories"></a>
   <a href="https://github.com/adblocker-1?tab=followers"><img src="https://img.shields.io/github/followers/adblocker-1?style=flat-square&label=Followers&color=3fb950" alt="Followers"></a>
   <img src="https://komarev.com/ghpvc/?username=adblocker-1&style=flat-square&color=8250df&label=Profile+views" alt="Profile views">
 </p>
@@ -42,6 +42,7 @@ Ready-to-use custom sensors for [Paessler PRTG](https://www.paessler.com/prtg). 
 <p align="center">
   <a href="https://github.com/adblocker-1/Sophos-api-device-migration"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-sophos-api-device-migration-dark.svg"><img src="assets/card-sophos-api-device-migration-light.svg" width="49%" alt="Sophos-api-device-migration: Moves Sophos Central devices between tenants with a few clicks."></picture></a>
   <a href="https://github.com/adblocker-1/Sophos-Firewall-API-Documentation"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-sophos-firewall-api-documentation-dark.svg"><img src="assets/card-sophos-firewall-api-documentation-light.svg" width="49%" alt="Sophos-Firewall-API-Documentation: Exports a Sophos Firewall configuration to Excel, JSON and XML."></picture></a>
+  <a href="https://github.com/adblocker-1/WipeOS"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-wipeos-dark.svg"><img src="assets/card-wipeos-light.svg" width="49%" alt="WipeOS: Bootable USB stick that securely erases drives and writes a PDF erasure report."></picture></a>
 </p>
 
 ## 🎛️ Side project
