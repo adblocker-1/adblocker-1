@@ -259,8 +259,15 @@ def spotlight(t):
     return svg(w, h, "FreeStream: Stream Deck and Wave Link for Linux", body, style)
 
 
+def spacer():
+    """Empty card-sized image that fills the second column of an odd row,
+    so the last card lines up on the left instead of being centred."""
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="460" height="156" viewBox="0 0 460 156"/>\n'
+
+
 def main():
     OUT.mkdir(exist_ok=True)
+    (OUT / "spacer.svg").write_text(spacer())
     for theme, t in THEMES.items():
         (OUT / f"header-{theme}.svg").write_text(header(t))
         (OUT / f"freestream-{theme}.svg").write_text(spotlight(t))
