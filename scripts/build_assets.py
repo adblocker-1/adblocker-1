@@ -15,7 +15,7 @@ from xml.sax.saxutils import escape
 OUT = Path(__file__).resolve().parent.parent / "assets"
 # Vendor logos from theSVG (MIT), selfh.st icons (MailStore, CC BY 4.0) and
 # Dashboard Icons (N-able, Apache 2.0). The marks belong to their owners.
-# wipeos.svg is a drawn icon (drive with erase arrow), not a vendor logo.
+# wipeos.svg is a drawn icon (open hard drive wiped with a cloth), not a vendor logo.
 LOGOS = Path(__file__).resolve().parent / "logos"
 
 SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
