@@ -15,6 +15,7 @@ from xml.sax.saxutils import escape
 OUT = Path(__file__).resolve().parent.parent / "assets"
 # Vendor logos from theSVG (MIT), selfh.st icons (MailStore, CC BY 4.0) and
 # Dashboard Icons (N-able, Apache 2.0). The marks belong to their owners.
+# wipeos.svg is a drawn icon (drive with erase arrow), not a vendor logo.
 LOGOS = Path(__file__).resolve().parent / "logos"
 
 SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
@@ -43,7 +44,8 @@ CATEGORY_COLORS = {
     "Admin tool": "#bf3989",
 }
 
-POWERSHELL = "#5391fe"
+# Language dot colours, as on GitHub.
+LANGUAGES = {"PowerShell": "#5391fe", "C": "#555555"}
 
 PROJECTS = [
     ("Veeam-backup-PRTG", "Backup", "PRTG sensor", "veeam",
@@ -66,6 +68,8 @@ PROJECTS = [
      "Moves Sophos Central devices between tenants with a few clicks."),
     ("Sophos-Firewall-API-Documentation", "Admin tool", "Export tool", "sophos",
      "Exports a Sophos Firewall configuration to Excel, JSON and XML."),
+    ("WipeOS", "Admin tool", "Boot image", "wipeos",
+     "Bootable USB stick that securely erases drives and writes a PDF erasure report.", "C"),
 ]
 
 
@@ -107,7 +111,7 @@ def header(t):
   <text x="{px + 40}" y="{y}" class="mono" font-size="13" fill="{t['muted']}">{name}</text>
   <text x="{px + pw - 20}" y="{y}" class="mono" font-size="13" fill="{t['ok']}" text-anchor="end" font-weight="600">{state}</text>"""
 
-    chips = ["8 PRTG sensors", "2 admin tools", "1 Linux suite"]
+    chips = ["8 PRTG sensors", "3 admin tools", "1 Linux suite"]
     chip_svg, cx = "", 64
     for c in chips:
         cw = 22 + len(c) * 8.2
@@ -178,7 +182,7 @@ def logo_tile(t, stem, x, y, size, color):
     return f"{tile}\n{logo}"
 
 
-def card(t, name, category, kind, logo, desc, delay):
+def card(t, name, category, kind, logo, desc, delay, lang="PowerShell"):
     w, h = 460, 156
     color = CATEGORY_COLORS[category]
     # Narrowest width that keeps the line count, so the lines come out balanced.
@@ -193,8 +197,8 @@ def card(t, name, category, kind, logo, desc, delay):
 <text x="{24 + (len(category) * 7.6 + 20) / 2:.0f}" y="35" class="sans" font-size="11.5" font-weight="600" fill="{color}" text-anchor="middle" letter-spacing=".6">{category.upper()}</text>
 {logo_tile(t, logo, w - 76, 20, 52, color) if logo else f'<circle cx="{w - 30}" cy="31" r="5" fill="{t["ok"]}" class="pulse" style="animation-delay:{delay:.1f}s"/>'}
 <text x="24" y="68" class="sans" font-size="19" font-weight="700" fill="{t['accent1']}">{escape(name)}</text>{desc_svg}
-<circle cx="30" cy="{h - 22}" r="6" fill="{POWERSHELL}"/>
-<text x="43" y="{h - 17}" class="sans" font-size="13" fill="{t['muted']}">PowerShell</text>
+<circle cx="30" cy="{h - 22}" r="6" fill="{LANGUAGES[lang]}"/>
+<text x="43" y="{h - 17}" class="sans" font-size="13" fill="{t['muted']}">{lang}</text>
 <text x="{w - 24}" y="{h - 17}" class="mono" font-size="12" fill="{t['muted']}" text-anchor="end">{escape(kind)}</text>"""
     if logo:
         # The logo takes the top corner, so the status light moves next to the sensor type.
@@ -260,8 +264,8 @@ def main():
     for theme, t in THEMES.items():
         (OUT / f"header-{theme}.svg").write_text(header(t))
         (OUT / f"freestream-{theme}.svg").write_text(spotlight(t))
-        for i, (name, cat, kind, logo, desc) in enumerate(PROJECTS):
-            (OUT / f"card-{name.lower()}-{theme}.svg").write_text(card(t, name, cat, kind, logo, desc, i * .3))
+        for i, project in enumerate(PROJECTS):
+            (OUT / f"card-{project[0].lower()}-{theme}.svg").write_text(card(t, *project[:5], i * .3, *project[5:]))
     print(f"Wrote {len(list(OUT.glob('*.svg')))} SVGs to {OUT}")
 
 
