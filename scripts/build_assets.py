@@ -7,6 +7,7 @@ switch between them with <picture> and prefers-color-scheme.
 Usage: python3 scripts/build_assets.py
 """
 
+import base64
 import re
 from pathlib import Path
 from textwrap import wrap
@@ -15,7 +16,7 @@ from xml.sax.saxutils import escape
 OUT = Path(__file__).resolve().parent.parent / "assets"
 # Vendor logos from theSVG (MIT), selfh.st icons (MailStore, CC BY 4.0) and
 # Dashboard Icons (N-able, Apache 2.0). The marks belong to their owners.
-# wipeos.svg is a drawn icon (open hard drive wiped with a cloth), not a vendor logo.
+# wipeos.png is the WipeOS app icon (a hard drive wiped with a cloth), not a vendor logo.
 LOGOS = Path(__file__).resolve().parent / "logos"
 
 SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
@@ -167,7 +168,16 @@ def logo_tile(t, stem, x, y, size, color):
 
     Without a logo file the tile shows the vendor's initial instead, so a
     logo can be added later by dropping the SVG in and re-running the script.
+    A <stem>.png is an app icon that brings its own tile: it is embedded as
+    is, without the white tile, and drawn a little larger so its artwork can
+    reach past the tile's edge.
     """
+    png = LOGOS / f"{stem}.png"
+    if png.exists():
+        data = base64.b64encode(png.read_bytes()).decode()
+        grow = 18
+        return (f'<image x="{x - grow / 2}" y="{y - grow / 2}" width="{size + grow}" height="{size + grow}" '
+                f'href="data:image/png;base64,{data}"/>')
     tile = f'<rect x="{x + .5}" y="{y + .5}" width="{size - 1}" height="{size - 1}" rx="12" fill="#ffffff" stroke="{t["border"]}"/>'
     src = LOGOS / f"{stem}.svg"
     if not src.exists():
